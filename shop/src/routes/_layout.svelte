@@ -4,7 +4,8 @@
 	export let segment;
 </script>
 
-<style>
+<style lang="scss" global>
+	@import "../scss/modular.scss";
 	main {
 		max-width: 1200px;
 		background-color: white;

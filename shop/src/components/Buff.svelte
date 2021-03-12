@@ -1,6 +1,9 @@
 <script>
     let buffs = [
         { packName: 'Gains Buff', rarity: 'common', tier: 'Common', cost: 0.99, listings: 1000 },
+        { packName: 'Love Buff', rarity: 'uncommon', tier: 'Uncommon', cost: 99.99, listings: 1 },
+        { packName: 'Love Buff', rarity: 'rare', tier: 'Rare', cost: 99.99, listings: 1 },
+        { packName: 'Love Buff', rarity: 'epic', tier: 'Epic', cost: 99.99, listings: 1 },
         { packName: 'Love Buff', rarity: 'legendary', tier: 'Legendary', cost: 99.99, listings: 1 },
     ];
     let packName = "Generic Name"
@@ -11,6 +14,10 @@
 </script>
 
 <style>
+    .col-2-10 {
+        padding: 25px;
+        width: 20%;
+    }
     .rarity {
         width: 100%;
         height: 0;
@@ -55,7 +62,7 @@
 </style>
 
 {#each buffs as buff}
-    <div>
+    <div class="col-2-10">
         <div class="rarity {buff.rarity}">
 
         </div>
