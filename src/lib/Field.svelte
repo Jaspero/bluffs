@@ -1,7 +1,6 @@
 <script>
     export let type = "text"
     export let label = "Label"
-
 </script>
 
 <style>
@@ -21,11 +20,6 @@
         outline: none;
         border: none;
         background: none;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        font-weight: 500;
-        letter-spacing: 0px;
         font-family: Roboto,sans-serif;
     }
 
@@ -39,7 +33,6 @@
         color: #5d5d5d;
         transition: 0.3s;
         font-size: 14px;
-        letter-spacing: 0;
         font-family: Roboto,sans-serif;
     }
 
@@ -52,11 +45,13 @@
     }
 
     .box {
+        display: block;
         border: 1px solid var(--light-tertiary);
         box-shadow: 0 0 0 1px transparent;
         height: 48px;
         min-width: 250px;
         transition: .3s;
+        margin-bottom: 15px;
     }
 
     .box:hover {
@@ -72,7 +67,7 @@
 
 <label for="input" class="box">
     <div class="input-wrapper">
-        <input type="text" id="input" class="input-field" placeholder="{label}">
+        <input type="{type}" id="input" class="input-field" placeholder="{label}">
         <span class="label">{label}</span>
     </div>
 </label>
