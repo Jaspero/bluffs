@@ -23,7 +23,7 @@
 </style>
 
 <div class="grid nogutter jc-between">
-    <h2 class="w-full m-b-s">Leaderboard</h2>
+    <h2>Leaderboard</h2>
     <div>
         <h4>Most Buffed</h4>
 

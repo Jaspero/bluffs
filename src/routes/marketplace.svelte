@@ -33,7 +33,7 @@
 </style>
 
 <div class="grid">
-    <h2 class="w-full">Marketplace</h2>
+    <h2>Marketplace</h2>
 </div>
 
 <div class="custom-grid">
