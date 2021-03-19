@@ -30,6 +30,7 @@ html {
 }
 
 body {
+  background-color: var(--light-theme);
   overflow-x: hidden;
   min-height: 100vh;
   margin: 0;
@@ -41,7 +42,7 @@ body {
  *============================================================================*/
 
 h1, h2, h3, h4, h5, h6,
-p, ol, ul, hr {
+p, ol, ul {
   margin:  0;
 }
 

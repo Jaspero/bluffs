@@ -1,4 +1,5 @@
 <script>
+    import Header from "../lib/Header.svelte";
     let mostBuffed = [
         { name: 'Barack Obama', twitter: 'BarackObama', count: 1000 },
         { name: 'Joe Biden', twitter: 'JoeBiden', count: 1000 },
@@ -14,18 +15,16 @@
 </script>
 
 <style>
-    .index {
-        min-width: 2ch;
-    }
     td {
         padding: 2px 4px;
     }
 </style>
 
+<Header>Leaderboard</Header>
+
 <div class="grid nogutter jc-between">
-    <h2>Leaderboard</h2>
     <div>
-        <h4>Most Buffed</h4>
+        <h4 class="m-b-s">Most Buffed</h4>
 
         <table>
             {#each mostBuffed as mBuffed, i}
@@ -40,7 +39,7 @@
     </div>
 
     <div>
-        <h4>Most Buffs Cast</h4>
+        <h4 class="m-b-s">Most Buffs Cast</h4>
 
         <table>
             {#each mostBuffed as mBuffed, i}
@@ -55,7 +54,7 @@
     </div>
 
     <div>
-        <h4>Collection</h4>
+        <h4 class="m-b-s">Collection</h4>
 
         <table>
             {#each mostBuffed as mBuffed, i}

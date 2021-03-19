@@ -1,6 +1,8 @@
 <style>
     nav {
-        background: #EDF0F7;
+        position: sticky;
+        top: 0;
+        background: var(--light-theme);
         height: 60px;
     }
     .nav-grid {
@@ -11,7 +13,7 @@
         font-size: 14px;
     }
 
-    a {
+    .nav-button {
         position: relative;
         display: inline-block;
         overflow: hidden;
@@ -19,9 +21,14 @@
         height: 36px;
         line-height: 36px;
         padding: 0 16px;
-        color: rgba(0,0,0,.6);
+        color: var(--light-secondary);
         text-transform: uppercase;
         transition: .3s;
+    }
+
+    .nav-button:first-child {
+        font-size: 24px;
+        padding: 0;
     }
 
     .hover-backdrop {
@@ -34,47 +41,53 @@
         transition: .3s;
     }
 
-    a:hover {
-        color: rgba(0,0,0,.9);
+    .nav-button:hover {
+        color: var(--light-primary);
     }
 
-    a:hover .hover-backdrop {
+    .nav-button:hover .hover-backdrop {
         background-color: rgba(0,0,0,.08);
     }
 
-    a.register {
+    .nav-button.register {
         background-color: var(--primary-theme);
         color: white;
+    }
+
+    .nav-button.register:hover .hover-backdrop {
+        background-color: rgba(0,0,0,.08);
     }
 </style>
 
 <nav>
     <div class="nav-grid h-full flex ai-center">
-        <a href="/" class="m-r-s">BLUFFS</a>
+        <a class="nav-button m-r-s" href="/">
+            BLUFFS
+        </a>
 
-        <a href="/packs">
+        <a class="nav-button" href="/packs">
             Packs
             <span class="hover-backdrop"></span>
         </a>
 
-        <a href="/marketplace">
+        <a class="nav-button" href="/marketplace">
             Marketplace
             <span class="hover-backdrop"></span>
         </a>
 
-        <a href="/leaderboard">
+        <a class="nav-button" href="/leaderboard">
             Leaderboard
             <span class="hover-backdrop"></span>
         </a>
 
         <div class="flex-1"></div>
 
-        <a href="/login">
-            Log in
+        <a class="nav-button" href="/login">
+            Login
             <span class="hover-backdrop"></span>
         </a>
 
-        <a href="/register" class="register">
+        <a class="nav-button register" href="/register">
             Register
             <span class="hover-backdrop"></span>
         </a>

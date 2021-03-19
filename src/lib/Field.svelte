@@ -1,62 +1,71 @@
 <script>
-    export let type = "text"
-    export let label = "Label"
+    export let type = "text" // Determines the type of input. type="text" will be the default
+    export let label = "Label" // Determines the text of the placeholder. label="Label" will be the default
 </script>
 
 <style>
     .input-wrapper {
+        display: block;
         position: relative;
+        height: 100%;
     }
 
     .input-field {
         display: block;
         position: relative;
-        line-height: 14px;
-        font-size: 14px;
-        margin-top: 22px;
-        bottom: 0;
-        padding-left: 10px;
+        line-height: 16px;
+        font-size: 16px;
+        padding: 12px;
         width: 100%;
+        height: 100%;
         outline: none;
         border: none;
-        background: none;
+        background-color: var(--light-theme);
+        color: var(--light-primary);
+        caret-color: var(--light-primary);
         font-family: Roboto,sans-serif;
     }
 
     .label {
         display: block;
         position: absolute;
-        bottom: 6px;
-        left: 10px;
-        opacity: 0;
-        visibility: hidden;
-        color: #5d5d5d;
+        bottom: 17px;
+        left: 12px;
+        color: var(--light-secondary);
         transition: 0.3s;
-        font-size: 14px;
+        pointer-events: none;
+        font-size: 16px;
         font-family: Roboto,sans-serif;
+    }
+
+    .input-field:not(:placeholder-shown), .input-field:focus:not(:placeholder-shown) {
+        padding: 24px 12px 6px 12px;
     }
 
     .input-field:not(:placeholder-shown) + .label,
     .input-field:focus:not(:placeholder-shown) + .label {
         transform: translateY(-18px);
-        font-size: 12px;
-        opacity: 1;
-        visibility: visible;
+        font-size: 10px;
+    }
+
+    ::placeholder {
+        visibility: hidden;
     }
 
     .box {
         display: block;
         border: 1px solid var(--light-tertiary);
         box-shadow: 0 0 0 1px transparent;
-        height: 48px;
-        min-width: 250px;
+        height: 60px;
+        width: 250px;
+        max-width: 500px;
         transition: .3s;
         margin-bottom: 15px;
     }
 
     .box:hover {
-        border: 1px solid var(--light-primary);
-        box-shadow: 0 0 0 1px var(--light-primary);
+        border: 1px solid var(--light-secondary);
+        box-shadow: 0 0 0 1px var(--light-secondary);
     }
 
     .box:focus-within {
@@ -66,8 +75,8 @@
 </style>
 
 <label for="input" class="box">
-    <div class="input-wrapper">
+    <span class="input-wrapper">
         <input type="{type}" id="input" class="input-field" placeholder="{label}">
         <span class="label">{label}</span>
-    </div>
+    </span>
 </label>

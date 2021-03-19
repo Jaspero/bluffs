@@ -17,10 +17,18 @@
   flex-wrap: wrap;
   max-width: 1200px;
   width: 100%;
-  margin: 60px auto 0;
+  margin: 0 auto;
 }
 
-.grid.nogutter {
+.grid-small {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid.nogutter, .grid-small.nogutter {
   [class*="col-"] {
     padding: 0;
   }

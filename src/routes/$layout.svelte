@@ -6,6 +6,6 @@
     <title>Bluffs</title>
 </svelte:head>
 
-<Nav></Nav>
+<Nav />
 
 <slot></slot>

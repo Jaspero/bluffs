@@ -1,3 +1,9 @@
+<script>
+    import Header from "../lib/Header.svelte";
+</script>
+
+<Header grid="small">Register</Header>
+
 <div class="grid">
-    <h2>Register</h2>
+
 </div>
