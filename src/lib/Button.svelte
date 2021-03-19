@@ -135,7 +135,7 @@
     }
 </style>
 
-{#if option === "link" & click === undefined}
+{#if link !== undefined & click === undefined}
     <a href="/{link}" target="{target}" class="{size} {kind} {color}">
         <slot></slot>
         <span class="button-hover-backdrop"></span>

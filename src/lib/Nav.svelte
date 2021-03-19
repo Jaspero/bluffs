@@ -1,34 +1,50 @@
-<style>
-    nav {
+<style lang="scss">
+    .nav {
         position: sticky;
         top: 0;
         background: var(--light-theme);
         height: 60px;
-    }
-    .nav-grid {
+
+      &-grid {
         max-width: 1200px;
         margin: 0 auto;
-    }
-    nav > a {
-        font-size: 14px;
-    }
+      }
 
-    .nav-button {
+      &-button {
         position: relative;
         display: inline-block;
         overflow: hidden;
         min-width: 64px;
         height: 36px;
+        font-size: 14px;
         line-height: 36px;
         padding: 0 16px;
         color: var(--light-secondary);
         text-transform: uppercase;
         transition: .3s;
-    }
 
-    .nav-button:first-child {
-        font-size: 24px;
-        padding: 0;
+        &:first-child {
+          font-size: 24px;
+          padding: 0;
+        }
+
+        &:hover {
+          color: var(--light-primary);
+
+          & .hover-backdrop {
+            background-color: rgba(0,0,0,.08);
+          }
+        }
+
+        &.register {
+          background-color: var(--primary-theme);
+          color: white;
+
+          &:hover .hover-backdrop {
+            background-color: rgba(0,0,0,.08);
+          }
+        }
+      }
     }
 
     .hover-backdrop {
@@ -40,26 +56,9 @@
         background-color: transparent;
         transition: .3s;
     }
-
-    .nav-button:hover {
-        color: var(--light-primary);
-    }
-
-    .nav-button:hover .hover-backdrop {
-        background-color: rgba(0,0,0,.08);
-    }
-
-    .nav-button.register {
-        background-color: var(--primary-theme);
-        color: white;
-    }
-
-    .nav-button.register:hover .hover-backdrop {
-        background-color: rgba(0,0,0,.08);
-    }
 </style>
 
-<nav>
+<nav class="nav">
     <div class="nav-grid h-full flex ai-center">
         <a class="nav-button m-r-s" href="/">
             BLUFFS
@@ -88,7 +87,7 @@
         </a>
 
         <a class="nav-button register" href="/register">
-            Register
+            Signup
             <span class="hover-backdrop"></span>
         </a>
     </div>

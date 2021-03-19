@@ -3,27 +3,31 @@
     import Pack from "$lib/Pack.svelte";
 
     let packs = [
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Rare', id: 'single'},
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Common', id: 'single'},
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Epic', id: 'single'},
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Rare', id: 'single'},
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Rare', id: 'single'},
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Rare', id: 'single'},
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Common', id: 'single'},
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Common', id: 'single'},
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Legendary', id: 'single'},
-        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'Epic', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'rare', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'common', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'epic', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'rare', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'rare', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'rare', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'common', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'common', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'legendary', id: 'single'},
+        {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'epic', id: 'single'},
     ];
 </script>
 
 <style>
-
+    .w-20 {
+        width: 20%;
+    }
 </style>
 
 <Header>Packs</Header>
 
 <div class="grid">
     {#each packs as pack}
-        <Pack {pack} />
+        <div class="w-20">
+            <Pack {pack} />
+        </div>
     {/each}
 </div>

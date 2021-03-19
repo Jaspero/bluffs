@@ -1,6 +1,21 @@
 <script>
-    export let type = "text" // Determines the type of input. type="text" will be the default
-    export let label = "Label" // Determines the text of the placeholder. label="Label" will be the default
+    /**
+     * 
+     * @type {"text"}
+     */
+    export let type = "text"
+
+    /**
+     *  Specify input label
+     *  @type {string}
+     */
+    export let label = "Label"
+
+    /**
+     * Specify autocomplete
+     * @type {"email" | "username" | "new-password" | "current-password" | "off" | "on"}
+     */
+    export let autocomplete = undefined
 </script>
 
 <style>
@@ -76,7 +91,7 @@
 
 <label for="input" class="box">
     <span class="input-wrapper">
-        <input type="{type}" id="input" class="input-field" placeholder="{label}">
+        <input autocomplete="{autocomplete}" type="{type}" id="input" class="input-field" placeholder="{label}">
         <span class="label">{label}</span>
     </span>
 </label>

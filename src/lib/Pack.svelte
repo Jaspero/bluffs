@@ -2,84 +2,90 @@
     export let pack
 </script>
 
-<style>
-    .card {
-        width: 20%;
-        padding: 20px;
-        box-shadow: 0 0 0 0 transparent;
-        background-color: transparent;
-        transition: .2s;
-    }
-    .card:hover {
-        background-color: rgba(0,0,0,.05);
-        box-shadow: 0 0 0 1px rgba(0,0,0,.25);
-    }
-    .image {
-        position: relative;
-        width: 100%;
-        height: 0;
-        padding-bottom: 100%;
-    }
-    .pack-tier {
-        font-weight: 500;
-    }
-    .sold-count {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        padding: 4px 6px;
-        font-size: 12px;
-        color: var(--primary-primary);
+<style lang="scss">
+  .card {
+    display: block;
+    padding: 15px;
+    border: 2px solid transparent;
+    background-color: var(--light-theme);
+    transition: .2s;
+
+    &:hover {
+      border-color: var(--light-tertiary);
+      background-color: rgba(0,0,0,.04);
     }
 
-    .card.Common .image {
-        background-color: #EBECEF;
-        border: 2px solid var(--rarity-common);
-    }
-    .card.Rare .image {
-        background-color: #F4F2EA;
-        border: 2px solid var(--rarity-rare);
-    }
-    .card.Epic .image {
-        background-color: #F0E7F9;
-        border: 2px solid var(--rarity-epic);
-    }
-    .card.Legendary .image {
-        background-color: #F7E3E6;
-        border: 2px solid var(--rarity-legendary);
-    }
-
-    .card.Common .pack-tier {
+    &.common {
+      .pack-tier {
         color: var(--rarity-common);
-    }
-    .card.Rare .pack-tier {
-        color: var(--rarity-rare);
-    }
-    .card.Epic .pack-tier {
-        color: var(--rarity-epic);
-    }
-    .card.Legendary .pack-tier {
-        color: var(--rarity-legendary);
+      }
+      .sold-count {
+        background-color: var(--rarity-common);
+      }
+      .image {
+        border: 2px solid var(--rarity-common);
+        background-color: #EBECEF;
+      }
     }
 
-    .card.Common .sold-count {
-        background-color: var(--rarity-common);
-    }
-    .card.Rare .sold-count {
+    &.rare {
+      .pack-tier {
+        color: var(--rarity-rare);
+      }
+      .sold-count {
         background-color: var(--rarity-rare);
+      }
+      .image {
+        border: 2px solid var(--rarity-rare);
+        background-color: #F4F2EA;
+      }
     }
-    .card.Epic .sold-count {
+
+    &.epic {
+      .pack-tier {
+        color: var(--rarity-epic);
+      }
+      .sold-count {
         background-color: var(--rarity-epic);
+      }
+      .image {
+        border: 2px solid var(--rarity-epic);
+        background-color: #F0E7F9;
+      }
     }
-    .card.Legendary .sold-count {
+
+    &.legendary {
+      .pack-tier {
+        color: var(--rarity-legendary);
+      }
+      .sold-count {
         background-color: var(--rarity-legendary);
+      }
+      .image {
+        border: 2px solid var(--rarity-legendary);
+        background-color: #F7E3E6;
+      }
     }
-    h5 {
-        margin-top: 2px;
-    }
-    h6 {
-        margin: 2px 0;
-    }
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+  }
+
+  .sold-count {
+    position: absolute;
+    bottom: 0;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: white;
+  }
+
+  .pack-tier {
+    text-transform: capitalize;
+  }
 </style>
 
 <a href="/pack" class="card {pack.tier}">
@@ -87,7 +93,7 @@
         <div class="sold-count">{pack.sold} SOLD</div>
     </div>
     <h5>{pack.packName}</h5>
-    <h6 class="pack-tier">{pack.tier} Tier</h6>
+    <h6 class="pack-tier">{pack.tier} tier</h6>
     <div>
         ${pack.cost} - {pack.count} buffs
     </div>

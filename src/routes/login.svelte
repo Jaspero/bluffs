@@ -4,6 +4,44 @@
     import Header from "../lib/Header.svelte";
 </script>
 
+<style lang="scss">
+    .google-signup {
+        position: relative;
+        border: 1px solid var(--light-tertiary);
+        background-color: white;
+        color: rgba(0,0,0,.54);
+        font-family: Roboto-Medium,sans-serif;
+        outline: none;
+        font-size: 14px;
+        padding-left: 10px;
+        padding-right: 24px;
+        height: 40px;
+        transition: .3s;
+
+    img {
+        margin-right: 18px;
+    }
+
+    &:hover {
+         color: rgba(0,0,0,.9);
+
+    .button-hover-backdrop {
+        background-color: rgba(0,0,0,.02);
+    }
+    }
+    }
+
+    .button-hover-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        transition: .3s;
+    }
+</style>
+
 <Header grid="small">Login</Header>
 
 <div class="grid-small nogutter">
@@ -12,10 +50,18 @@
     <hr>
 
     <form class="col-12">
-        <Field label="User name" />
-        <Field label="Password" type="password"/>
+        <Field label="User name" autocomplete="username" />
+        <Field label="Password" type="password" autocomplete="current-password" />
         <Button type="submit" kind="filled" color="primary">Log in</Button>
     </form>
+
+    <hr>
+
+    <button class="google-signup">
+        <img src="../../assets/google-g.svg" alt="" width="18">
+        Sign in with Google
+        <span class="button-hover-backdrop"></span>
+    </button>
 
     <hr>
 
@@ -26,6 +72,6 @@
 
     <div class="col-12 m-t-m">
         <p class="fs-small">Don't have an account?</p>
-        <Button option="link" link="register" kind="ghost" color="primary" size="small">Register</Button>
+        <Button link="register" kind="ghost" color="primary" size="small">Register</Button>
     </div>
 </div>
