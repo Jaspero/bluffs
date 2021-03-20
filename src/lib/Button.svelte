@@ -1,4 +1,7 @@
 <script>
+    import {createEventDispatcher} from 'svelte';
+    let dispatch = createEventDispatcher();
+
     /**
      * Set a function executed on click
      * @type {function}
@@ -142,7 +145,7 @@
     </a>
 
     {:else}
-    <button class="{size} {kind} {color} {click}">
+    <button class="{size} {kind} {color} {click}" on:click={()=>dispatch('click')}>
         <slot></slot>
         <span class="button-hover-backdrop"></span>
     </button>

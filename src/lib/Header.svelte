@@ -1,5 +1,9 @@
 <script>
-    export let grid = "medium"
+    /**
+     *
+     * @type {"small" | "normal"}
+     */
+    export let grid = undefined
 </script>
 
 <style>
