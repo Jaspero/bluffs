@@ -1,92 +1,85 @@
 <script>
-
+    export let buff
 </script>
 
-<style>
-    .col-2-10 {
-        padding: 40px 0 0 40px;
-        width: 20%;
+<style lang="scss">
+  .card {
+    display: block;
+    padding: 15px;
+    border: 2px solid transparent;
+    background-color: var(--light-theme);
+    transition: .2s;
+
+    &:hover {
+      border: 2px solid var(--light-tertiary);
+      background-color: rgba(0,0,0,.04);
     }
-    .rarity {
-        width: 100%;
-        height: 0;
-        padding-top: 100%;
-    }
-    .common {
-        border: 2px solid #646466;
+
+    &.common {
+      .buff-tier {
+        color: var(--rarity-common);
+      }
+      .image {
+        border: 2px solid var(--rarity-common);
         background-color: #EBECEF;
-        box-shadow: 0 0 1px transparent;
-        transition: .4s;
+      }
     }
-    .common:hover {
-        box-shadow: 0 0 0 1px #646466;
-    }
-    .uncommon {
-        border: 2px solid #3DA1CE;
-        background-color: #E7F2FA;
-        box-shadow: 0 0 1px transparent;
-        transition: .4s;
-    }
-    .uncommon:hover {
-        box-shadow: 0 0 0 1px #3DA1CE;
-    }
-    .rare {
-        border: 2px solid #BC9C31;
+
+    &.rare {
+      .buff-tier {
+        color: var(--rarity-rare);
+      }
+      .image {
+        border: 2px solid var(--rarity-rare);
         background-color: #F4F2EA;
-        box-shadow: 0 0 1px transparent;
-        transition: .4s;
+      }
     }
-    .rare:hover {
-        box-shadow: 0 0 0 1px #BC9C31;
-    }
-    .epic {
-        border: 2px solid #8F37C6;
+
+    &.epic {
+      .buff-tier {
+        color: var(--rarity-epic);
+      }
+      .image {
+        border: 2px solid var(--rarity-epic);
         background-color: #F0E7F9;
-        box-shadow: 0 0 1px transparent;
-        transition: .4s;
+      }
     }
-    .epic:hover {
-        box-shadow: 0 0 0 1px #8F37C6;
-    }
-    .legendary {
-        border: 2px solid #d60e0e;
+
+    &.legendary {
+      .buff-tier {
+        color: var(--rarity-legendary);
+      }
+      .image {
+        border: 2px solid var(--rarity-legendary);
         background-color: #F7E3E6;
-        box-shadow: 0 0 1px transparent;
-        transition: .4s;
+      }
     }
-    .legendary:hover {
-        box-shadow: 0 0 0 1px #d60e0e;
-    }
-    .Common {
-        color: #646466;
-    }
-    .Uncommon {
-        color: #3DA1CE;
-    }
-    .Rare {
-        color: #BC9C31;
-    }
-    .Epic {
-        color: #8F37C6;
-    }
-    .Legendary {
-        color: #d60e0e;
-    }
+  }
+
+  .lowest-price {
+    color: var(--light-secondary);
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+  }
+
+  .buff-tier {
+    text-transform: capitalize;
+    margin: 4px 0;
+  }
 </style>
 
-<!--<div>
-    <slot>
-            <div class="rarity {buff.rarity} pointer">
-
-            </div>
-            <h5>{buff.packName}</h5>
-            <div class="{buff.tier}">{buff.tier} Tier</div>
-            <div>{buff.listings} {buff.listings === 1 ? 'listing' : 'listings' }</div>
-    </slot>
-</div>-->
-<!--
-
-{#each buffs as buff}
-
-{/each}
--->
+<a href="" class="card {buff.tier}">
+    <div class="image m-b-xs">
+    </div>
+    <h5>{buff.buffName}</h5>
+    <h6 class="buff-tier">{buff.tier} tier</h6>
+    {#if buff.lowestPrice}
+        <h6 class="lowest-price">Lowest price</h6>
+        <span class="font-secondary">${buff.lowestPrice}</span>
+    {/if}
+</a>
