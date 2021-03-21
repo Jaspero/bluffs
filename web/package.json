@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
-		"start": "svelte-kit start",
+		"start": "npm run sass && npm run dev",
 		"sass": "sass index.scss static/index.css"
 	},
 	"devDependencies": {
