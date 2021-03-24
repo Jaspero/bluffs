@@ -3,13 +3,6 @@
     let dispatch = createEventDispatcher();
 
     /**
-     * Set a function executed on click
-     * @type {function}
-     * Renders as <button>
-     */
-    export let click = undefined
-
-    /**
      * Specify button kind
      * @type {"ghost" | "filled" | "outlined"}
      */
@@ -54,98 +47,98 @@
 </script>
 
 <style lang="scss">
-    button, a {
-        position: relative;
-        display: inline-block;
-        text-transform: uppercase;
-        border: none;
-        outline: none;
+  button, a {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
 
-      &.small {
-        min-width: 48px;
-        height: 24px;
-        line-height: 24px;
-        font-size: 12px;
-        padding: 0 8px;
-      }
-      &.normal {
-        min-width: 64px;
-        height: 36px;
-        line-height: 36px;
-        font-size: 14px;
-        padding: 0 16px;
-      }
-
-      &:hover .button-hover-backdrop {
-        background-color: rgba(0,0,0,.06);
-      }
+    &.small {
+      min-width: 48px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 12px;
+      padding: 0 8px;
+    }
+    &.normal {
+      min-width: 64px;
+      height: 36px;
+      line-height: 36px;
+      font-size: 14px;
+      padding: 0 16px;
     }
 
-    .button-hover-backdrop {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-        transition: .2s;
+    &:hover .button-hover-backdrop {
+      background-color: rgba(0,0,0,.06);
     }
+  }
 
-    .filled {
-      &.primary {
-        background-color: var(--primary-theme);
-        color: var(--primary-primary);
-      }
-      &.accent {
-        background-color: var(--accent-theme);
-        color: var(--accent-primary);
-      }
-      &.warn {
-        background-color: var(--warn-theme);
-        color: var(--warn-primary);
-      }
+  .button-hover-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: .2s;
+  }
+
+  .filled {
+    &.primary {
+      background-color: var(--primary-theme);
+      color: var(--primary-primary);
     }
-
-    .outlined {
-      background-color: var(--light-theme);
-
-      &.primary {
-        border: 1px solid var(--light-tertiary);
-        color: var(--primary-theme);
-      }
-      &.accent {
-        border: 1px solid var(--light-tertiary);
-        color: var(--accent-theme);
-      }
-      &.warn {
-        border: 1px solid var(--light-tertiary);
-        color: var(--warn-theme);
-      }
+    &.accent {
+      background-color: var(--accent-theme);
+      color: var(--accent-primary);
     }
-
-    .ghost {
-      background-color: var(--light-theme);
-
-      &.primary {
-        color: var(--primary-theme);
-      }
-      &.accent {
-        color: var(--accent-theme);
-      }
-      &.warn {
-        color: var(--warn-theme);
-      }
+    &.warn {
+      background-color: var(--warn-theme);
+      color: var(--warn-primary);
     }
+  }
+
+  .outlined {
+    background-color: var(--light-theme);
+
+    &.primary {
+      border: 1px solid var(--light-tertiary);
+      color: var(--primary-theme);
+    }
+    &.accent {
+      border: 1px solid var(--light-tertiary);
+      color: var(--accent-theme);
+    }
+    &.warn {
+      border: 1px solid var(--light-tertiary);
+      color: var(--warn-theme);
+    }
+  }
+
+  .ghost {
+    background-color: var(--light-theme);
+
+    &.primary {
+      color: var(--primary-theme);
+    }
+    &.accent {
+      color: var(--accent-theme);
+    }
+    &.warn {
+      color: var(--warn-theme);
+    }
+  }
 </style>
 
-{#if link !== undefined & click === undefined}
+{#if link !== undefined}
     <a href="/{link}" target="{target}" class="{size} {kind} {color}">
         <slot></slot>
         <span class="button-hover-backdrop"></span>
     </a>
 
-    {:else}
-    <button class="{size} {kind} {color} {click}" on:click={()=>dispatch('click')}>
+{:else}
+    <button class="{size} {kind} {color}" on:click={()=>dispatch('click')}>
         <slot></slot>
         <span class="button-hover-backdrop"></span>
     </button>

@@ -35,7 +35,6 @@
         height: 100%;
         outline: none;
         border: none;
-        background-color: var(--light-theme);
         color: var(--light-primary);
         caret-color: var(--light-primary);
         font-family: Roboto,sans-serif;
@@ -67,29 +66,31 @@
         visibility: hidden;
     }
 
-    .box {
+    .field {
         display: block;
         border: 1px solid var(--light-tertiary);
         box-shadow: 0 0 0 1px transparent;
         height: 60px;
+        border-radius: 4px;
+        overflow: hidden;
         width: 250px;
         max-width: 500px;
         transition: .3s;
         margin-bottom: 15px;
     }
 
-    .box:hover {
+    .field:hover {
         border: 1px solid var(--light-secondary);
         box-shadow: 0 0 0 1px var(--light-secondary);
     }
 
-    .box:focus-within {
+    .field:focus-within {
         border: 1px solid var(--primary-theme);
         box-shadow: 0 0 0 1px var(--primary-theme);
     }
 </style>
 
-<label for="input" class="box">
+<label for="input" class="field">
     <span class="input-wrapper">
         <input autocomplete="{autocomplete}" type="{type}" id="input" class="input-field" placeholder="{label}">
         <span class="label">{label}</span>

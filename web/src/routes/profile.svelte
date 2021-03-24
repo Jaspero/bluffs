@@ -7,41 +7,9 @@
 <Header grid="small">Profile</Header>
 
 <div class="grid-small nogutter">
-    <div class="col-12 m-b-s">
-        <h4 class="m-b-xs">Account information</h4>
-        <p>Information containing your email, user name and password.</p>
+    <div class="w-full flex jc-between ai-center">
+        <h6>User name</h6>
+        <Button kind="outlined">Edit Profile</Button>
     </div>
-
-    <div class="col-12">
-        <Field type="email" label="Email"></Field>
-    </div>
-
-    <div class="col-12">
-        <Field type="text" label="User Name"></Field>
-    </div>
-
-    <div class="col-12">
-        <Field type="password" label="password"></Field>
-    </div>
-
-    <hr>
-
-    <div class="col-12 m-b-s">
-        <h4 class="m-b-xs">Social</h4>
-        <p>A connected Twitter account is required to cast buffs.</p>
-    </div>
-
-    <div class="col-12">
-        <Field type="email" label="Email"></Field>
-    </div>
-
-    <div class="col-12">
-        <Field type="text" label="User Name"></Field>
-    </div>
-
-    <div class="col-12">
-        <Field type="password" label="password"></Field>
-    </div>
-
-    <hr>
+    <div class="fs-small c-light-secondary">Joined April 2021</div>
 </div>

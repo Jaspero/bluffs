@@ -5,41 +5,38 @@
 </script>
 
 <style lang="scss">
-    .google-signup {
-        position: relative;
-        border: 1px solid var(--light-tertiary);
-        background-color: white;
-        color: rgba(0,0,0,.54);
-        font-family: Roboto-Medium,sans-serif;
-        outline: none;
-        font-size: 14px;
-        padding-left: 10px;
-        padding-right: 24px;
-        height: 40px;
-        transition: .3s;
+  .google-signup {
+    position: relative;
+    border: 1px solid var(--light-tertiary);
+    background-color: var(--light-theme);
+    color: rgba(0,0,0,.54);
+    font-family: Roboto-Medium,sans-serif;
+    outline: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 24px;
+    height: 40px;
+    transition: .3s;
 
     img {
-        margin-right: 18px;
+      margin-right: 18px;
     }
 
     &:hover {
-         color: rgba(0,0,0,.9);
+      color: rgba(0,0,0,.7);
+      border-color: var(--light-secondary);
+    }
+  }
 
-    .button-hover-backdrop {
-        background-color: rgba(0,0,0,.02);
-    }
-    }
-    }
-
-    .button-hover-backdrop {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-        transition: .3s;
-    }
+  .button-hover-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: .3s;
+  }
 </style>
 
 <Header grid="small">Login</Header>
@@ -60,7 +57,6 @@
     <button class="google-signup">
         <img src="../../assets/google-g.svg" alt="" width="18">
         Sign in with Google
-        <span class="button-hover-backdrop"></span>
     </button>
 
     <hr>

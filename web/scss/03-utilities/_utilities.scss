@@ -103,6 +103,21 @@
     color: var(--#{$group-name}-theme);
   }
 }
+@each $group-name, $group in $colors-themes {
+  .c-#{$group-name}-primary {
+    color: var(--#{$group-name}-primary);
+  }
+}
+@each $group-name, $group in $colors-themes {
+  .c-#{$group-name}-secondary {
+    color: var(--#{$group-name}-secondary);
+  }
+}
+@each $group-name, $group in $colors-themes {
+  .c-#{$group-name}-tertiary {
+    color: var(--#{$group-name}-tertiary);
+  }
+}
 
 
 

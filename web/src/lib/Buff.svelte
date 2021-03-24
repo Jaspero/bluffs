@@ -6,13 +6,13 @@
   .card {
     display: block;
     padding: 15px;
-    border: 2px solid transparent;
+    border: 1px solid var(--light-tertiary);
+    border-radius: 8px;
     background-color: var(--light-theme);
-    transition: .2s;
+    transition: border-color .2s;
 
     &:hover {
-      border: 2px solid var(--light-tertiary);
-      background-color: rgba(0,0,0,.04);
+      border-color: var(--light-secondary);
     }
 
     &.common {
@@ -20,7 +20,6 @@
         color: var(--rarity-common);
       }
       .image {
-        border: 2px solid var(--rarity-common);
         background-color: #EBECEF;
       }
     }
@@ -30,7 +29,6 @@
         color: var(--rarity-rare);
       }
       .image {
-        border: 2px solid var(--rarity-rare);
         background-color: #F4F2EA;
       }
     }
@@ -40,7 +38,6 @@
         color: var(--rarity-epic);
       }
       .image {
-        border: 2px solid var(--rarity-epic);
         background-color: #F0E7F9;
       }
     }
@@ -50,7 +47,6 @@
         color: var(--rarity-legendary);
       }
       .image {
-        border: 2px solid var(--rarity-legendary);
         background-color: #F7E3E6;
       }
     }
@@ -65,6 +61,7 @@
     width: 100%;
     height: 0;
     padding-bottom: 100%;
+    border-radius: 4px;
   }
 
   .buff-tier {
@@ -73,13 +70,13 @@
   }
 </style>
 
-<a href="" class="card {buff.tier}">
+<a href="/buff" class="card {buff.tier}">
     <div class="image m-b-xs">
     </div>
     <h5>{buff.buffName}</h5>
     <h6 class="buff-tier">{buff.tier} tier</h6>
     {#if buff.lowestPrice}
-        <h6 class="lowest-price">Lowest price</h6>
-        <span class="font-secondary">${buff.lowestPrice}</span>
+        <h6 class="lowest-price">Price range</h6>
+        <span class="font-secondary">${buff.lowestPrice} ~ ${buff.highestPrice}</span>
     {/if}
 </a>

@@ -13,7 +13,7 @@
         margin-bottom: 3rem;
     }
     h1 {
-        padding: 3rem 0;
+        padding: 3rem 10px;
     }
 </style>
 

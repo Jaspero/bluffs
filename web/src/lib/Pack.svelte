@@ -6,13 +6,12 @@
   .card {
     display: block;
     padding: 15px;
-    border: 2px solid transparent;
-    background-color: var(--light-theme);
-    transition: .2s;
+    border: 1px solid var(--light-tertiary);
+    border-radius: 8px;
+    transition: border-color .2s;
 
     &:hover {
-      border-color: var(--light-tertiary);
-      background-color: rgba(0,0,0,.04);
+      border-color: var(--light-secondary);
     }
 
     &.common {
@@ -23,7 +22,6 @@
         background-color: var(--rarity-common);
       }
       .image {
-        border: 2px solid var(--rarity-common);
         background-color: #EBECEF;
       }
     }
@@ -36,7 +34,6 @@
         background-color: var(--rarity-rare);
       }
       .image {
-        border: 2px solid var(--rarity-rare);
         background-color: #F4F2EA;
       }
     }
@@ -49,7 +46,6 @@
         background-color: var(--rarity-epic);
       }
       .image {
-        border: 2px solid var(--rarity-epic);
         background-color: #F0E7F9;
       }
     }
@@ -62,7 +58,6 @@
         background-color: var(--rarity-legendary);
       }
       .image {
-        border: 2px solid var(--rarity-legendary);
         background-color: #F7E3E6;
       }
     }
@@ -73,6 +68,8 @@
     width: 100%;
     height: 0;
     padding-bottom: 100%;
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .sold-count {
@@ -81,6 +78,7 @@
     padding: 4px 8px;
     font-size: 12px;
     color: white;
+    border-top-right-radius: 4px;
   }
 
   .pack-tier {

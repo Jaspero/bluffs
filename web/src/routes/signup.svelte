@@ -8,7 +8,7 @@
   .google-signup {
     position: relative;
     border: 1px solid var(--light-tertiary);
-    background-color: white;
+    background-color: var(--light-theme);
     color: rgba(0,0,0,.54);
     font-family: Roboto-Medium,sans-serif;
     outline: none;

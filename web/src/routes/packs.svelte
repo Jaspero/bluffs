@@ -16,17 +16,11 @@
     ];
 </script>
 
-<style>
-    .w-20 {
-        width: 20%;
-    }
-</style>
-
 <Header>Packs</Header>
 
 <div class="grid">
     {#each packs as pack}
-        <div class="w-20">
+        <div class="col-3">
             <Pack {pack} />
         </div>
     {/each}
