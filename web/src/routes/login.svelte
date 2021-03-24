@@ -2,6 +2,8 @@
     import Field from "../lib/Field.svelte";
     import Button from "../lib/Button.svelte";
     import Header from "../lib/Header.svelte";
+    import AccountOutline from "svelte-material-icons/AccountOutline.svelte";
+    import LockOutline from "svelte-material-icons/LockOutline.svelte";
 </script>
 
 <style lang="scss">
@@ -41,23 +43,25 @@
 
 <Header grid="small">Login</Header>
 
-<div class="grid-small nogutter">
-    <h5 class="w-full">Log in to view your collection and open packs</h5>
+<div class="grid-small">
+    <h5 class="col-12">Log in to view your collection and open packs</h5>
 
     <hr>
 
     <form class="col-12">
-        <Field label="User name" autocomplete="username" />
-        <Field label="Password" type="password" autocomplete="current-password" />
+        <Field label="User name" autocomplete="username"><AccountOutline size="24px" /></Field>
+        <Field label="Password" type="password" autocomplete="current-password"><LockOutline size="24px" /></Field>
         <Button type="submit" kind="filled" color="primary">Log in</Button>
     </form>
 
     <hr>
 
-    <button class="google-signup">
-        <img src="../../assets/google-g.svg" alt="" width="18">
-        Sign in with Google
-    </button>
+    <div class="col-12">
+        <button class="google-signup">
+            <img src="../../assets/google-g.svg" alt="" width="18">
+            Sign in with Google
+        </button>
+    </div>
 
     <hr>
 

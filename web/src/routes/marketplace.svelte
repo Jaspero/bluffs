@@ -20,7 +20,7 @@
 
 <div class="grid">
     {#each buffs as buff}
-        <div class="col-3">
+        <div class="col-3 col-s-4 col-xs-6">
             <Buff  {buff} />
         </div>
     {/each}

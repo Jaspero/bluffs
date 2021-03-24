@@ -16,7 +16,7 @@
 
     /**
      * Specify button size
-     * @type {"normal" | "small"}
+     * @type {"normal" | "small" | "icon"}
      */
     export let size = "normal"
 
@@ -67,6 +67,12 @@
       line-height: 36px;
       font-size: 14px;
       padding: 0 16px;
+    }
+    &.icon {
+      width: 36px;
+      height: 36px;
+      line-height: 1;
+      padding: 0;
     }
 
     &:hover .button-hover-backdrop {
@@ -128,6 +134,14 @@
     &.warn {
       color: var(--warn-theme);
     }
+  }
+
+  .icon {
+    background-color: var(--light-theme);
+    min-width: 40px;
+    height: 40px;
+    padding: 0;
+
   }
 </style>
 

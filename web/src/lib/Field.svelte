@@ -9,6 +9,12 @@
      *  Specify input label
      *  @type {string}
      */
+    export let id = undefined
+
+    /**
+     *  Specify input label
+     *  @type {string}
+     */
     export let label = "Label"
 
     /**
@@ -53,7 +59,7 @@
     }
 
     .input-field:not(:placeholder-shown), .input-field:focus:not(:placeholder-shown) {
-        padding: 24px 12px 6px 12px;
+        padding: 24px 50px 6px 12px;
     }
 
     .input-field:not(:placeholder-shown) + .label,
@@ -88,11 +94,19 @@
         border: 1px solid var(--primary-theme);
         box-shadow: 0 0 0 1px var(--primary-theme);
     }
+    .icon-slot {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+    }
 </style>
 
-<label for="input" class="field">
+<label for="{id}" class="field">
     <span class="input-wrapper">
-        <input autocomplete="{autocomplete}" type="{type}" id="input" class="input-field" placeholder="{label}">
+        <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}">
         <span class="label">{label}</span>
+        <span class="icon-slot">
+            <slot></slot>
+        </span>
     </span>
 </label>

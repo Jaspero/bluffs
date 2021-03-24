@@ -2,6 +2,9 @@
     import Header from "$lib/Header.svelte";
     import Field from "$lib/Field.svelte";
     import Button from "$lib/Button.svelte";
+    import AccountOutline from "svelte-material-icons/AccountOutline.svelte";
+    import EmailOutline from "svelte-material-icons/EmailOutline.svelte";
+    import LockOutline from "svelte-material-icons/LockOutline.svelte";
 </script>
 
 <style lang="scss">
@@ -44,23 +47,25 @@
 
 <Header grid="small">Signup</Header>
 
-<div class="grid-small nogutter">
-    <h5 class="w-full">Create an account and start collecting buffs</h5>
+<div class="grid-small">
+    <h5 class="col-12">Create an account and start collecting buffs</h5>
 
     <hr>
 
     <form class="col-12">
-        <Field label="User name" autocomplete="off" />
-        <Field label="Email" autocomplete="email" />
-        <Field label="Password" type="password" autocomplete="off" />
+        <Field label="User name" autocomplete="off"><AccountOutline size="24px" /></Field>
+        <Field label="Email" autocomplete="email"><EmailOutline size="24px" /></Field>
+        <Field label="Password" type="password" autocomplete="off"><LockOutline size="24px" /></Field>
         <Button type="submit" kind="filled" color="primary">Sign up</Button>
     </form>
 
     <hr>
 
-    <button class="google-signup">
-        <img src="../../assets/google-g.svg" alt="" width="18">
-        Sign up with Google
-        <span class="button-hover-backdrop"></span>
-    </button>
+    <div class="col-12">
+        <button class="google-signup">
+            <img src="../../assets/google-g.svg" alt="" width="18">
+            Sign up with Google
+            <span class="button-hover-backdrop"></span>
+        </button>
+    </div>
 </div>

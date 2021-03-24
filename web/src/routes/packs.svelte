@@ -20,7 +20,7 @@
 
 <div class="grid">
     {#each packs as pack}
-        <div class="col-3">
+        <div class="col-3 col-s-4 col-xs-6">
             <Pack {pack} />
         </div>
     {/each}

@@ -15,9 +15,10 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 1250px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 3rem;
 }
 
 .grid-small {
@@ -26,11 +27,24 @@
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .grid.nogutter, .grid-small.nogutter {
   [class*="col-"] {
     padding: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid, .grid-small {
+    padding: 0 2rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid, .grid-small {
+    padding: 0 5px 1rem;
   }
 }
 
@@ -41,6 +55,12 @@
 
 [class*="col-"] {
   padding: 10px;
+}
+
+@media (max-width: 600px) {
+  [class*="col-"] {
+    padding: 5px;
+  }
 }
 
 .col-0 { display: none; }

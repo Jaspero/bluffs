@@ -15,50 +15,42 @@
     }
 
     &.common {
+      background-color: #EBECEF;
       .pack-tier {
         color: var(--rarity-common);
       }
       .sold-count {
         background-color: var(--rarity-common);
       }
-      .image {
-        background-color: #EBECEF;
-      }
     }
 
     &.rare {
+      background-color: #F4F2EA;
       .pack-tier {
         color: var(--rarity-rare);
       }
       .sold-count {
         background-color: var(--rarity-rare);
       }
-      .image {
-        background-color: #F4F2EA;
-      }
     }
 
     &.epic {
+      background-color: #F0E7F9;
       .pack-tier {
         color: var(--rarity-epic);
       }
       .sold-count {
         background-color: var(--rarity-epic);
       }
-      .image {
-        background-color: #F0E7F9;
-      }
     }
 
     &.legendary {
+      background-color: #F7E3E6;
       .pack-tier {
         color: var(--rarity-legendary);
       }
       .sold-count {
         background-color: var(--rarity-legendary);
-      }
-      .image {
-        background-color: #F7E3E6;
       }
     }
   }
@@ -72,6 +64,14 @@
     overflow: hidden;
   }
 
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+  }
+
   .sold-count {
     position: absolute;
     bottom: 0;
@@ -83,11 +83,13 @@
 
   .pack-tier {
     text-transform: capitalize;
+    margin: 4px 0;
   }
 </style>
 
 <a href="/pack" class="card {pack.tier}">
     <div class="image m-b-xs">
+        <img src="assets/search-24px.svg" alt="">
         <div class="sold-count">{pack.sold} SOLD</div>
     </div>
     <h5>{pack.packName}</h5>

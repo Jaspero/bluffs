@@ -1,8 +1,8 @@
 <style>
     div {
         padding: 15px;
-        background-color: var(--dark-secondary);
         border: 1px solid var(--light-tertiary);
+        border-radius: 8px;
     }
 </style>
 

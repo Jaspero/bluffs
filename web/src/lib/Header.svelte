@@ -6,15 +6,27 @@
     export let grid = undefined
 </script>
 
-<style>
+<style lang="scss">
+  section {
+    background-color: var(--accent-theme);
+    color: var(--accent-primary);
+    margin-bottom: 3rem;
+  }
+  h1 {
+    padding: 3rem 10px;
+  }
+
+  @media (max-width: 900px) {
     section {
-        background-color: var(--accent-theme);
-        color: var(--accent-primary);
-        margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
-    h1 {
-        padding: 3rem 10px;
+  }
+
+  @media (max-width: 600px) {
+    section {
+      margin-bottom: 1rem;
     }
+  }
 </style>
 
 <section>
