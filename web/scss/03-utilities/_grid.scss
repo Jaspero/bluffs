@@ -38,13 +38,13 @@
 
 @media (max-width: 900px) {
   .grid, .grid-small {
-    padding: 0 2rem 1rem;
+    padding: 0 2rem;
   }
 }
 
 @media (max-width: 600px) {
   .grid, .grid-small {
-    padding: 0 5px 1rem;
+    padding: 0 5px;
   }
 }
 
@@ -55,12 +55,6 @@
 
 [class*="col-"] {
   padding: 10px;
-}
-
-@media (max-width: 600px) {
-  [class*="col-"] {
-    padding: 5px;
-  }
 }
 
 .col-0 { display: none; }

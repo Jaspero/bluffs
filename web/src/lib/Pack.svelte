@@ -5,9 +5,10 @@
 <style lang="scss">
   .card {
     display: block;
-    padding: 15px;
+    padding: 10px;
     border: 1px solid var(--light-tertiary);
     border-radius: 8px;
+    overflow: hidden;
     transition: border-color .2s;
 
     &:hover {
@@ -61,7 +62,6 @@
     height: 0;
     padding-bottom: 100%;
     border-radius: 4px;
-    overflow: hidden;
   }
 
   img {
@@ -74,11 +74,12 @@
 
   .sold-count {
     position: absolute;
-    bottom: 0;
-    padding: 4px 8px;
+    top: -10px;
+    left: -10px;
+    padding: 3px 6px;
     font-size: 12px;
     color: white;
-    border-top-right-radius: 4px;
+    border-bottom-right-radius: 8px;
   }
 
   .pack-tier {

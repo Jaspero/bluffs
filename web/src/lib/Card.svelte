@@ -1,6 +1,6 @@
 <style>
     div {
-        padding: 15px;
+        padding: 10px;
         border: 1px solid var(--light-tertiary);
         border-radius: 8px;
     }

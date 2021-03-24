@@ -5,7 +5,7 @@
 <style lang="scss">
   .card {
     display: block;
-    padding: 15px;
+    padding: 10px;
     border: 1px solid var(--light-tertiary);
     border-radius: 8px;
     background-color: var(--light-theme);
@@ -20,12 +20,18 @@
       .buff-tier {
         color: var(--rarity-common);
       }
+      .listings {
+        background-color: var(--rarity-common);
+      }
     }
 
     &.rare {
       background-color: #F4F2EA;
       .buff-tier {
         color: var(--rarity-rare);
+      }
+      .listings {
+        background-color: var(--rarity-rare);
       }
     }
 
@@ -34,12 +40,18 @@
       .buff-tier {
         color: var(--rarity-epic);
       }
+      .listings {
+        background-color: var(--rarity-epic);
+      }
     }
 
     &.legendary {
       background-color: #F7E3E6;
       .buff-tier {
         color: var(--rarity-legendary);
+      }
+      .listings {
+        background-color: var(--rarity-legendary);
       }
     }
   }
@@ -68,10 +80,21 @@
     text-transform: capitalize;
     margin: 4px 0;
   }
+
+  .listings {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: white;
+    border-bottom-right-radius: 8px;
+  }
 </style>
 
 <a href="/buff" class="card {buff.tier}">
     <div class="image m-b-xs">
+        <div class="listings">{buff.listings} LISTINGS</div>
         <img src="assets/search-24px.svg" alt="">
     </div>
     <h5>{buff.buffName}</h5>

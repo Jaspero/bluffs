@@ -18,7 +18,7 @@
 
 <style lang="scss">
   .nav {
-    z-index: 1;
+    z-index: 2;
     position: sticky;
     top: 0;
     background: var(--light-theme);
@@ -69,7 +69,7 @@
 
     &-mobile {
       display: none;
-      z-index: 1;
+      z-index: 2;
       position: sticky;
       top: 0;
       background: var(--light-theme);
@@ -80,7 +80,7 @@
 
   .menu {
     display: none;
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 50px;
     right: 0;
