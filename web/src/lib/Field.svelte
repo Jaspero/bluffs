@@ -7,6 +7,12 @@
 
     /**
      *
+     * @type {boolean}
+     */
+    export let required = false
+
+    /**
+     *
      * @type {"small" | "medium" | "large" | "none"}
      */
     export let spacing = "medium"
@@ -61,7 +67,7 @@
   .label {
     display: block;
     position: absolute;
-    bottom: 17px;
+    bottom: 16px;
     left: 12px;
     color: var(--light-secondary);
     transition: 0.3s;
@@ -134,7 +140,7 @@
 
 <label for="{id}" class="field {spacing} {size}">
     <span class="input-wrapper">
-        <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}">
+        <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}" required="{required}">
         <span class="label">{label}</span>
         <span class="icon-slot">
             <slot></slot>

@@ -53,9 +53,9 @@
     <hr>
 
     <form class="col-12">
-        <Field label="User name" autocomplete="off"><AccountOutline size="24px" /></Field>
-        <Field label="Email" autocomplete="email"><EmailOutline size="24px" /></Field>
-        <Field label="Password" type="password" autocomplete="off"><LockOutline size="24px" /></Field>
+        <Field label="User name" type="text" autocomplete="off" required="true"><AccountOutline size="24px" /></Field>
+        <Field label="Email" type="email" autocomplete="email" required="true"><EmailOutline size="24px" /></Field>
+        <Field label="Password" type="password" autocomplete="off" required="true"><LockOutline size="24px" /></Field>
         <Button type="submit" kind="filled" color="primary">Sign up</Button>
     </form>
 

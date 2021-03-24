@@ -49,8 +49,8 @@
     <hr>
 
     <form class="col-12">
-        <Field label="User name" autocomplete="username"><AccountOutline size="24px" /></Field>
-        <Field label="Password" type="password" autocomplete="current-password"><LockOutline size="24px" /></Field>
+        <Field label="User name" autocomplete="username" required="true"><AccountOutline size="24px" /></Field>
+        <Field label="Password" type="password" autocomplete="current-password" required="true"><LockOutline size="24px" /></Field>
         <Button type="submit" kind="filled" color="primary">Log in</Button>
     </form>
 
