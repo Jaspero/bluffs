@@ -36,7 +36,9 @@
 
 <div class="grid">
     <div class="col-12 search">
-        <Field label="Search" spacing="none" size="full"><Magnify size="24px" /></Field>
+        <Field label="Search" spacing="none" size="full">
+            <slot slot="prefix"><Magnify size="24px" /></slot>
+        </Field>
     </div>
 
     {#each packs as pack}

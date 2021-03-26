@@ -106,7 +106,7 @@
 
 <div class="grid">
     <div class="col-12 search">
-        <Field label="Search" spacing="none">
+        <Field label="Search" spacing="none" size="full">
             <slot slot="prefix"><Magnify size="24px" /></slot>
         </Field>
     </div>

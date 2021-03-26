@@ -43,10 +43,43 @@
 </script>
 
 <style lang="scss">
-  .input-wrapper {
+  .field {
     display: block;
     position: relative;
-    height: 100%;
+    border: 1px solid var(--light-tertiary);
+    box-shadow: 0 0 0 1px transparent;
+    height: 60px;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 500px;
+    transition: .3s;
+
+    &:hover {
+      border: 1px solid var(--light-secondary);
+      box-shadow: 0 0 0 1px var(--light-secondary);
+    }
+    &:focus-within {
+      border: 1px solid var(--primary-theme);
+      box-shadow: 0 0 0 1px var(--primary-theme);
+    }
+    &.small {
+      margin-bottom: 5px;
+    }
+    &.medium {
+      margin-bottom: 15px;
+    }
+    &.large {
+      margin-bottom: 30px;
+    }
+    &.none {
+      margin-bottom: 0;
+    }
+    &.normal {
+      width: 250px;
+    }
+    &.full {
+      width: 100%;
+    }
   }
 
   .input-field {
@@ -105,44 +138,6 @@
     visibility: hidden;
   }
 
-  .field {
-    display: block;
-    border: 1px solid var(--light-tertiary);
-    box-shadow: 0 0 0 1px transparent;
-    height: 60px;
-    border-radius: 4px;
-    overflow: hidden;
-    max-width: 500px;
-    transition: .3s;
-
-    &:hover {
-      border: 1px solid var(--light-secondary);
-      box-shadow: 0 0 0 1px var(--light-secondary);
-    }
-    &:focus-within {
-      border: 1px solid var(--primary-theme);
-      box-shadow: 0 0 0 1px var(--primary-theme);
-    }
-    &.small {
-      margin-bottom: 5px;
-    }
-    &.medium {
-      margin-bottom: 15px;
-    }
-    &.large {
-      margin-bottom: 30px;
-    }
-    &.none {
-      margin-bottom: 0;
-    }
-    &.normal {
-      width: 250px;
-    }
-    &.full {
-      width: 100%;
-    }
-  }
-
   .prefix {
     z-index: 1;
     position: absolute;
@@ -162,18 +157,16 @@
 </style>
 
 <label for="{id}" class="field {spacing} {size}">
-    <span class="input-wrapper">
-        {#if $$slots.prefix}
-            <span class="prefix">
-                <slot name="prefix"></slot>
-            </span>
-        {/if}
-        <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}" required="{required}" class:has-prefix={$$slots.prefix} class:has-suffix={$$slots.suffix}>
-        <span class="label" class:has-prefix={$$slots.prefix}>{label}</span>
-        {#if $$slots.suffix}
-            <span class="suffix">
-                <slot name="suffix"></slot>
-            </span>
-        {/if}
-    </span>
+    {#if $$slots.prefix}
+        <span class="prefix">
+            <slot name="prefix"></slot>
+        </span>
+    {/if}
+    <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}" required="{required}" class:has-prefix={$$slots.prefix} class:has-suffix={$$slots.suffix}>
+    <span class="label" class:has-prefix={$$slots.prefix}>{label}</span>
+    {#if $$slots.suffix}
+        <span class="suffix">
+            <slot name="suffix"></slot>
+        </span>
+    {/if}
 </label>
