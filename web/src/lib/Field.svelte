@@ -62,6 +62,27 @@
     color: var(--light-primary);
     caret-color: var(--light-primary);
     font-family: Roboto,sans-serif;
+
+    &:not(:placeholder-shown), &:focus:not(:placeholder-shown) {
+      padding: 24px 12px 6px;
+    }
+    &:not(:placeholder-shown) + .label,
+    &:focus:not(:placeholder-shown) + .label {
+      transform: translateY(-18px);
+      font-size: 10px;
+    }
+  }
+
+  .has-prefix {
+    &.input-field, &.input-field:not(:placeholder-shown), &.input-field:focus:not(:placeholder-shown) {
+      padding-left: 48px;
+    }
+  }
+
+  .has-suffix {
+    &.input-field, &.input-field:not(:placeholder-shown), &.input-field:focus:not(:placeholder-shown) {
+      padding-right: 48px;
+    }
   }
 
   .label {
@@ -74,16 +95,10 @@
     pointer-events: none;
     font-size: 16px;
     font-family: Roboto,sans-serif;
-  }
 
-  .input-field:not(:placeholder-shown), .input-field:focus:not(:placeholder-shown) {
-    padding: 24px 50px 6px 12px;
-  }
-
-  .input-field:not(:placeholder-shown) + .label,
-  .input-field:focus:not(:placeholder-shown) + .label {
-    transform: translateY(-18px);
-    font-size: 10px;
+    &.has-prefix {
+      left: 48px;
+    }
   }
 
   ::placeholder {
@@ -104,7 +119,6 @@
       border: 1px solid var(--light-secondary);
       box-shadow: 0 0 0 1px var(--light-secondary);
     }
-
     &:focus-within {
       border: 1px solid var(--primary-theme);
       box-shadow: 0 0 0 1px var(--primary-theme);
@@ -121,15 +135,24 @@
     &.none {
       margin-bottom: 0;
     }
-    .normal {
+    &.normal {
       width: 250px;
     }
-    .full {
+    &.full {
       width: 100%;
     }
   }
 
-  .icon-slot {
+  .prefix {
+    z-index: 1;
+    position: absolute;
+    left: 12px;
+    bottom: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .suffix {
     position: absolute;
     right: 12px;
     bottom: 16px;
@@ -140,10 +163,17 @@
 
 <label for="{id}" class="field {spacing} {size}">
     <span class="input-wrapper">
-        <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}" required="{required}">
-        <span class="label">{label}</span>
-        <span class="icon-slot">
-            <slot></slot>
-        </span>
+        {#if $$slots.prefix}
+            <span class="prefix">
+                <slot name="prefix"></slot>
+            </span>
+        {/if}
+        <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}" required="{required}" class:has-prefix={$$slots.prefix} class:has-suffix={$$slots.suffix}>
+        <span class="label" class:has-prefix={$$slots.prefix}>{label}</span>
+        {#if $$slots.suffix}
+            <span class="suffix">
+                <slot name="suffix"></slot>
+            </span>
+        {/if}
     </span>
 </label>

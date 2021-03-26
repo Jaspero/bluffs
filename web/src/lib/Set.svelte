@@ -1,18 +1,14 @@
 <script>
-    import {createEventDispatcher} from 'svelte';
-    let dispatch = createEventDispatcher();
-
-    export let buff
+    export let set
 </script>
 
 <style lang="scss">
   .card {
     display: block;
-    cursor: pointer;
     padding: 10px;
     border: 1px solid var(--light-tertiary);
     border-radius: 8px;
-    background-color: var(--light-theme);
+    overflow: hidden;
     transition: border-color .2s;
 
     &:hover {
@@ -21,54 +17,50 @@
 
     &.common {
       background-color: #EBECEF;
-      .buff-tier {
+
+      .set-tier {
         color: var(--rarity-common);
       }
-      .listings {
+      .completed {
+        color: white;
         background-color: var(--rarity-common);
       }
     }
 
     &.rare {
       background-color: #F4F2EA;
-      .buff-tier {
+
+      .set-tier {
         color: var(--rarity-rare);
-      }
-      .listings {
-        background-color: var(--rarity-rare);
-      }
+      }.completed {
+         color: white;
+         background-color: var(--rarity-rare);
+       }
     }
 
     &.epic {
       background-color: #F0E7F9;
-      .buff-tier {
+
+      .set-tier {
         color: var(--rarity-epic);
       }
-      .listings {
+      .completed {
+        color: white;
         background-color: var(--rarity-epic);
       }
     }
 
     &.legendary {
       background-color: #F7E3E6;
-      .buff-tier {
+
+      .set-tier {
         color: var(--rarity-legendary);
       }
-      .listings {
+      .completed {
+        color: white;
         background-color: var(--rarity-legendary);
       }
     }
-
-    &.unique {
-      background-color: #E2F3ED;
-      .buff-tier {
-        color: var(--rarity-unique);
-      }
-    }
-  }
-
-  .price-range {
-    color: var(--light-secondary);
   }
 
   .image {
@@ -87,12 +79,7 @@
     width: 60px;
   }
 
-  .buff-tier {
-    text-transform: capitalize;
-    margin: 4px 0;
-  }
-
-  .listings {
+  .completed {
     position: absolute;
     top: -10px;
     left: -10px;
@@ -102,25 +89,21 @@
     border-bottom-right-radius: 8px;
   }
 
-  .cast-buff {
-    background: white;
-    border: none;
-    outline: none;
+  .set-tier {
+    text-transform: capitalize;
+    margin: 4px 0;
   }
 </style>
 
-<div class="card {buff.tier}" on:click={()=>dispatch('click')}>
+<a href="/set" class="card {set.tier}">
     <div class="image m-b-xs">
-        {#if buff.listings !== undefined}
-            <div class="listings">{buff.listings} Listings</div>
+        {#if set.completed === true}
+            <div class="completed">
+                Completed
+            </div>
         {/if}
         <img src="assets/search-24px.svg" alt="">
     </div>
-    <h5>{buff.buffName}</h5>
-    <h6 class="buff-tier">{buff.tier} tier</h6>
-    <div class="fs-small">{buff.buffEffect}</div>
-    {#if buff.lowestPrice && buff.highestPrice}
-        <h6 class="price-range">Price range</h6>
-        <span class="font-secondary">${buff.lowestPrice} ~ ${buff.highestPrice}</span>
-    {/if}
-</div>
+    <h5>{set.setName}</h5>
+    <h6 class="set-tier">{set.tier} tier</h6>
+</a>

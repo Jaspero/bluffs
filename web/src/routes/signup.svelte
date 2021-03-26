@@ -11,6 +11,7 @@
   .google-signup {
     position: relative;
     border: 1px solid var(--light-tertiary);
+    border-radius: 4px;
     background-color: var(--light-theme);
     color: rgba(0,0,0,.54);
     font-family: Roboto-Medium,sans-serif;
@@ -53,9 +54,15 @@
     <hr>
 
     <form class="col-12">
-        <Field label="User name" type="text" autocomplete="off" required="true"><AccountOutline size="24px" /></Field>
-        <Field label="Email" type="email" autocomplete="email" required="true"><EmailOutline size="24px" /></Field>
-        <Field label="Password" type="password" autocomplete="off" required="true"><LockOutline size="24px" /></Field>
+        <Field label="User name" type="text" autocomplete="off" required="true">
+            <slot slot="prefix"><AccountOutline size="24px" /></slot>
+        </Field>
+        <Field label="Email" type="email" autocomplete="email" required="true">
+            <slot slot="prefix"><EmailOutline size="24px" /></slot>
+        </Field>
+        <Field label="Password" type="password" autocomplete="off" required="true">
+            <slot slot="prefix"><LockOutline size="24px" /></slot>
+        </Field>
         <Button type="submit" kind="filled" color="primary">Sign up</Button>
     </form>
 

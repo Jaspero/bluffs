@@ -27,7 +27,6 @@
 
     &-grid {
       max-width: 1250px;
-      padding: 0 3rem;
       margin: 0 auto;
     }
 
@@ -82,6 +81,7 @@
     display: none;
     z-index: 2;
     position: fixed;
+    flex-direction: column;
     top: 50px;
     right: 0;
     transform: translateX(100%);
@@ -103,7 +103,6 @@
       padding: 0 8px;
       line-height: 30px;
       font-size: 14px;
-      width: 100%;
     }
   }
 
@@ -111,20 +110,11 @@
     .nav {
       display: none;
     }
-    .nav-grid {
-      padding: 0 2rem;
-    }
     .nav-mobile {
       display: block;
     }
     .menu {
-      display: block;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .nav-grid {
-      padding: 0 1rem;
+      display: flex;
     }
   }
 </style>
@@ -173,4 +163,6 @@
     <a href="/marketplace" class="menu-button" on:click={closeMenu}>Marketplace</a>
     <hr class="small">
     <a href="/leaderboard" class="menu-button" on:click={closeMenu}>Leaderboard</a>
+    <hr class="small">
+    <a href="/profile" class="menu-button" on:click={closeMenu}>Profile</a>
 </div>

@@ -25,9 +25,6 @@
     top: 60px;
     border-bottom: 2px dashed var(--light-tertiary);
     background-color: var(--light-theme);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
 
     @media (max-width: 900px) {
       top: 50px;

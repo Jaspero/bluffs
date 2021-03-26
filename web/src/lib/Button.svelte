@@ -28,12 +28,6 @@
 
     /**
      * Specify if the button is a button or a link
-     * @type {"button" | "link"}
-     */
-    export let option = "button"
-
-    /**
-     * Specify if the button is a button or a link
      * @type {string}
      */
     export let link = undefined
@@ -51,8 +45,10 @@
     position: relative;
     display: inline-block;
     text-transform: uppercase;
+    border-radius: 4px;
     border: none;
     outline: none;
+    overflow: hidden;
 
     &.small {
       min-width: 48px;
@@ -74,7 +70,6 @@
       line-height: 1;
       padding: 0;
     }
-
     &:hover .button-hover-backdrop {
       background-color: rgba(0,0,0,.06);
     }
