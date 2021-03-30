@@ -27,6 +27,7 @@
 
     &-grid {
       max-width: 1250px;
+      padding: 0 10px;
       margin: 0 auto;
     }
 

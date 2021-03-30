@@ -65,9 +65,10 @@
       padding: 0 16px;
     }
     &.icon {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       line-height: 1;
+      border-radius: 50%;
       padding: 0;
     }
     &:hover .button-hover-backdrop {
@@ -129,14 +130,6 @@
     &.warn {
       color: var(--warn-theme);
     }
-  }
-
-  .icon {
-    background-color: var(--light-theme);
-    min-width: 40px;
-    height: 40px;
-    padding: 0;
-
   }
 </style>
 

@@ -1,5 +1,7 @@
 <script>
     import Buff from "../lib/Buff.svelte";
+    import Dialog from "../lib/Dialog.svelte";
+    import Field from "../lib/Field.svelte";
 
     let buffs = [
         {buffName: 'Vigor', buffEffect: "+5% Energy", tier: 'rare'},
@@ -19,6 +21,8 @@
         buffEffect: "+5% Luck",
         tier: 'unique'
     }
+
+    let dialog
 </script>
 
 <style>
@@ -43,7 +47,15 @@
 <div class="grid">
     {#each buffs as buff}
         <div class="col-3">
-            <Buff {buff} />
+            <Buff {buff} on:click={() => dialog.open()} />
         </div>
     {/each}
 </div>
+
+<Dialog title="Choose on who you want to cast the buff" confirm="Cast" bind:this={dialog}>
+    <slot slot="content">
+        <Field label="Target's Twitter Anchor">
+            <slot slot="hint">Example: @elonmusk</slot>
+        </Field>
+    </slot>
+</Dialog>

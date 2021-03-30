@@ -50,7 +50,6 @@
     box-shadow: 0 0 0 1px transparent;
     height: 60px;
     border-radius: 4px;
-    overflow: hidden;
     max-width: 500px;
     transition: .3s;
 
@@ -80,6 +79,9 @@
     &.full {
       width: 100%;
     }
+    &.has-hint {
+      margin-bottom: 32px;
+    }
   }
 
   .input-field {
@@ -88,6 +90,7 @@
     line-height: 16px;
     font-size: 16px;
     padding: 12px;
+    border-radius: 4px;
     width: 100%;
     height: 100%;
     outline: none;
@@ -154,19 +157,40 @@
     width: 24px;
     height: 24px;
   }
+
+  .hint {
+    position: absolute;
+    bottom: -24px;
+    left: 12px;
+    font-size: 12px;
+    color: var(--light-secondary);
+  }
+
+  .has-hint {
+
+  }
 </style>
 
-<label for="{id}" class="field {spacing} {size}">
+<label for="{id}" class="field {spacing} {size}" class:has-hint={$$slots.hint}>
     {#if $$slots.prefix}
         <span class="prefix">
             <slot name="prefix"></slot>
         </span>
     {/if}
+
     <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}" required="{required}" class:has-prefix={$$slots.prefix} class:has-suffix={$$slots.suffix}>
+
     <span class="label" class:has-prefix={$$slots.prefix}>{label}</span>
+
     {#if $$slots.suffix}
         <span class="suffix">
             <slot name="suffix"></slot>
+        </span>
+    {/if}
+
+    {#if $$slots.hint}
+        <span class="hint">
+            <slot name="hint"></slot>
         </span>
     {/if}
 </label>
