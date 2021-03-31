@@ -133,12 +133,11 @@
   }
 </style>
 
-{#if link !== undefined}
+{#if link}
     <a href="/{link}" target="{target}" class="{size} {kind} {color}">
         <slot></slot>
         <span class="button-hover-backdrop"></span>
     </a>
-
 {:else}
     <button class="{size} {kind} {color}" on:click={()=>dispatch('click')}>
         <slot></slot>

@@ -238,6 +238,12 @@
 .b-b { border-bottom: 1px solid var(--light-tertiary); }
 .b-l { border-left  : 1px solid var(--light-tertiary); }
 
+.b-a-dashed { border       : 2px dashed var(--light-tertiary); }
+.b-t-dashed { border-top   : 2px dashed var(--light-tertiary); }
+.b-r-dashed { border-right : 2px dashed var(--light-tertiary); }
+.b-b-dashed { border-bottom: 2px dashed var(--light-tertiary); }
+.b-l-dashed { border-left  : 2px dashed var(--light-tertiary); }
+
 
 
 /* Paddings

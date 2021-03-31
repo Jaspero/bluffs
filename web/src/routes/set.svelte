@@ -52,7 +52,7 @@
     {/each}
 </div>
 
-<Dialog title="Choose on who you want to cast the buff" confirm="Cast" bind:this={dialog}>
+<Dialog title="Choose the target for your buff" confirm="Cast" bind:this={dialog}>
     <slot slot="content">
         <Field label="Target's Twitter Anchor">
             <slot slot="hint">Example: @elonmusk</slot>

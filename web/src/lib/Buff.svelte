@@ -6,7 +6,7 @@
 </script>
 
 <style lang="scss">
-  .card {
+  .buff {
     display: block;
     cursor: pointer;
     padding: 10px;
@@ -109,9 +109,9 @@
   }
 </style>
 
-<div class="card {buff.tier}" on:click={()=>dispatch('click')}>
+<div class="buff {buff.tier}" on:click={()=>dispatch('click')}>
     <div class="image m-b-xs">
-        {#if buff.listings !== undefined}
+        {#if buff.listings}
             <div class="listings">{buff.listings} Listings</div>
         {/if}
         <img src="assets/search-24px.svg" alt="">

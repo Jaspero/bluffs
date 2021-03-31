@@ -3,7 +3,7 @@
 </script>
 
 <style lang="scss">
-  .card {
+  .pack {
     display: block;
     padding: 10px;
     border: 1px solid var(--light-tertiary);
@@ -88,7 +88,7 @@
   }
 </style>
 
-<a href="/pack" class="card {pack.tier}">
+<a href="/pack" class="pack {pack.tier}">
     <div class="image m-b-xs">
         <img src="assets/search-24px.svg" alt="">
         <div class="sold-count">{pack.sold} SOLD</div>

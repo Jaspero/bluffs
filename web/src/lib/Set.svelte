@@ -3,7 +3,7 @@
 </script>
 
 <style lang="scss">
-  .card {
+  .set {
     display: block;
     padding: 10px;
     border: 1px solid var(--light-tertiary);
@@ -95,7 +95,7 @@
   }
 </style>
 
-<a href="/set" class="card {set.tier}">
+<a href="/set" class="set {set.tier}">
     <div class="image m-b-xs">
         {#if set.completed === true}
             <div class="completed">

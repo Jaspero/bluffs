@@ -49,8 +49,6 @@
     transform: translate(-50%,-50%);
     box-shadow: 0 3px 6px rgba(0,0,0,.16);
     border-radius: 8px;
-    max-width: 800px;
-    width: 90vw;
     background-color: white;
 
     &-backdrop {
@@ -76,7 +74,7 @@
     <div class="dialog-backdrop">
         <div class="dialog">
             <div class="dialog-header flex jc-between ai-center p-a-s">
-                <h5>{title}</h5>
+                <h5 class="m-r-s">{title}</h5>
                 <Button size="icon" kind="ghost" color="" on:click={() => close()}><Close size="24px" /></Button>
             </div>
             {#if $$slots.content}
