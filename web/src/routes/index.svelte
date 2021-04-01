@@ -2,20 +2,21 @@
     import Card from "$lib/Card.svelte";
     import Set from "$lib/Set.svelte";
     import Buff from "$lib/Buff.svelte";
+    import Button from "$lib/Button.svelte";
 
     let sets = [
-        {setName: "Common Tier Set Example", tier: "common"},
-        {setName: "Rare Tier Set Example", tier: "rare"},
-        {setName: "Epic Tier Set Example", tier: "epic"},
-        {setName: "Legendary Tier Set Example", tier: "legendary"},
+        {setName: "Common Tier Set Example", tier: "common", featured: true},
+        {setName: "Rare Tier Set Example", tier: "rare", featured: true},
+        {setName: "Epic Tier Set Example", tier: "epic", featured: true},
+        {setName: "Legendary Tier Set Example", tier: "legendary", featured: true}
     ]
 
     let buffs = [
         {buffName: "Common Tier Buff Example", buffEffect: "asdf", tier: "common"},
-        {buffName: "Common Tier Buff Example", buffEffect: "asdf", tier: "rare"},
-        {buffName: "Common Tier Buff Example", buffEffect: "asdf", tier: "epic"},
-        {buffName: "Common Tier Buff Example", buffEffect: "asdf", tier: "legendary"},
-        {buffName: "Common Tier Buff Example", buffEffect: "asdf", tier: "unique"}
+        {buffName: "Rare Tier Buff Example", buffEffect: "asdf", tier: "rare"},
+        {buffName: "Epic Tier Buff Example", buffEffect: "asdf", tier: "epic"},
+        {buffName: "Legendary Tier Buff Example", buffEffect: "asdf", tier: "legendary"},
+        {buffName: "Unique Tier Buff Example", buffEffect: "asdf", tier: "unique"}
     ]
 
     let setTiers = ["common", "rare", "epic", "legendary"]
@@ -108,11 +109,30 @@
   }
 </style>
 
-<section class="b-b-dashed">
+<!--<section class="b-b-dashed">
     <div class="grid jc-center p-y-s">
         <h4 class="col-12 col-s-8 col-xs-12">Hi, Welcome to Bluffs!</h4>
         <div class="col-12">
             <Card></Card>
+        </div>
+    </div>
+</section>-->
+
+<section>
+    <div class="grid p-y-xs">
+        <div class="col-12">
+            <h4>Featured Sets</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto aut culpa eligendi explicabo facere minima nobis reiciendis sed sequi, sunt ullam voluptate voluptatum. Et maxime officia praesentium sapiente sint.</p>
+        </div>
+        {#each sets as set}
+            <div class="col-3">
+                {#if set.featured === true}
+                    <Set {set} />
+                {/if}
+            </div>
+        {/each}
+        <div class="col-12">
+            <Button kind="outlined" size="large" width="full" link="sets">Browse all sets</Button>
         </div>
     </div>
 </section>

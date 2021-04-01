@@ -75,7 +75,7 @@
         <div class="dialog">
             <div class="dialog-header flex jc-between ai-center p-a-s">
                 <h5 class="m-r-s">{title}</h5>
-                <Button size="icon" kind="ghost" color="" on:click={() => close()}><Close size="24px" /></Button>
+                <Button size="icon" kind="ghost" on:click={() => close()}><Close size="24px" /></Button>
             </div>
             {#if $$slots.content}
                 <div class="dialog-content p-a-s">
@@ -86,7 +86,7 @@
                 <div class="m-r-s">
                     <Button color="warn" on:click={() => close()}>{cancel}</Button>
                 </div>
-                <Button>{confirm}</Button>
+                <Button color="primary">{confirm}</Button>
             </div>
         </div>
     </div>

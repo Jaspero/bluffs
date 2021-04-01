@@ -10,7 +10,7 @@
     }
 
     const closeMenu = () => {
-        if (menu = true) {
+        if (menu === true) {
             menu = !menu
         }
     }
@@ -124,17 +124,17 @@
     <div class="nav-grid h-full flex ai-center">
         <a class="nav-button m-r-s" href="/">BLUFFS</a>
 
-        <Button link="packs" kind="ghost" color="">Packs</Button>
+        <Button link="packs" kind="ghost">Packs</Button>
 
-        <Button link="marketplace" kind="ghost" color="">Marketplace</Button>
+        <Button link="marketplace" kind="ghost">Marketplace</Button>
 
-        <Button link="leaderboard" kind="ghost" color="">Leaderboard</Button>
+        <Button link="leaderboard" kind="ghost">Leaderboard</Button>
 
         <div class="flex-1"></div>
 
-        <Button link="login" kind="ghost" color="">Login</Button>
+        <Button link="login" kind="ghost">Login</Button>
 
-        <Button link="signup">Signup</Button>
+        <Button link="signup" color="primary">Signup</Button>
     </div>
 </nav>
 
@@ -144,7 +144,7 @@
 
         <div class="flex-1"></div>
 
-        <Button size="icon" kind="ghost" color="" on:click={toggleMenu}>
+        <Button size="icon" kind="ghost" on:click={toggleMenu}>
             {#if menu === false}
                 <Menu size="24px" />
             {:else}

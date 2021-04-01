@@ -50,7 +50,6 @@
     box-shadow: 0 0 0 1px transparent;
     height: 60px;
     border-radius: 4px;
-    max-width: 500px;
     transition: .3s;
 
     &:hover {

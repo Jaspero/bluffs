@@ -4,19 +4,25 @@
 
     /**
      * Specify button kind
+     * @type {"full"}
+     */
+    export let width = undefined
+
+    /**
+     * Specify button kind
      * @type {"ghost" | "filled" | "outlined"}
      */
     export let kind = "filled"
 
     /**
      * Specify button color
-     * @type {"primary" | "accent" | "warn"}
+     * @type {"default" | "primary" | "accent" | "warn"}
      */
-    export let color = "primary"
+    export let color = "default"
 
     /**
      * Specify button size
-     * @type {"normal" | "small" | "icon"}
+     * @type {"small" | "normal" | "large" | "icon"}
      */
     export let size = "normal"
 
@@ -44,6 +50,7 @@
   button, a {
     position: relative;
     display: inline-block;
+    text-align: center;
     text-transform: uppercase;
     border-radius: 4px;
     border: none;
@@ -63,6 +70,16 @@
       line-height: 36px;
       font-size: 14px;
       padding: 0 16px;
+    }
+    &.large {
+      min-width: 64px;
+      height: 48px;
+      line-height: 48px;
+      font-size: 14px;
+      padding: 0 16px;
+    }
+    &.full {
+      width: 100%;
     }
     &.icon {
       width: 40px;
@@ -87,6 +104,10 @@
   }
 
   .filled {
+    &.default {
+      background-color: var(--light-theme);
+      color: var(--light-primary);
+    }
     &.primary {
       background-color: var(--primary-theme);
       color: var(--primary-primary);
@@ -103,17 +124,18 @@
 
   .outlined {
     background-color: var(--light-theme);
+    border: 1px solid var(--light-tertiary);
 
+    &.default {
+      color: var(--light-primary);
+    }
     &.primary {
-      border: 1px solid var(--light-tertiary);
       color: var(--primary-theme);
     }
     &.accent {
-      border: 1px solid var(--light-tertiary);
       color: var(--accent-theme);
     }
     &.warn {
-      border: 1px solid var(--light-tertiary);
       color: var(--warn-theme);
     }
   }
@@ -121,6 +143,9 @@
   .ghost {
     background-color: var(--light-theme);
 
+    &.default {
+      color: var(--light-primary);
+    }
     &.primary {
       color: var(--primary-theme);
     }
@@ -134,12 +159,12 @@
 </style>
 
 {#if link}
-    <a href="/{link}" target="{target}" class="{size} {kind} {color}">
+    <a href="/{link}" target="{target}" class="{size} {kind} {color} {width}">
         <slot></slot>
         <span class="button-hover-backdrop"></span>
     </a>
 {:else}
-    <button class="{size} {kind} {color}" on:click={()=>dispatch('click')}>
+    <button class="{size} {kind} {color} {width}" on:click={()=>dispatch('click')}>
         <slot></slot>
         <span class="button-hover-backdrop"></span>
     </button>
