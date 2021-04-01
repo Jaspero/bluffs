@@ -102,15 +102,22 @@
       }
     }
   }
+
+  .section-bg {
+    background-color: rgba(211,136,49,.16);
+  }
 </style>
 
 <section class="b-b-dashed">
     <div class="grid jc-center p-y-s">
         <h4 class="col-12 col-s-8 col-xs-12">Hi, Welcome to Bluffs!</h4>
+        <div class="col-12">
+            <Card></Card>
+        </div>
     </div>
 </section>
 
-<section>
+<section class="section-bg b-b-dashed">
     <div class="grid jc-center p-y-s">
         <div class="col-6 col-s-8 col-xs-12">
             <Card>
@@ -162,5 +169,16 @@
                 </div>
             </Card>
         </div>
+    </div>
+</section>
+
+<section>
+    <div class="grid p-y-s">
+        <h4 class="col-12">Coming very soon... Until then we offer you these exclusive buffs to get you started!</h4>
+        {#each buffs as buff}
+            <div class="col-3">
+                <Buff {buff} />
+            </div>
+        {/each}
     </div>
 </section>

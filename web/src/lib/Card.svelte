@@ -3,6 +3,7 @@
 
 <style lang="scss">
   .card {
+    background-color: var(--light-theme);
     border: 1px solid var(--light-tertiary);
     border-radius: 8px;
     height: 100%;
@@ -19,9 +20,9 @@
     {#if $$slots.title || $$slots.subtitle}
         <div class="p-a-s b-b-dashed card-header">
             {#if $$slots.title}
-                <h5>
+                <h4>
                     <slot name="title"></slot>
-                </h5>
+                </h4>
             {/if}
 
             {#if $$slots.subtitle}
