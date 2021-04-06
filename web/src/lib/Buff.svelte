@@ -116,11 +116,14 @@
         {/if}
         <img src="assets/search-24px.svg" alt="">
     </div>
-    <h5>{buff.buffName}</h5>
-    <h6 class="buff-tier">{buff.tier} tier</h6>
+    <h6>{buff.buffName}</h6>
+    <p class="buff-tier fs-small">{buff.tier} tier</p>
     <div class="fs-small">{buff.buffEffect}</div>
     {#if buff.lowestPrice && buff.highestPrice}
         <h6 class="price-range">Price range</h6>
         <span class="font-secondary">${buff.lowestPrice} ~ ${buff.highestPrice}</span>
+    {/if}
+    {#if buff.cost}
+        <p>${buff.cost}</p>
     {/if}
 </div>

@@ -143,18 +143,24 @@
   .prefix {
     z-index: 1;
     position: absolute;
-    left: 12px;
-    bottom: 16px;
-    width: 24px;
-    height: 24px;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .suffix {
     position: absolute;
-    right: 12px;
-    bottom: 16px;
-    width: 24px;
-    height: 24px;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hint {

@@ -12,11 +12,15 @@
     ]
 
     let buffs = [
-        {buffName: "Common Tier Buff Example", buffEffect: "asdf", tier: "common"},
-        {buffName: "Rare Tier Buff Example", buffEffect: "asdf", tier: "rare"},
-        {buffName: "Epic Tier Buff Example", buffEffect: "asdf", tier: "epic"},
-        {buffName: "Legendary Tier Buff Example", buffEffect: "asdf", tier: "legendary"},
-        {buffName: "Unique Tier Buff Example", buffEffect: "asdf", tier: "unique"}
+        {buffName: "Common Tier Buff Example", buffEffect: "+5% Generic Buff", tier: "common"},
+        {buffName: "Rare Tier Buff Example", buffEffect: "+5% Generic Buff", tier: "rare"},
+        {buffName: "Epic Tier Buff Example", buffEffect: "+5% Generic Buff", tier: "epic"},
+        {buffName: "Legendary Tier Buff Example", buffEffect: "+5% Generic Buff", tier: "legendary"},
+        {buffName: "Unique Tier Buff Example", buffEffect: "+5% Generic Buff", tier: "unique"},
+        {buffName: "Common Tier Buff Example", buffEffect: "+5% Generic Buff", tier: "common", cost: 9.99},
+        {buffName: "Rare Tier Buff Example", buffEffect: "+5% Generic Buff", tier: "rare", cost: 9.99},
+        {buffName: "Epic Tier Buff Example", buffEffect: "+5% Generic Buff", tier: "epic", cost: 9.99},
+        {buffName: "Legendary Tier Buff Example", buffEffect: "+5% Generic Buff", tier: "legendary", cost: 9.99}
     ]
 
     let setTiers = ["common", "rare", "epic", "legendary"]
@@ -126,7 +130,7 @@
         </div>
         {#each sets as set}
             <div class="col-3">
-                {#if set.featured === true}
+                {#if set.featured}
                     <Set {set} />
                 {/if}
             </div>
@@ -171,7 +175,7 @@
                 <div class="grid nogutter">
                     <div class="col-6">
                         {#each buffs as buff}
-                            {#if buff.tier === selectedBuff}
+                            {#if buff.tier === selectedBuff &! buff.cost}
                                 <Buff {buff} />
                             {/if}
                         {/each}
@@ -196,9 +200,11 @@
     <div class="grid p-y-s">
         <h4 class="col-12">Coming very soon... Until then we offer you these exclusive buffs to get you started!</h4>
         {#each buffs as buff}
-            <div class="col-3">
-                <Buff {buff} />
-            </div>
+            {#if buff.cost}
+                <div class="col-3">
+                    <Buff {buff} />
+                </div>
+            {/if}
         {/each}
     </div>
 </section>
