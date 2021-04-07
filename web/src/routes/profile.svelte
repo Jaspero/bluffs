@@ -102,7 +102,6 @@
 
 
 <div class="grid">
-    <svelte:component this={component} {...props}/>
     {#if selected === "one"}
         {#each sets as set}
             {#if set.completed === true}
