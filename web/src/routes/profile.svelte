@@ -1,7 +1,9 @@
 <script>
     import Header from "$lib/Header.svelte";
     import Set from "$lib/Set.svelte";
-    import Buff from "../lib/Buff.svelte";
+    import Buff from "$lib/Buff.svelte";
+    import Field from "$lib/Field.svelte";
+    import Dialog from "$lib/Dialog.svelte";
 
     let sets = [
         {setName: "Common 2020", tier: "common", completed: true},
@@ -30,9 +32,7 @@
     let tabs = ["one", "two", "three"]
     let selected = tabs[0]
 
-    const reroute = () => {
-        location.href = '/buff';
-    }
+    let dialog
 </script>
 
 <style lang="scss">
@@ -100,7 +100,9 @@
     </div>
 </div>
 
+
 <div class="grid">
+    <svelte:component this={component} {...props}/>
     {#if selected === "one"}
         {#each sets as set}
             {#if set.completed === true}
@@ -118,8 +120,17 @@
     {:else}
         {#each buffs as buff}
             <div class="col-3 col-s-4 col-xs-6">
-                <Buff {buff} on:click={reroute} />
+                <Buff {buff} on:click={() => dialog.open()} />
             </div>
         {/each}
     {/if}
 </div>
+
+
+<Dialog title="Choose the target for your buff" confirm="Cast" bind:this={dialog}>
+    <slot slot="content">
+        <Field label="Target's Twitter Anchor">
+            <slot slot="hint">Example: @elonmusk</slot>
+        </Field>
+    </slot>
+</Dialog>

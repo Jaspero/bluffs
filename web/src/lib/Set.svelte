@@ -1,4 +1,6 @@
 <script>
+    import CheckCircle from "svelte-material-icons/CheckCircle.svelte";
+
     export let set
 </script>
 
@@ -9,15 +11,17 @@
     border: 1px solid var(--light-tertiary);
     border-radius: 8px;
     overflow: hidden;
-    transition: border-color .2s;
+    transition: border-color .2s, transform .3s;
 
     &:hover {
       border-color: var(--light-secondary);
+      transform: translateY(-2px);
     }
 
     &.common {
-      background-color: #EBECEF;
-
+      .image {
+        background-color: #EBECEF;
+      }
       .set-tier {
         color: var(--rarity-common);
       }
@@ -28,8 +32,9 @@
     }
 
     &.rare {
-      background-color: #F4F2EA;
-
+      .image {
+        background-color: #F4F2EA;
+      }
       .set-tier {
         color: var(--rarity-rare);
       }.completed {
@@ -39,8 +44,9 @@
     }
 
     &.epic {
-      background-color: #F0E7F9;
-
+      .image {
+        background-color: #F0E7F9;
+      }
       .set-tier {
         color: var(--rarity-epic);
       }
@@ -51,8 +57,9 @@
     }
 
     &.legendary {
-      background-color: #F7E3E6;
-
+      .image {
+        background-color: #F7E3E6;
+      }
       .set-tier {
         color: var(--rarity-legendary);
       }
@@ -68,7 +75,7 @@
     width: 100%;
     height: 0;
     padding-bottom: 100%;
-    border-radius: 4px;
+    border-radius: 8px;
   }
 
   img {
@@ -79,31 +86,20 @@
     width: 60px;
   }
 
-  .completed {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    padding: 3px 6px;
-    font-size: 12px;
-    color: white;
-    border-bottom-right-radius: 8px;
-  }
-
   .set-tier {
     text-transform: capitalize;
-    margin: 4px 0;
   }
 </style>
 
-<a href="/set" class="set {set.tier}">
-    <div class="image m-b-xs">
-        {#if set.completed === true}
-            <div class="completed">
-                Completed
-            </div>
+<a href="/set" class="set {set.tier} font-secondary">
+    <div class="flex jc-between ai-center">
+        <h5>{set.setName}</h5>
+        {#if set.completed}
+            <CheckCircle color="#3da1ce" size="18px" width="18px" height="18px" />
         {/if}
+    </div>
+    <p class="set-tier fs-small">{set.tier}</p>
+    <div class="image m-t-xs">
         <img src="assets/search-24px.svg" alt="">
     </div>
-    <h5>{set.setName}</h5>
-    <h6 class="set-tier">{set.tier} tier</h6>
 </a>

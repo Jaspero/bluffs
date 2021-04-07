@@ -10,17 +10,20 @@
     display: block;
     cursor: pointer;
     padding: 10px;
-    border: 1px solid var(--light-tertiary);
+    border: 1px solid rgba(0,0,0,.1);
     border-radius: 8px;
     background-color: var(--light-theme);
-    transition: border-color .2s;
+    transition: border-color .2s, transform .3s;
 
     &:hover {
       border-color: var(--light-secondary);
+      transform: translateY(-2px);
     }
 
     &.common {
-      background-color: #EBECEF;
+      .image {
+        background-color: #EBECEF;
+      }
       .buff-tier {
         color: var(--rarity-common);
       }
@@ -30,7 +33,9 @@
     }
 
     &.rare {
-      background-color: #F4F2EA;
+      .image {
+        background-color: #F4F2EA;
+      }
       .buff-tier {
         color: var(--rarity-rare);
       }
@@ -40,7 +45,9 @@
     }
 
     &.epic {
-      background-color: #F0E7F9;
+      .image {
+        background-color: #F0E7F9;
+      }
       .buff-tier {
         color: var(--rarity-epic);
       }
@@ -50,7 +57,9 @@
     }
 
     &.legendary {
-      background-color: #F7E3E6;
+      .image {
+        background-color: #F7E3E6;
+      }
       .buff-tier {
         color: var(--rarity-legendary);
       }
@@ -60,7 +69,9 @@
     }
 
     &.unique {
-      background-color: #E2F3ED;
+      .image {
+        background-color: #E2F3ED;
+      }
       .buff-tier {
         color: var(--rarity-unique);
       }
@@ -76,7 +87,8 @@
     width: 100%;
     height: 0;
     padding-bottom: 100%;
-    border-radius: 4px;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   img {
@@ -89,13 +101,12 @@
 
   .buff-tier {
     text-transform: capitalize;
-    margin: 4px 0;
   }
 
   .listings {
     position: absolute;
-    top: -10px;
-    left: -10px;
+    top: 0;
+    left: 0;
     padding: 3px 6px;
     font-size: 12px;
     color: white;
@@ -109,19 +120,20 @@
   }
 </style>
 
-<div class="buff {buff.tier}" on:click={()=>dispatch('click')}>
-    <div class="image m-b-xs">
+<div class="buff {buff.tier} font-secondary" on:click={()=>dispatch('click')}>
+    <h6>{buff.buffName}</h6>
+    <div class="fs-small flex jc-between">
+        <span class="buff-tier">{buff.tier}</span>
         {#if buff.listings}
-            <div class="listings">{buff.listings} Listings</div>
+            <span>{buff.listings} Listings</span>
         {/if}
+    </div>
+    <div class="image m-y-xs">
         <img src="assets/search-24px.svg" alt="">
     </div>
-    <h6>{buff.buffName}</h6>
-    <p class="buff-tier fs-small">{buff.tier} tier</p>
-    <div class="fs-small">{buff.buffEffect}</div>
+    <div>{buff.buffEffect}</div>
     {#if buff.lowestPrice && buff.highestPrice}
-        <h6 class="price-range">Price range</h6>
-        <span class="font-secondary">${buff.lowestPrice} ~ ${buff.highestPrice}</span>
+        <span>${buff.lowestPrice} ~ ${buff.highestPrice}</span>
     {/if}
     {#if buff.cost}
         <p>${buff.cost}</p>

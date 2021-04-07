@@ -1,4 +1,7 @@
 <script>
+    import {createEventDispatcher} from 'svelte';
+    let dispatch = createEventDispatcher();
+
     export let pack
 </script>
 
@@ -9,14 +12,17 @@
     border: 1px solid var(--light-tertiary);
     border-radius: 8px;
     overflow: hidden;
-    transition: border-color .2s;
+    transition: border-color .2s, transform .3s;
 
     &:hover {
       border-color: var(--light-secondary);
+      transform: translateY(-2px);
     }
 
     &.common {
-      background-color: #EBECEF;
+      .image {
+        background-color: #EBECEF;
+      }
       .pack-tier {
         color: var(--rarity-common);
       }
@@ -26,7 +32,9 @@
     }
 
     &.rare {
-      background-color: #F4F2EA;
+      .image {
+        background-color: #F4F2EA;
+      }
       .pack-tier {
         color: var(--rarity-rare);
       }
@@ -36,7 +44,9 @@
     }
 
     &.epic {
-      background-color: #F0E7F9;
+      .image {
+        background-color: #F0E7F9;
+      }
       .pack-tier {
         color: var(--rarity-epic);
       }
@@ -46,7 +56,9 @@
     }
 
     &.legendary {
-      background-color: #F7E3E6;
+      .image {
+        background-color: #F7E3E6;
+      }
       .pack-tier {
         color: var(--rarity-legendary);
       }
@@ -72,30 +84,20 @@
     width: 60px;
   }
 
-  .sold-count {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    padding: 3px 6px;
-    font-size: 12px;
-    color: white;
-    border-bottom-right-radius: 8px;
-  }
-
   .pack-tier {
     text-transform: capitalize;
-    margin: 4px 0;
   }
 </style>
 
-<a href="/pack" class="pack {pack.tier}">
-    <div class="image m-b-xs">
-        <img src="assets/search-24px.svg" alt="">
-        <div class="sold-count">{pack.sold} SOLD</div>
-    </div>
+<div class="pack {pack.tier} font-secondary pointer" on:click={()=>dispatch('click')}>
     <h5>{pack.packName}</h5>
-    <h6 class="pack-tier">{pack.tier} tier</h6>
-    <div>
-        ${pack.cost} - {pack.count} buffs
+    <div class="flex jc-between">
+        <span class="pack-tier">{pack.tier}</span>
+        <span>{pack.sold} sold</span>
     </div>
-</a>
+    <div class="image m-y-xs">
+        <img src="assets/search-24px.svg" alt="">
+    </div>
+    <p>Contains {pack.count} buffs</p>
+    <p>${pack.cost}</p>
+</div>
