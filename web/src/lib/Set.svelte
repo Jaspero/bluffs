@@ -8,6 +8,7 @@
   .set {
     display: block;
     padding: 10px;
+    background-color: var(--theme-fg);
     border: 1px solid var(--theme-tertiary);
     border-radius: 8px;
     overflow: hidden;

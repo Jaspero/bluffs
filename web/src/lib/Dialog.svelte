@@ -46,10 +46,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    background-color: var(--theme-fg);
     transform: translate(-50%,-50%);
     box-shadow: 0 3px 6px rgba(0,0,0,.16);
     border-radius: 8px;
-    background-color: white;
 
     &-backdrop {
       z-index: 10;

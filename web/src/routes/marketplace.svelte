@@ -3,6 +3,7 @@
     import Buff from "$lib/Buff.svelte";
     import Field from "$lib/Field.svelte";
     import Magnify from "svelte-material-icons/Magnify.svelte";
+    import Select from "../lib/Select.svelte";
 
     let buffs = [
         {
@@ -105,10 +106,19 @@
 <Header>Marketplace</Header>
 
 <div class="grid">
-    <div class="col-12 search">
+    <div class="col-12 search flex">
         <Field label="Search" spacing="none" size="full">
             <slot slot="prefix"><Magnify size="24px" /></slot>
         </Field>
+
+        <div class="m-l-s">
+            <Select>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </Select>
+        </div>
     </div>
 
     {#each buffs as buff}

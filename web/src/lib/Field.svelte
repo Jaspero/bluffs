@@ -44,8 +44,9 @@
 
 <style lang="scss">
   .field {
-    display: block;
+    display: flex;
     position: relative;
+    background-color: var(--theme-fg);
     border: 1px solid var(--theme-tertiary);
     box-shadow: 0 0 0 1px transparent;
     height: 60px;
@@ -89,40 +90,28 @@
   }
 
   .input-field {
-    display: block;
+    display: flex;
     position: relative;
     line-height: 16px;
     font-size: 16px;
-    padding: 12px;
+    padding: 0;
     border-radius: 4px;
-    width: 100%;
+    flex: 1;
     height: 100%;
     outline: none;
     border: none;
-    background-color: var(--theme-fg);
+    background-color: transparent;
     color: var(--theme-primary);
     caret-color: var(--theme-primary);
     font-family: Roboto,sans-serif;
 
     &:not(:placeholder-shown), &:focus:not(:placeholder-shown) {
-      padding: 24px 12px 6px;
+      padding: 24px 12px 6px 0;
     }
     &:not(:placeholder-shown) + .label,
     &:focus:not(:placeholder-shown) + .label {
       transform: translateY(-18px);
       font-size: 10px;
-    }
-  }
-
-  .has-prefix {
-    &.input-field, &.input-field:not(:placeholder-shown), &.input-field:focus:not(:placeholder-shown) {
-      padding-left: 48px;
-    }
-  }
-
-  .has-suffix {
-    &.input-field, &.input-field:not(:placeholder-shown), &.input-field:focus:not(:placeholder-shown) {
-      padding-right: 48px;
     }
   }
 
@@ -146,22 +135,7 @@
     visibility: hidden;
   }
 
-  .prefix {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 48px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .suffix {
-    position: absolute;
-    top: 0;
-    right: 0;
+  .prefix, .suffix {
     width: 48px;
     height: 100%;
     display: flex;
@@ -189,7 +163,7 @@
         </span>
     {/if}
 
-    <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}" required="{required}" class:has-prefix={$$slots.prefix} class:has-suffix={$$slots.suffix}>
+    <input autocomplete="{autocomplete}" type="{type}" id="{id}" class="input-field" placeholder="{label}" required="{required}">
 
     <span class="label" class:has-prefix={$$slots.prefix}>{label}</span>
 
