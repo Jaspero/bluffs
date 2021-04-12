@@ -46,15 +46,15 @@
   .field {
     display: block;
     position: relative;
-    border: 1px solid var(--light-tertiary);
+    border: 1px solid var(--theme-tertiary);
     box-shadow: 0 0 0 1px transparent;
     height: 60px;
     border-radius: 4px;
     transition: .3s;
 
     &:hover {
-      border: 1px solid var(--light-secondary);
-      box-shadow: 0 0 0 1px var(--light-secondary);
+      border: 1px solid var(--theme-secondary);
+      box-shadow: 0 0 0 1px var(--theme-secondary);
     }
     &:focus-within {
       border: 1px solid var(--primary-theme);
@@ -83,6 +83,11 @@
     }
   }
 
+  input:-webkit-autofill {
+    -webkit-text-fill-color: var(--theme-primary);
+    -webkit-background-clip: text;
+  }
+
   .input-field {
     display: block;
     position: relative;
@@ -94,8 +99,9 @@
     height: 100%;
     outline: none;
     border: none;
-    color: var(--light-primary);
-    caret-color: var(--light-primary);
+    background-color: var(--theme-fg);
+    color: var(--theme-primary);
+    caret-color: var(--theme-primary);
     font-family: Roboto,sans-serif;
 
     &:not(:placeholder-shown), &:focus:not(:placeholder-shown) {
@@ -125,7 +131,7 @@
     position: absolute;
     bottom: 16px;
     left: 12px;
-    color: var(--light-secondary);
+    color: var(--theme-secondary);
     transition: 0.3s;
     pointer-events: none;
     font-size: 16px;
@@ -168,7 +174,7 @@
     bottom: -24px;
     left: 12px;
     font-size: 12px;
-    color: var(--light-secondary);
+    color: var(--theme-secondary);
   }
 
   .has-hint {

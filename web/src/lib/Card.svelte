@@ -3,8 +3,8 @@
 
 <style lang="scss">
   .card {
-    background-color: var(--light-theme);
-    border: 1px solid var(--light-tertiary);
+    background-color: var(--theme-fg);
+    border: 1px solid var(--theme-tertiary);
     border-radius: 8px;
     height: 100%;
 

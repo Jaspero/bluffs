@@ -10,13 +10,13 @@
     display: block;
     cursor: pointer;
     padding: 10px;
-    border: 1px solid rgba(0,0,0,.1);
+    border: 1px solid var(--theme-tertiary);
     border-radius: 8px;
-    background-color: var(--light-theme);
+    background-color: var(--theme-fg);
     transition: border-color .2s, transform .3s;
 
     &:hover {
-      border-color: var(--light-secondary);
+      border-color: var(--theme-secondary);
       transform: translateY(-2px);
     }
 
@@ -79,7 +79,7 @@
   }
 
   .price-range {
-    color: var(--light-secondary);
+    color: var(--theme-secondary);
   }
 
   .image {

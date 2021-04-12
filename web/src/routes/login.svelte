@@ -9,9 +9,9 @@
 <style lang="scss">
   .google-signup {
     position: relative;
-    border: 1px solid var(--light-tertiary);
+    border: 1px solid rgba(0,0,0,.16);
     border-radius: 4px;
-    background-color: var(--light-theme);
+    background-color: #FFFFFF;
     color: rgba(0,0,0,.54);
     font-family: Roboto-Medium,sans-serif;
     outline: none;
@@ -27,7 +27,7 @@
 
     &:hover {
       color: rgba(0,0,0,.7);
-      border-color: var(--light-secondary);
+      border-color: rgba(0,0,0,.4);
     }
   }
 

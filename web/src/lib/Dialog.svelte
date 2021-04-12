@@ -62,10 +62,10 @@
     }
 
     &-header {
-      border-bottom: 2px dashed var(--light-tertiary);
+      border-bottom: 2px dashed var(--theme-tertiary);
     }
     &-content {
-      border-bottom: 2px dashed var(--light-tertiary);
+      border-bottom: 2px dashed var(--theme-tertiary);
     }
   }
 </style>

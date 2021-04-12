@@ -37,7 +37,7 @@
 
 <style lang="scss">
   .selected {
-    color: var(--light-primary);
+    color: var(--theme-primary);
   }
   .link-line {
     width: 110px;

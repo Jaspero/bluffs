@@ -93,8 +93,8 @@
     z-index: 1;
     position: sticky;
     top: 60px;
-    border-bottom: 2px dashed var(--light-tertiary);
-    background-color: var(--light-theme);
+    border-bottom: 2px dashed var(--theme-tertiary);
+    background-color: var(--theme-bg);
 
     @media (max-width: 900px) {
       top: 50px;

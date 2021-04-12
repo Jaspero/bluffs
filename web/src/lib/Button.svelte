@@ -105,8 +105,8 @@
 
   .filled {
     &.default {
-      background-color: var(--light-theme);
-      color: var(--light-primary);
+      background-color: var(--theme-bg);
+      color: var(--theme-primary);
     }
     &.primary {
       background-color: var(--primary-theme);
@@ -123,11 +123,11 @@
   }
 
   .outlined {
-    background-color: var(--light-theme);
-    border: 1px solid var(--light-tertiary);
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-tertiary);
 
     &.default {
-      color: var(--light-primary);
+      color: var(--theme-primary);
     }
     &.primary {
       color: var(--primary-theme);
@@ -141,10 +141,10 @@
   }
 
   .ghost {
-    background-color: var(--light-theme);
+    background-color: var(--theme-bg);
 
     &.default {
-      color: var(--light-primary);
+      color: var(--theme-primary);
     }
     &.primary {
       color: var(--primary-theme);

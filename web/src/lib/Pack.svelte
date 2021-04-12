@@ -9,13 +9,13 @@
   .pack {
     display: block;
     padding: 10px;
-    border: 1px solid var(--light-tertiary);
+    border: 1px solid var(--theme-tertiary);
     border-radius: 8px;
     overflow: hidden;
     transition: border-color .2s, transform .3s;
 
     &:hover {
-      border-color: var(--light-secondary);
+      border-color: var(--theme-secondary);
       transform: translateY(-2px);
     }
 

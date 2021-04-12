@@ -53,7 +53,7 @@
     }
     &.common {
       &:hover {
-        border-color: var(--light-tertiary)
+        border-color: var(--theme-tertiary)
       }
       &.selected {
         border-color: var(--rarity-common);
@@ -64,7 +64,7 @@
     }
     &.rare {
       &:hover {
-        border-color: var(--light-tertiary)
+        border-color: var(--theme-tertiary)
       }
       &.selected {
         border-color: var(--rarity-rare);
@@ -75,7 +75,7 @@
     }
     &.epic {
       &:hover {
-        border-color: var(--light-tertiary)
+        border-color: var(--theme-tertiary)
       }
       &.selected {
         border-color: var(--rarity-epic);
@@ -86,7 +86,7 @@
     }
     &.legendary {
       &:hover {
-        border-color: var(--light-tertiary)
+        border-color: var(--theme-tertiary)
       }
       &.selected {
         border-color: var(--rarity-legendary);
@@ -97,7 +97,7 @@
     }
     &.unique {
       &:hover {
-        border-color: var(--light-tertiary)
+        border-color: var(--theme-tertiary)
       }
       &.selected {
         border-color: var(--rarity-unique);
@@ -107,20 +107,7 @@
       }
     }
   }
-
-  .section-bg {
-    background-color: rgba(211,136,49,.16);
-  }
 </style>
-
-<!--<section class="b-b-dashed">
-    <div class="grid jc-center p-y-s">
-        <h4 class="col-12 col-s-8 col-xs-12">Hi, Welcome to Bluffs!</h4>
-        <div class="col-12">
-            <Card></Card>
-        </div>
-    </div>
-</section>-->
 
 <section>
     <div class="grid p-y-xs">
@@ -141,7 +128,7 @@
     </div>
 </section>
 
-<section class="section-bg b-b-dashed">
+<section class="b-t-dashed b-b-dashed">
     <div class="grid jc-center p-y-s">
         <div class="col-6 col-s-8 col-xs-12">
             <Card>

@@ -36,18 +36,48 @@ $colors-themes: (
     secondary: rgba(255,255,255,.8),
     tertiary : rgba(255,255,255,.15)
   ),
-  light: (
-    theme    : #FFFFFF,
+  theme: (
+    fg       : #FFFFFF,
+    bg       : #f8f8f8,
     primary  : rgba(0,0,0,.9),
     secondary: rgba(0,0,0,.7),
     tertiary : rgba(0,0,0,.15)
   ),
-  dark: (
-    theme    : #414141,
-    primary  : rgba(255,255,255,1),
-    secondary: rgba(255,255,255,.8),
-    tertiary : rgba(255,255,255,.15)
-  )
+);
+
+$colors-themes-dark: (
+    rarity: (
+      common   : #949494,
+      rare     : #e2bf32,
+      epic     : #ec44ff,
+      legendary: #ff5959,
+      unique   : #33B26D
+    ),
+    primary: (
+      theme    : #3DA1CE,
+      primary  : rgba(255,255,255,1),
+      secondary: rgba(255,255,255,.8),
+      tertiary : rgba(255,255,255,.15)
+    ),
+    accent: (
+      theme    : #D38831,
+      primary  : rgba(255,255,255,1),
+      secondary: rgba(255,255,255,.8),
+      tertiary : rgba(255,255,255,.15)
+    ),
+    warn: (
+      theme    : #DC143C,
+      primary  : rgba(255,255,255,1),
+      secondary: rgba(255,255,255,.8),
+      tertiary : rgba(255,255,255,.15)
+    ),
+    theme: (
+      fg       : #11303d,
+      bg       : #0e2833,
+      primary  : rgba(255,255,255,1),
+      secondary: rgba(255,255,255,.8),
+      tertiary : rgba(255,255,255,.15)
+    ),
 );
 
 $fonts: (
@@ -68,6 +98,14 @@ $fonts: (
   }
   @each $font-name, $font-value in $fonts {
     --font-#{$font-name}: #{$font-value};
+  }
+}
+
+[data-theme="dark"] {
+  @each $group-name, $group in $colors-themes-dark {
+    @each $color-name, $color-value in $group {
+      --#{$group-name}-#{$color-name}: #{$color-value};
+    }
   }
 }
 

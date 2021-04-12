@@ -14,6 +14,23 @@
             menu = !menu
         }
     }
+
+    const toggleSwitch = (e) => {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    }
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        else {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    }
 </script>
 
 <style lang="scss">
@@ -21,8 +38,8 @@
     z-index: 2;
     position: sticky;
     top: 0;
-    background: var(--light-theme);
-    border-bottom: 1px solid var(--light-tertiary);
+    background: var(--theme-bg);
+    border-bottom: 1px solid var(--theme-tertiary);
     height: 60px;
 
     &-grid {
@@ -40,7 +57,7 @@
       font-size: 14px;
       line-height: 36px;
       padding: 0 16px;
-      color: var(--light-secondary);
+      color: var(--theme-secondary);
       text-transform: uppercase;
       transition: .3s;
 
@@ -50,7 +67,7 @@
       }
 
       &:hover {
-        color: var(--light-primary);
+        color: var(--theme-primary);
 
         & .hover-backdrop {
           background-color: rgba(0,0,0,.08);
@@ -72,8 +89,8 @@
       z-index: 2;
       position: sticky;
       top: 0;
-      background: var(--light-theme);
-      border-bottom: 1px solid var(--light-tertiary);
+      background: var(--theme-bg);
+      border-bottom: 1px solid var(--theme-tertiary);
       height: 50px;
     }
   }
@@ -89,8 +106,8 @@
     width: 180px;
     height: calc(100% - 50px);
     padding: 10px;
-    background-color: var(--light-theme);
-    border-left: 1px solid var(--light-tertiary);
+    background-color: var(--theme-bg);
+    border-left: 1px solid var(--theme-tertiary);
     transition: transform .45s;
 
     &.active {
@@ -118,6 +135,64 @@
       display: flex;
     }
   }
+
+  .theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+
+    em {
+      margin-left: 10px;
+      font-size: 1rem;
+    }
+  }
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+
+  .theme-switch input {
+    display:none;
+  }
+
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+
+  input:checked + .slider {
+    background-color: #66bb6a;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
 </style>
 
 <nav class="nav">
@@ -135,6 +210,14 @@
         <Button link="login" kind="ghost">Login</Button>
 
         <Button link="signup" color="primary">Signup</Button>
+    </div>
+
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox" on:click={toggleSwitch}>
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+        <em>Enable Dark Mode!</em>
     </div>
 </nav>
 
