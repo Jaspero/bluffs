@@ -8,24 +8,13 @@
 
 <style lang="scss">
   section {
-    background-color: var(--accent-theme);
-    color: var(--accent-primary);
-    margin-bottom: 3rem;
+    color: var(--theme-primary);
   }
   h1 {
-    padding: 3rem 10px;
+    padding: 2rem 10px;
   }
-
-  @media (max-width: 900px) {
-    section {
-      margin-bottom: 2rem;
-    }
-  }
-
-  @media (max-width: 600px) {
-    section {
-      margin-bottom: 1rem;
-    }
+  hr {
+    margin-top: 0;
   }
 </style>
 
@@ -43,4 +32,5 @@
             </h1>
         </div>
     {/if}
+    <hr>
 </section>

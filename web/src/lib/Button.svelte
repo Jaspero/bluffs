@@ -89,7 +89,7 @@
       padding: 0;
     }
     &:hover .button-hover-backdrop {
-      background-color: rgba(0,0,0,.06);
+      background-color: var(--theme-backdrop);
     }
   }
 

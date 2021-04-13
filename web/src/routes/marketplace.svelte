@@ -6,87 +6,31 @@
     import Select from "../lib/Select.svelte";
 
     let buffs = [
-        {
-            buffName: 'Vigor',
-            buffEffect: "+5% Energy",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'rare'
-        },
-        {
-            buffName: 'Certified Rocket',
-            buffEffect: "+5% Looks",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'common'
-        },
-        {
-            buffName: 'Total Resistance',
-            buffEffect: "+5% Immune System",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'epic'
-        },
-        {
-            buffName: 'Jolly Joker',
-            buffEffect: "+2% Humor, +3% Happiness",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'rare'
-        },
-        {
-            buffName: 'Loose Pants',
-            buffEffect: "+5% Weight Loss",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'rare'
-        },
-        {
-            buffName: 'Keen Eye',
-            buffEffect: "+5% Art",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'rare'
-        },
-        {
-            buffName: 'Speedy Soles',
-            buffEffect: "+5% Speed",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'common'
-        },
-        {
-            buffName: 'Power Nap',
-            buffEffect: "+5% Sleep",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'common'
-        },
-        {
-            buffName: 'Suit and Tie',
-            buffEffect: "+5% Business",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'legendary'
-        },
-        {
-            buffName: 'Four-Leaf Clover',
-            buffEffect: "+5% Luck",
-            lowestPrice: 4.99,
-            highestPrice: 99.99,
-            listings: 10,
-            tier: 'epic'
-        },
+        {buffName: 'Vigor', buffEffect: "+5% Energy", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'rare'},
+        {buffName: 'Certified Rocket', buffEffect: "+5% Looks", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'common'},
+        {buffName: 'Total Resistance', buffEffect: "+5% Immune System", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'epic'},
+        {buffName: 'Jolly Joker', buffEffect: "+2% Humor, +3% Happiness", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'rare'},
+        {buffName: 'Loose Pants', buffEffect: "+5% Weight Loss", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'rare'},
+        {buffName: 'Keen Eye', buffEffect: "+5% Art", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'rare'},
+        {buffName: 'Speedy Soles', buffEffect: "+5% Speed", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'common'},
+        {buffName: 'Power Nap', buffEffect: "+5% Sleep", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'common'},
+        {buffName: 'Suit and Tie', buffEffect: "+5% Business", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'legendary'},
+        {buffName: 'Four-Leaf Clover', buffEffect: "+5% Luck", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'epic'},
     ];
+
+    let scoops = 1;
+    let flavours = ['Mint choc chip'];
+
+    let menu = [
+        'Cookies and cream',
+        'Mint choc chip',
+        'Raspberry ripple'
+    ];
+
+    function join(flavours) {
+        if (flavours.length === 1) return flavours[0];
+        return `${flavours.slice(0, -1).join(', ')} and ${flavours[flavours.length - 1]}`;
+    }
 </script>
 
 <style lang="scss">
@@ -107,18 +51,9 @@
 
 <div class="grid">
     <div class="col-12 search flex">
-        <Field label="Search" spacing="none" size="full">
+        <!--<Field label="Search" spacing="none" size="full">
             <slot slot="prefix"><Magnify size="24px" /></slot>
-        </Field>
-
-        <div class="m-l-s">
-            <Select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </Select>
-        </div>
+        </Field>-->
     </div>
 
     {#each buffs as buff}

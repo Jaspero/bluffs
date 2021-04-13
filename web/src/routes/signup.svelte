@@ -31,16 +31,6 @@
       border-color: rgba(0,0,0,.4);
     }
   }
-
-  .button-hover-backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    transition: .3s;
-  }
 </style>
 
 <Header grid="small">Signup</Header>
@@ -69,7 +59,6 @@
         <button class="google-signup">
             <img src="../../assets/google-g.svg" alt="" width="18">
             Sign up with Google
-            <span class="button-hover-backdrop"></span>
         </button>
     </div>
 </div>

@@ -51,7 +51,7 @@
     box-shadow: 0 0 0 1px transparent;
     height: 60px;
     border-radius: 4px;
-    transition: .3s;
+    transition: border .3s, box-shadow .3s;
 
     &:hover {
       border: 1px solid var(--theme-secondary);
@@ -94,7 +94,7 @@
     position: relative;
     line-height: 16px;
     font-size: 16px;
-    padding: 0;
+    padding: 12px;
     border-radius: 4px;
     flex: 1;
     height: 100%;
@@ -106,7 +106,7 @@
     font-family: Roboto,sans-serif;
 
     &:not(:placeholder-shown), &:focus:not(:placeholder-shown) {
-      padding: 24px 12px 6px 0;
+      padding: 24px 12px 6px;
     }
     &:not(:placeholder-shown) + .label,
     &:focus:not(:placeholder-shown) + .label {
@@ -121,7 +121,7 @@
     bottom: 16px;
     left: 12px;
     color: var(--theme-secondary);
-    transition: 0.3s;
+    transition: transform .3s, font-size .3s;
     pointer-events: none;
     font-size: 16px;
     font-family: Roboto,sans-serif;
@@ -136,11 +136,18 @@
   }
 
   .prefix, .suffix {
-    width: 48px;
+    width: 36px;
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+  }
+
+  .prefix {
+    justify-content: flex-end;
+  }
+
+  .suffix {
+    justify-content: flex-start;
   }
 
   .hint {

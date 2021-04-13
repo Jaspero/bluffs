@@ -70,7 +70,7 @@
         color: var(--theme-primary);
 
         & .hover-backdrop {
-          background-color: rgba(0,0,0,.08);
+          background-color: var(--theme-backdrop);
         }
       }
 
