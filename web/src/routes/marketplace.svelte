@@ -18,19 +18,17 @@
         {buffName: 'Four-Leaf Clover', buffEffect: "+5% Luck", lowestPrice: 4.99, highestPrice: 99.99, listings: 10, tier: 'epic'},
     ];
 
-    let scoops = 1;
-    let flavours = ['Mint choc chip'];
-
-    let menu = [
-        'Cookies and cream',
-        'Mint choc chip',
-        'Raspberry ripple'
-    ];
-
-    function join(flavours) {
-        if (flavours.length === 1) return flavours[0];
-        return `${flavours.slice(0, -1).join(', ')} and ${flavours[flavours.length - 1]}`;
-    }
+    let options = [
+        {label: 'Option 1'},
+        {label: 'Option 2'},
+        {label: 'Option 3'},
+        {label: 'Option 4'},
+        {label: 'Option 5'},
+        {label: 'Option 6'},
+        {label: 'Option 7'},
+        {label: 'Option 8'},
+        {label: 'Option 9'}
+    ]
 </script>
 
 <style lang="scss">
@@ -51,6 +49,7 @@
 
 <div class="grid">
     <div class="col-12 search flex">
+        <Select label="Filter" {options} />
         <!--<Field label="Search" spacing="none" size="full">
             <slot slot="prefix"><Magnify size="24px" /></slot>
         </Field>-->

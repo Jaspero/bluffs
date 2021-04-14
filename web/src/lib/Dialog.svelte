@@ -1,6 +1,7 @@
 <script>
     import Close from "svelte-material-icons/Close.svelte";
     import Button from "./Button.svelte";
+    import {clickOutside} from './clickOutside.js';
 
     /**
      * Toggles Dialog on/off
@@ -39,6 +40,10 @@
     export function close() {
         opened = false
     }
+
+    function handleClickOutside(event) {
+        opened = false
+    }
 </script>
 
 <style lang="scss">
@@ -72,7 +77,7 @@
 
 {#if opened}
     <div class="dialog-backdrop">
-        <div class="dialog">
+        <div class="dialog" use:clickOutside on:click_outside={handleClickOutside}>
             <div class="dialog-header flex jc-between ai-center p-a-s">
                 <h5 class="m-r-s">{title}</h5>
                 <Button size="icon" kind="ghost" on:click={() => close()}><Close size="24px" /></Button>

@@ -123,6 +123,7 @@
     color: var(--theme-secondary);
     transition: transform .3s, font-size .3s;
     pointer-events: none;
+    user-select: none;
     font-size: 16px;
     font-family: Roboto,sans-serif;
 
