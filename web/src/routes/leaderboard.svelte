@@ -21,6 +21,7 @@
       width: 100%;
       border-radius: 8px;
       font-size: .9rem;
+      background-color: var(--theme-fg);
       overflow: hidden;
       box-shadow: 0 0 0 1px rgba(0,0,0,.15);
     }
@@ -52,7 +53,7 @@
                 <td>No.</td>
                 <td>Person</td>
                 <td>Twitter</td>
-                <td>Count</td>
+                <td class="ta-right">Count</td>
             </tr>
             </thead>
             <tbody>
@@ -61,7 +62,7 @@
                     <td>{i + 1}.</td>
                     <td>{mBuffed.name}</td>
                     <td><a href="https://twitter.com/{mBuffed.twitter}" target="_blank">@{mBuffed.twitter}</a></td>
-                    <td>{mBuffed.count}</td>
+                    <td class="ta-right">{mBuffed.count}</td>
                 </tr>
             {/each}
             </tbody>
@@ -76,7 +77,7 @@
                 <td>No.</td>
                 <td>Person</td>
                 <td>Twitter</td>
-                <td>Count</td>
+                <td class="ta-right">Count</td>
             </tr>
             </thead>
             <tbody>
@@ -85,7 +86,7 @@
                     <td>{i + 1}.</td>
                     <td>{mBuffed.name}</td>
                     <td><a href="https://twitter.com/{mBuffed.twitter}" target="_blank">@{mBuffed.twitter}</a></td>
-                    <td>{mBuffed.count}</td>
+                    <td class="ta-right">{mBuffed.count}</td>
                 </tr>
             {/each}
             </tbody>
@@ -100,7 +101,7 @@
                 <td>No.</td>
                 <td>Person</td>
                 <td>Twitter</td>
-                <td>Count</td>
+                <td class="ta-right">Count</td>
             </tr>
             </thead>
             <tbody>
@@ -109,7 +110,7 @@
                     <td>{i + 1}.</td>
                     <td>{mBuffed.name}</td>
                     <td><a href="https://twitter.com/{mBuffed.twitter}" target="_blank">@{mBuffed.twitter}</a></td>
-                    <td>{mBuffed.count}</td>
+                    <td class="ta-right">{mBuffed.count}</td>
                 </tr>
             {/each}
             </tbody>

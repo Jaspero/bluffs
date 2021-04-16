@@ -10,6 +10,18 @@
      */
     export let label = "Label"
 
+    /**
+     *
+     * @type {"small" | "medium" | "large" | "none"}
+     */
+    export let spacing = "medium"
+
+    /**
+     *
+     * @type {"normal" | "full"}
+     */
+    export let size = "normal"
+
     export let options = []
 
     let opened = false
@@ -34,7 +46,6 @@
     width: 100%;
     border-radius: 4px;
     transition: border .3s, box-shadow .3s;
-
     &:hover {
       border: 1px solid var(--theme-secondary);
       box-shadow: 0 0 0 1px var(--theme-secondary);
@@ -42,6 +53,24 @@
     &:focus-within {
       border: 1px solid var(--primary-theme);
       box-shadow: 0 0 0 1px var(--primary-theme);
+    }
+    &.small {
+      margin-bottom: 5px;
+    }
+    &.medium {
+      margin-bottom: 15px;
+    }
+    &.large {
+      margin-bottom: 30px;
+    }
+    &.none {
+      margin-bottom: 0;
+    }
+    &.normal {
+      width: 250px;
+    }
+    &.full {
+      width: 100%;
     }
 
     &-box {
@@ -59,23 +88,23 @@
     &-option {
       padding: 12px;
       user-select: none;
-
+      transition: color .2s, background-color .2s;
       &:hover {
         background-color: var(--theme-backdrop);
+      }
+      &.checked {
+        background-color: var(--primary-theme);
+        color: var(--primary-primary);
       }
     }
   }
 
-  input:-webkit-autofill {
-    -webkit-text-fill-color: var(--theme-primary);
-    -webkit-background-clip: text;
-  }
-
   input[type=checkbox] {
+    display: none;
     margin: 4px 4px 4px 0;
   }
 
-  .input-field {
+  .chips {
     display: flex;
     position: relative;
     line-height: 16px;
@@ -135,6 +164,7 @@
   }
 
   .chip {
+    position: relative;
     font-size: 12px;
     padding: 2px 6px;
     user-select: none;
@@ -142,11 +172,11 @@
   }
 </style>
 
-<div class="select" on:click|stopPropagation={toggleSelect} use:clickOutside on:click_outside={closeMenu}>
+<div class="select {size} {spacing}" on:click|stopPropagation={toggleSelect} use:clickOutside on:click_outside={closeMenu}>
     {#if opened}
         <div class="select-box flex fd-col" transition:fly="{{ y: -10, duration: 300 }}">
             {#each options as option}
-                <label for="{option.label}" class="select-option">
+                <label for="{option.label}" class="select-option pointer" class:checked={option.checked}>
                     <input type="checkbox" id="{option.label}" value="{option.label}" bind:checked="{option.checked}">
                     {option.label}
                 </label>
@@ -154,11 +184,13 @@
         </div>
     {/if}
 
-    <div class="input-field">
+    <div class="chips">
         {#each options.filter(p => p.checked) as option}
-            <div class="chip flex ai-center pointer m-r-xs br-pill" on:click|stopPropagation={() => option.checked = false}>
+            <div class="chip of-hidden flex ai-center pointer m-r-xs br-pill" on:click|stopPropagation={() => option.checked = false}>
                 <span class="m-r-xs">{option.label}</span>
+
                 <CloseCircle size="16px" />
+                <div class="hover-backdrop"></div>
             </div>
         {/each}
     </div>

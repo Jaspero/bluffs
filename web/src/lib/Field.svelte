@@ -52,7 +52,6 @@
     height: 60px;
     border-radius: 4px;
     transition: border .3s, box-shadow .3s;
-
     &:hover {
       border: 1px solid var(--theme-secondary);
       box-shadow: 0 0 0 1px var(--theme-secondary);
@@ -157,10 +156,6 @@
     left: 12px;
     font-size: 12px;
     color: var(--theme-secondary);
-  }
-
-  .has-hint {
-
   }
 </style>
 

@@ -49,10 +49,13 @@
 
 <div class="grid">
     <div class="col-12 search flex">
-        <Select label="Filter" {options} />
-        <!--<Field label="Search" spacing="none" size="full">
-            <slot slot="prefix"><Magnify size="24px" /></slot>
-        </Field>-->
+        <div class="m-r-xs">
+            <Field label="Search" spacing="none">
+                <slot slot="prefix"><Magnify size="24px" /></slot>
+            </Field>
+        </div>
+
+        <Select label="Filters" {options} spacing="none" size="full" />
     </div>
 
     {#each buffs as buff}

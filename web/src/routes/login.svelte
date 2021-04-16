@@ -2,8 +2,11 @@
     import Field from "../lib/Field.svelte";
     import Button from "../lib/Button.svelte";
     import Header from "../lib/Header.svelte";
-    import AccountOutline from "svelte-material-icons/AccountOutline.svelte";
+    import EmailOutline from "svelte-material-icons/EmailOutline.svelte";
     import LockOutline from "svelte-material-icons/LockOutline.svelte";
+    import Dialog from "../lib/Dialog.svelte";
+
+    let dialog
 </script>
 
 <style lang="scss">
@@ -40,8 +43,8 @@
     <hr>
 
     <form class="col-12">
-        <Field label="User name" autocomplete="username" required="true">
-            <slot slot="prefix"><AccountOutline size="24px" /></slot>
+        <Field label="Email" type="email" autocomplete="email" required="true">
+            <slot slot="prefix"><EmailOutline size="24px" /></slot>
         </Field>
         <Field label="Password" type="password" autocomplete="current-password" required="true">
             <slot slot="prefix"><LockOutline size="24px" /></slot>
@@ -62,11 +65,19 @@
 
     <div class="col-12">
         <p class="fs-small">Forgot your password?</p>
-        <Button kind="ghost" color="primary" size="small">Reset password</Button>
+        <Button kind="ghost" color="primary" size="small" on:click={() => dialog.open()}>Reset password</Button>
     </div>
 
     <div class="col-12 m-t-s">
         <p class="fs-small">Don't have an account?</p>
-        <Button link="register" kind="ghost" color="primary" size="small">Register</Button>
+        <Button link="signup" kind="ghost" color="primary" size="small">Register</Button>
     </div>
 </div>
+
+<Dialog bind:this={dialog} title="Forgot your password?" subtitle="Don't worry! Just fill in your email and we'll send you a link to reset your password." confirm="submit" confirmType="submit">
+    <slot slot="content">
+        <Field label="Email" type="email" autocomplete="email" spacing="none" required="true">
+            <slot slot="prefix"><EmailOutline size="24px" /></slot>
+        </Field>
+    </slot>
+</Dialog>

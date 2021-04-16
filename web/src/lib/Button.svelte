@@ -52,6 +52,7 @@
     display: inline-block;
     text-align: center;
     text-transform: uppercase;
+    user-select: none;
     border-radius: 4px;
     border: none;
     outline: none;
@@ -164,7 +165,7 @@
         <span class="button-hover-backdrop"></span>
     </a>
 {:else}
-    <button class="{size} {kind} {color} {width}" on:click={()=>dispatch('click')}>
+    <button class="{size} {kind} {color} {width}" type="{type}" on:click={()=>dispatch('click')}>
         <slot></slot>
         <span class="button-hover-backdrop"></span>
     </button>

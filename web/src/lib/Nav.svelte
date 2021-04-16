@@ -2,20 +2,21 @@
     import Button from "./Button.svelte";
     import Menu from "svelte-material-icons/Menu.svelte";
     import Close from "svelte-material-icons/Close.svelte";
+    import {clickOutside} from './clickOutside.js';
 
     let menu = false
 
-    const toggleMenu = () => {
+    function toggleMenu() {
         menu = !menu
     }
 
-    const closeMenu = () => {
+    function closeMenu() {
         if (menu === true) {
             menu = !menu
         }
     }
 
-    const toggleSwitch = (e) => {
+    function toggleSwitch(e) {
         if (e.target.checked) {
             document.documentElement.setAttribute('data-theme', 'dark');
         } else {
@@ -23,13 +24,8 @@
         }
     }
 
-    function switchTheme(e) {
-        if (e.target.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-        else {
-            document.documentElement.setAttribute('data-theme', 'light');
-        }
+    function handleClickOutside(event) {
+        menu = false
     }
 </script>
 
@@ -237,7 +233,7 @@
     </div>
 </nav>
 
-<div class="menu"  class:active={menu}>
+<div class="menu" class:active={menu} use:clickOutside on:click_outside={handleClickOutside}>
     <a href="/login" class="menu-button" on:click={closeMenu}>Login</a>
     <hr class="small">
     <a href="/signup" class="menu-button" on:click={closeMenu}>Signup</a>

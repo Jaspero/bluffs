@@ -6,6 +6,7 @@
     import Magnify from "svelte-material-icons/Magnify.svelte";
     import Plus from "svelte-material-icons/Plus.svelte";
     import Minus from "svelte-material-icons/Minus.svelte";
+    import Select from "../lib/Select.svelte";
 
     let packs = [
         {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'rare'},
@@ -19,6 +20,18 @@
         {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'legendary'},
         {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'epic'},
     ];
+
+    let options = [
+        {label: 'Option 1'},
+        {label: 'Option 2'},
+        {label: 'Option 3'},
+        {label: 'Option 4'},
+        {label: 'Option 5'},
+        {label: 'Option 6'},
+        {label: 'Option 7'},
+        {label: 'Option 8'},
+        {label: 'Option 9'}
+    ]
 
     let packDetails = [
         {packName: 'Pack Name', cost: 4.99, count: 10, sold: 1000, tier: 'rare'},
@@ -89,7 +102,7 @@
     }
   }
 
-  .mat-button {
+  .amount-button {
     position: absolute;
     width: 54px;
     height: 52px;
@@ -98,8 +111,8 @@
     border: none;
     border-radius: 0;
     outline: none;
-    background-color: rgba(0,0,0,.03);
-    background-position: center;
+    background-color: var(--theme-bg);
+    color: var(--theme-primary);
     transition: 0.4s;
 
     &:first-child {
@@ -114,10 +127,6 @@
       border-left: 2px solid transparent;
     }
 
-    &:hover {
-      background: rgba(0,0,0,.04) radial-gradient(circle, transparent 1%, rgba(0,0,0,.04) 1%) center/15000%;
-      border-color: rgba(0,0,0,.1);
-    }
 
     &:active {
       background-color: rgba(0,0,0,.04);
@@ -139,10 +148,14 @@
 <Header>Packs</Header>
 
 <div class="grid">
-    <div class="col-12 search">
-        <Field label="Search" spacing="none" size="full">
-            <slot slot="prefix"><Magnify size="24px" /></slot>
-        </Field>
+    <div class="col-12 search flex">
+        <div class="m-r-xs">
+            <Field label="Search" spacing="none">
+                <slot slot="prefix"><Magnify size="24px" /></slot>
+            </Field>
+        </div>
+
+        <Select label="Filters" {options} spacing="none" size="full" />
     </div>
 
     {#each packs as pack}
@@ -152,18 +165,18 @@
     {/each}
 </div>
 
-<Dialog title="Choose how many packs you want to buy" confirm="Buy" bind:this={dialog}>
+<Dialog title="Choose how many packs you wish to buy" confirm="Buy" bind:this={dialog}>
     <slot slot="content">
         {packDetails.packName}
 
         <label for="amount" class="box">
-            <button class="mat-button" on:click={() => removeAmount()}>
+            <button class="amount-button" on:click={() => removeAmount()}>
                 <Minus size="20px" />
             </button>
 
             <input autocomplete="off" type="number" id="amount" class="amount-field" bind:value={amount}>
 
-            <button class="mat-button" on:click={() => addAmount()}>
+            <button class="amount-button" on:click={() => addAmount()}>
                 <Plus size="20px" />
             </button>
         </label>

@@ -41,9 +41,6 @@
     <hr>
 
     <form class="col-12">
-        <Field label="User name" type="text" autocomplete="off" required="true">
-            <slot slot="prefix"><AccountOutline size="24px" /></slot>
-        </Field>
         <Field label="Email" type="email" autocomplete="email" required="true">
             <slot slot="prefix"><EmailOutline size="24px" /></slot>
         </Field>
