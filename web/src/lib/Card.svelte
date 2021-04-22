@@ -1,4 +1,15 @@
 <script>
+    /**
+     *
+     * @type {string}
+     */
+    export let title = undefined
+
+    /**
+     *
+     * @type {string}
+     */
+    export let subtitle = undefined
 </script>
 
 <style lang="scss">
@@ -17,17 +28,17 @@
 </style>
 
 <div class="card">
-    {#if $$slots.title || $$slots.subtitle}
+    {#if title || subtitle}
         <div class="p-a-s b-b-dashed card-header">
-            {#if $$slots.title}
+            {#if title}
                 <h4>
-                    <slot name="title"></slot>
+                    {title}
                 </h4>
             {/if}
 
-            {#if $$slots.subtitle}
+            {#if subtitle}
                 <p class="m-t-xs">
-                    <slot name="subtitle"></slot>
+                    {subtitle}
                 </p>
             {/if}
         </div>

@@ -2,9 +2,13 @@
     import Button from "./Button.svelte";
     import Menu from "svelte-material-icons/Menu.svelte";
     import Close from "svelte-material-icons/Close.svelte";
+    import Brightness3 from "svelte-material-icons/Brightness3.svelte";
+    import Brightness7 from "svelte-material-icons/Brightness7.svelte";
     import {clickOutside} from './clickOutside.js';
 
     let menu = false
+
+    let dark = false
 
     function toggleMenu() {
         menu = !menu
@@ -16,11 +20,13 @@
         }
     }
 
-    function toggleSwitch(e) {
-        if (e.target.checked) {
+    function toggleTheme() {
+        if (dark === false) {
             document.documentElement.setAttribute('data-theme', 'dark');
+            dark = true;
         } else {
             document.documentElement.setAttribute('data-theme', 'light');
+            dark = false;
         }
     }
 
@@ -40,6 +46,7 @@
 
     &-grid {
       max-width: 1250px;
+      width: 100%;
       padding: 0 10px;
       margin: 0 auto;
     }
@@ -131,89 +138,41 @@
       display: flex;
     }
   }
-
-  .theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-
-    em {
-      margin-left: 10px;
-      font-size: 1rem;
-    }
-  }
-  .theme-switch {
-    display: inline-block;
-    height: 34px;
-    position: relative;
-    width: 60px;
-  }
-
-  .theme-switch input {
-    display:none;
-  }
-
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-  }
-
-  .slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-  }
-
-  input:checked + .slider {
-    background-color: #66bb6a;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-
-  .slider.round {
-    border-radius: 34px;
-  }
-
-  .slider.round:before {
-    border-radius: 50%;
-  }
 </style>
 
 <nav class="nav">
     <div class="nav-grid h-full flex ai-center">
         <a class="nav-button m-r-s" href="/">BLUFFS</a>
 
-        <Button link="packs" kind="ghost">Packs</Button>
-
-        <Button link="marketplace" kind="ghost">Marketplace</Button>
-
-        <Button link="leaderboard" kind="ghost">Leaderboard</Button>
-
         <div class="flex-1"></div>
 
-        <Button link="login" kind="ghost">Login</Button>
+        <div class="m-r-xs">
+            <Button link="/packs" kind="ghost">Packs</Button>
+        </div>
 
-        <Button link="signup" color="primary">Signup</Button>
-    </div>
+        <div class="m-r-xs">
+            <Button link="/marketplace" kind="ghost">Marketplace</Button>
+        </div>
 
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox" on:click={toggleSwitch}>
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-        </label>
-        <em>Enable Dark Mode!</em>
+        <div class="m-r-xs">
+            <Button link="/leaderboard" kind="ghost">Leaderboard</Button>
+        </div>
+
+        <div class="m-r-xs">
+            <Button link="/login">Login</Button>
+        </div>
+
+        <Button link="/signup" color="primary">Join</Button>
+
+        <div class="m-l-xs">
+            <Button kind="ghost" size="icon" on:click={toggleTheme}>
+                {#if dark}
+                    <Brightness3 size="24px" />
+                {:else}
+                    <Brightness7 size="24px" />
+                {/if}
+            </Button>
+        </div>
     </div>
 </nav>
 
@@ -223,11 +182,21 @@
 
         <div class="flex-1"></div>
 
+        <div class="m-r-xs">
+            <Button size="icon" on:click={toggleTheme}>
+                {#if dark}
+                    <Brightness3 size="24px" />
+                {:else}
+                    <Brightness7 size="24px" />
+                {/if}
+            </Button>
+        </div>
+
         <Button size="icon" kind="ghost" on:click={toggleMenu}>
-            {#if menu === false}
-                <Menu size="24px" />
-            {:else}
+            {#if menu}
                 <Close size="24px" />
+            {:else}
+                <Menu size="24px" />
             {/if}
         </Button>
     </div>

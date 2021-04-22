@@ -46,30 +46,6 @@
 
 <div class="grid jc-center">
     <div class="col-6 col-s-12">
-        <h4 class="m-b-xs">Most Buffed</h4>
-        <table>
-            <thead>
-            <tr>
-                <td>No.</td>
-                <td>Person</td>
-                <td>Twitter</td>
-                <td class="ta-right">Count</td>
-            </tr>
-            </thead>
-            <tbody>
-            {#each mostBuffed as mBuffed, i}
-                <tr>
-                    <td>{i + 1}.</td>
-                    <td>{mBuffed.name}</td>
-                    <td><a href="https://twitter.com/{mBuffed.twitter}" target="_blank">@{mBuffed.twitter}</a></td>
-                    <td class="ta-right">{mBuffed.count}</td>
-                </tr>
-            {/each}
-            </tbody>
-        </table>
-    </div>
-
-    <div class="col-6 col-s-12">
         <h4 class="m-b-xs">Most Buffs Cast</h4>
         <table>
             <thead>

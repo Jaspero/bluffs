@@ -94,6 +94,12 @@
     }
   }
 
+  a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .button-hover-backdrop {
     position: absolute;
     top: 0;
@@ -160,7 +166,7 @@
 </style>
 
 {#if link}
-    <a href="/{link}" target="{target}" class="{size} {kind} {color} {width}">
+    <a href="{link}" target="{target}" class="{size} {kind} {color} {width}">
         <slot></slot>
         <span class="button-hover-backdrop"></span>
     </a>

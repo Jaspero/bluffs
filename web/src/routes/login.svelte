@@ -70,7 +70,7 @@
 
     <div class="col-12 m-t-s">
         <p class="fs-small">Don't have an account?</p>
-        <Button link="signup" kind="ghost" color="primary" size="small">Register</Button>
+        <Button link="/signup" kind="ghost" color="primary" size="small">Register</Button>
     </div>
 </div>
 

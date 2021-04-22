@@ -109,11 +109,46 @@
   }
 </style>
 
-<section>
+<section class="b-b-dashed">
+    <div class="grid jc-center p-y-s">
+        <h1 class="col-12 ta-center">Welcome to Bluffs</h1>
+        <h6 class="col-12 ta-center c-theme-secondary">A place where you can collect and cast buffs</h6>
+
+        <div class="col-4">
+            <Card title="Buy and sell buffs" subtitle="The Marketplace is a place where you can buy and sell buffs">
+                <Button link="/marketplace" width="full" kind="filled" color="primary">Visit the Marketplace</Button>
+            </Card>
+        </div>
+        <div class="col-4">
+            <Card title="Climb the leaderboard" subtitle="We also have a place for the competitive ones! Collect and cast buffs and be #1">
+                <Button link="/leaderboard" width="full" kind="filled" color="primary">View the Leaderboard</Button>
+            </Card>
+        </div>
+        <div class="col-4">
+            <Card title="Get limited edition buffs" subtitle="We will occasionally release limited edition buffs so keep your eye out for them!">
+                <Button link="https://twitter.com/bluffs" target="_blank" width="full" kind="filled" color="primary">Follow us on Twitter</Button>
+            </Card>
+        </div>
+
+        <div class="col-4">
+            <Card title="Open packs" subtitle="We release new packs frequently and these are the main source of buffs">
+                <Button link="/packs" width="full" kind="filled" color="primary">Open packs</Button>
+            </Card>
+        </div>
+
+        <div class="col-4">
+            <Card title="Complete sets and earn Unique buffs" subtitle="Create an account and start your awesome collection!">
+                <Button link="/signup" width="full" kind="filled" color="primary">Start Collecting</Button>
+            </Card>
+        </div>
+    </div>
+</section>
+
+<!--<section>
     <div class="grid p-y-xs">
         <div class="col-12">
             <h4>Featured Sets</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto aut culpa eligendi explicabo facere minima nobis reiciendis sed sequi, sunt ullam voluptate voluptatum. Et maxime officia praesentium sapiente sint.</p>
+            <p class="m-t-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto aut culpa eligendi explicabo facere minima nobis reiciendis sed sequi, sunt ullam voluptate voluptatum. Et maxime officia praesentium sapiente sint.</p>
         </div>
         {#each sets as set}
             <div class="col-3">
@@ -123,17 +158,15 @@
             </div>
         {/each}
         <div class="col-12">
-            <Button kind="outlined" size="large" width="full" link="sets">Browse all sets</Button>
+            <Button kind="outlined" size="large" width="full" link="/sets">Browse all sets</Button>
         </div>
     </div>
-</section>
+</section>-->
 
 <section class="b-t-dashed b-b-dashed">
     <div class="grid jc-center p-y-s">
         <div class="col-6 col-s-8 col-xs-12">
-            <Card>
-                <slot slot="title">Sets!</slot>
-                <slot slot="subtitle">There are many sets of buffs and 4 different tiers of sets. Collect all the buffs in a set to gain a Unique buff!</slot>
+            <Card title="What are sets?" subtitle="Sets are collections of buffs and there are 4 set tiers. Collect all the buffs in a set to gain a Unique buff!">
                 <div class="grid nogutter">
                     <div class="col-6">
                         {#each sets as set}
@@ -156,9 +189,7 @@
         </div>
 
         <div class="col-6 cols-8 col-xs-12">
-            <Card>
-                <slot slot="title">Buffs!</slot>
-                <slot slot="subtitle">There are many buffs for you to collect and cast! You can collect buffs by opening packs or by purchasing them in the Marketplace.</slot>
+            <Card title="What are buffs?" subtitle="Buffs are collectible NFTs. You can start collecting them by opening packs or by purchasim them in the Marketplace">
                 <div class="grid nogutter">
                     <div class="col-6">
                         {#each buffs as buff}
