@@ -43,8 +43,12 @@ $colors-themes: (
     secondary: rgba(0,0,0,.7),
     tertiary : rgba(0,0,0,.15),
     backdrop : rgba(0,0,0,.06),
-    pattern  : url("../../assets/dot-grid.png")
+    pattern  : url("../../assets/dot-grid.png"),
   ),
+  hero: (
+    hero     : url("../../assets/hero-bg.png"),
+    cards    : url("../../assets/hero-cards.png")
+  )
 );
 
 $colors-themes-dark: (
@@ -80,8 +84,12 @@ $colors-themes-dark: (
       secondary: rgba(255,255,255,.8),
       tertiary : rgba(255,255,255,.15),
       backdrop : rgba(255,255,255,.06),
-      pattern  : url("../../assets/dot-grid-dark.png")
+      pattern  : url("../../assets/dot-grid-dark.png"),
     ),
+    hero: (
+      hero     : url("../../assets/hero-bg-dark.png"),
+      cards    : url("../../assets/hero-cards-dark.png")
+    )
 );
 
 $fonts: (

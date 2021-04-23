@@ -43,6 +43,7 @@
     background: var(--theme-bg);
     border-bottom: 1px solid var(--theme-tertiary);
     height: 60px;
+    transition: background-color .5s;
 
     &-grid {
       max-width: 1250px;

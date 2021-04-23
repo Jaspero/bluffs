@@ -3,6 +3,7 @@
     import Set from "$lib/Set.svelte";
     import Buff from "$lib/Buff.svelte";
     import Button from "$lib/Button.svelte";
+    import dark from "$lib/Nav.svelte";
 
     let sets = [
         {setName: "Common Tier Set Example", tier: "common", featured: true},
@@ -107,40 +108,68 @@
       }
     }
   }
+
+  .hero {
+    position: relative;
+    min-height: calc(100vh - 60px);
+
+    &-image {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: var(--hero-hero);
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background-image .5s;
+    }
+
+    &-title {
+      position: absolute;
+      top: 10rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &-cards {
+      position: absolute;
+      bottom: 15rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 400px;
+      background-image: var(--hero-cards);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &-card {
+      position: absolute;
+      bottom: 15rem;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 700px;
+    }
+  }
 </style>
 
-<section class="b-b-dashed">
-    <div class="grid jc-center p-y-s">
-        <h1 class="col-12 ta-center">Welcome to Bluffs</h1>
-        <h6 class="col-12 ta-center c-theme-secondary">A place where you can collect and cast buffs</h6>
+<section class="b-b-dashed hero">
+    <div class="hero-image"></div>
 
-        <div class="col-4">
-            <Card title="Buy and sell buffs" subtitle="The Marketplace is a place where you can buy and sell buffs">
-                <Button link="/marketplace" width="full" kind="filled" color="primary">Visit the Marketplace</Button>
-            </Card>
-        </div>
-        <div class="col-4">
-            <Card title="Climb the leaderboard" subtitle="We also have a place for the competitive ones! Collect and cast buffs and be #1">
-                <Button link="/leaderboard" width="full" kind="filled" color="primary">View the Leaderboard</Button>
-            </Card>
-        </div>
-        <div class="col-4">
-            <Card title="Get limited edition buffs" subtitle="We will occasionally release limited edition buffs so keep your eye out for them!">
-                <Button link="https://twitter.com/bluffs" target="_blank" width="full" kind="filled" color="primary">Follow us on Twitter</Button>
-            </Card>
-        </div>
+    <div class="hero-title ta-center">
+        <h1 class="m-b-s">Welcome to Bluffs</h1>
+        <h6 class="c-theme-secondary">A place where you can collect and cast buffs</h6>
+    </div>
 
-        <div class="col-4">
-            <Card title="Open packs" subtitle="We release new packs frequently and these are the main source of buffs">
-                <Button link="/packs" width="full" kind="filled" color="primary">Open packs</Button>
-            </Card>
-        </div>
+    <div class="hero-cards"></div>
 
-        <div class="col-4">
-            <Card title="Complete sets and earn Unique buffs" subtitle="Create an account and start your awesome collection!">
-                <Button link="/signup" width="full" kind="filled" color="primary">Start Collecting</Button>
-            </Card>
-        </div>
+    <div class="hero-card">
+        <Card>
+            <div class="ta-center">
+                <h6 class="c-theme-secondary m-b-s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestias praesentium recusandae sequi totam? Aliquam aliquid architecto, blanditiis doloribus eveniet ipsum minima, nesciunt perspiciatis provident quis repellendus tempora ullam vitae.</h6>
+                <Button link="/signup" kind="filled" color="primary">Start your collection</Button>
+            </div>
+        </Card>
     </div>
 </section>
 
