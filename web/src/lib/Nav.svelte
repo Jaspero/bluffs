@@ -5,10 +5,9 @@
     import Brightness3 from "svelte-material-icons/Brightness3.svelte";
     import Brightness7 from "svelte-material-icons/Brightness7.svelte";
     import {clickOutside} from './clickOutside.js';
+    import {dark} from "$lib/stores"
 
     let menu = false
-
-    let dark = false
 
     function toggleMenu() {
         menu = !menu
@@ -21,12 +20,12 @@
     }
 
     function toggleTheme() {
-        if (dark === false) {
+        if ($dark === false) {
             document.documentElement.setAttribute('data-theme', 'dark');
-            dark = true;
+            $dark = true;
         } else {
             document.documentElement.setAttribute('data-theme', 'light');
-            dark = false;
+            $dark = false;
         }
     }
 
@@ -167,7 +166,7 @@
 
         <div class="m-l-xs">
             <Button kind="ghost" size="icon" on:click={toggleTheme}>
-                {#if dark}
+                {#if $dark}
                     <Brightness3 size="24px" />
                 {:else}
                     <Brightness7 size="24px" />
@@ -185,7 +184,7 @@
 
         <div class="m-r-xs">
             <Button size="icon" on:click={toggleTheme}>
-                {#if dark}
+                {#if $dark}
                     <Brightness3 size="24px" />
                 {:else}
                     <Brightness7 size="24px" />
