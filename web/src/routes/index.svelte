@@ -5,8 +5,6 @@
     import Button from "$lib/Button.svelte";
     import {dark} from "$lib/stores"
 
-    $: console.log($dark)
-
     let sets = [
         {setName: "Common Tier Set Example", tier: "common", featured: true},
         {setName: "Rare Tier Set Example", tier: "rare", featured: true},
@@ -174,7 +172,7 @@
     transform-origin: bottom center;
 
     circle {
-      transition: 2s;
+      transition: fill 2s;
       fill: #E0C66D;
     }
   }
@@ -202,7 +200,7 @@
   }
 
   [class*="clouds-"] {
-    transition: 2s;
+    transition: transform 2s;
   }
 
   .clouds {
@@ -218,7 +216,7 @@
   }
 
   .birds {
-    transition: 2s;
+    transition: transform 2s;
 
     &.fly {
       transform: translate(-900px, -100%);
@@ -304,7 +302,7 @@
 
     <div class="hero-title ta-center">
         <h1 class="m-b-s">Welcome to Bluffs</h1>
-        <h6 class="c-theme-secondary">A place where you can collect and cast buffs</h6>
+        <h6 class="c-theme-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6>
     </div>
 
     <div class="hero-cards"></div>
