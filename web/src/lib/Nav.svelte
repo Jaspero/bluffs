@@ -142,7 +142,9 @@
 
 <nav class="nav">
     <div class="nav-grid h-full flex ai-center">
-        <a class="nav-button m-r-s" href="/">BLUFFS</a>
+        <h6 class="m-l-xs">
+            <a class="nav-button" href="/">BLUFFS</a>
+        </h6>
 
         <div class="flex-1"></div>
 
@@ -156,6 +158,10 @@
 
         <div class="m-r-xs">
             <Button link="/leaderboard" kind="ghost">Leaderboard</Button>
+        </div>
+
+        <div class="m-r-xs">
+            <Button link="/faq" kind="ghost">Common Questions</Button>
         </div>
 
         <div class="m-r-xs">

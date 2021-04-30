@@ -148,7 +148,7 @@
   }
 
   .ghost {
-    background-color: var(--theme-bg);
+    background-color: transparent;
 
     &.default {
       color: var(--theme-primary);

@@ -45,6 +45,12 @@ $colors-themes: (
     backdrop : rgba(0,0,0,.06),
     pattern  : url("../../assets/dot-grid.png"),
   ),
+  footer: (
+    primary  : #dfe4ec,
+    secondary: #EDF0F7,
+    tertiary : #cfd5dc,
+    twitter  : url("../../assets/twitter-logo-dark.svg")
+  ),
   hero: (
     hero     : url("../../assets/hero-bg.png"),
     cards    : url("../../assets/hero-cards.png")
@@ -85,6 +91,12 @@ $colors-themes-dark: (
       tertiary : rgba(255,255,255,.15),
       backdrop : rgba(255,255,255,.06),
       pattern  : url("../../assets/dot-grid-dark.png"),
+    ),
+    footer: (
+      primary  : #082d3c,
+      secondary: #123b48,
+      tertiary : #03232d,
+      twitter  : url("../../assets/twitter-logo.svg")
     ),
     hero: (
       hero     : url("../../assets/hero-bg-dark.png"),
