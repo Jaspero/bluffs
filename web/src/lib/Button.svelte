@@ -112,7 +112,7 @@
 
   .filled {
     &.default {
-      background-color: var(--theme-bg);
+      background-color: var(--theme-fg);
       color: var(--theme-primary);
     }
     &.primary {
@@ -130,7 +130,7 @@
   }
 
   .outlined {
-    background-color: var(--theme-bg);
+    background-color: transparent;
     border: 1px solid var(--theme-tertiary);
 
     &.default {

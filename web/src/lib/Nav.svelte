@@ -165,7 +165,7 @@
         </div>
 
         <div class="m-r-xs">
-            <Button link="/login">Login</Button>
+            <Button link="/login" kind="ghost">Login</Button>
         </div>
 
         <Button link="/signup" color="primary">Join</Button>

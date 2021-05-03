@@ -7,108 +7,89 @@
 </script>
 
 <style lang="scss">
-  h5 {
-    margin-bottom: 10px;
-  }
-
-  p {
-    margin-bottom: 10px;
-  }
-
-  .shameless-plug {
-    background-color: var(--footer-secondary);
-
-    .grid {
-      padding: 20px 10px;
-    }
-
-    a {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: none;
-
-      &.discord {
-        background-color: #7289DA;
-      }
-      &.twitter {
-        background-color: #1DA1F2;
-      }
-    }
-  }
-
-  footer {
-    background-color: var(--footer-primary);
-
-    .grid {
-      padding: 40px 0;
+    footer {
+      padding: 30px 0;
+      background-color: var(--footer-primary);
     }
 
     a {
       display: block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: .95rem;
+      text-transform: uppercase;
+      user-select: none;
+      background-color: transparent;
+      transition: background-color .3s;
 
       &:hover {
-        text-decoration: underline;
+        background-color: var(--theme-backdrop);
       }
     }
-  }
 
-  .copyright {
-    background-color: var(--footer-tertiary);
-    padding: 10px;
-  }
+    h1 {
+      font-size: 30px;
+    }
+
+    h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    a {
+      margin-top: 6px;
+    }
 </style>
 
-<div class="shameless-plug w-full">
-    <div class="grid ai-center">
-        <span>Get connected with us on social networks!</span>
-
-        <div class="flex-1"></div>
-
-
-        <div class="m-x-s flex ai-center">
-            <span class="m-r-xs">Join us on Discord:</span>
-            <a href="" class="flex jc-center ai-center discord">
-                <img src="assets/discord.svg" alt="">
-            </a>
-        </div>
-
-        <div class="m-x-s flex ai-center">
-            <span class="m-r-xs">Follow us on Twitter:</span>
-            <a href="" class="flex jc-center ai-center twitter">
-                <img src="assets/twitter.svg" alt="">
-            </a>
-        </div>
-    </div>
-</div>
-
-<footer>
+<footer class="b-t">
     <div class="grid">
-        <div class="col-4">
-            <h5>Features</h5>
-            <a href="">Link 1</a>
-            <a href="">Link 2</a>
-            <a href="">Link 3</a>
-            <a href="">Link 4</a>
+        <h1 class="col-12">Bluffs</h1>
+
+        <span class="col-12">© {year} Bluffs. All rights reserved.</span>
+
+        <hr>
+
+        <div class="col-4 col-s-12">
+            <h4>Navigation</h4>
+
+            <a href="/packs">Packs</a>
+            <a href="/marketplace">Marketplace</a>
+            <a href="/leaderboard">Leaderboard</a>
+            <a href="/faq">Common Questions</a>
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
         </div>
 
-        <div class="col-4">
-            <h5>Get Started</h5>
-            <a href="">Link 1</a>
-            <a href="">Link 2</a>
-            <a href="">Link 3</a>
-            <a href="">Link 4</a>
+        <div class="col-4 col-s-6">
+            <h4>Newsletter</h4>
+
+            <p>Subscribe to our newsletter & never miss out on upcoming packs and updates.</p>
+
+            <a href="/faq">Newsletter</a>
         </div>
 
-        <div class="col-4">
-            <h5>Newsletter</h5>
-            <p class="c-theme-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda in laboriosam magnam minima neque optio quidem repellendus veritatis voluptatum.</p>
-            <Field label="Email" />
-            <Button kind="filled" color="primary">Sign up</Button>
+        <div class="col-4 col-s-6">
+            <h4>Community</h4>
+
+            <a href="https://discord.gg/E226Y6sX4Y" target="_blank">
+                <img src="{$dark ? 'assets/discord.svg' : 'assets/discord-filled.svg'}" alt="Discord" class="m-r-xs">
+                Discord
+            </a>
+
+            <a href="https://twitter.com/Bluffs" target="_blank">
+                <img src="{$dark ? 'assets/twitter.svg' : 'assets/twitter-filled.svg'}" alt="Twitter" class="m-r-xs">
+                Twitter
+            </a>
+
+            <a href="https://www.instagram.com/bluffs/" target="_blank">
+                <img src="{$dark ? 'assets/instagram.svg' : 'assets/instagram-filled.svg'}" alt="Instagram" class="m-r-xs">
+                Instagram
+            </a>
         </div>
     </div>
 </footer>
-
-<div class="copyright ta-center">
-    ©{year} <a href="https://jaspero.co/" target="_blank">Jaspero</a>
-</div>

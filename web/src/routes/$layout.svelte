@@ -5,7 +5,7 @@
 
 <style>
     main {
-        min-height: calc(100vh - 510px);
+        min-height: calc(100vh - 500px - 3rem);
     }
 </style>
 

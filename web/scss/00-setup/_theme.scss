@@ -46,10 +46,9 @@ $colors-themes: (
     pattern  : url("../../assets/dot-grid.png"),
   ),
   footer: (
-    primary  : #dfe4ec,
-    secondary: #EDF0F7,
-    tertiary : #cfd5dc,
-    twitter  : url("../../assets/twitter-logo-dark.svg")
+    primary  : #fbfbfb,
+    secondary: #a4d3e8,
+    tertiary : #cfd5dc
   ),
   hero: (
     hero     : url("../../assets/hero-bg.png"),
@@ -94,9 +93,8 @@ $colors-themes-dark: (
     ),
     footer: (
       primary  : #082d3c,
-      secondary: #123b48,
-      tertiary : #03232d,
-      twitter  : url("../../assets/twitter-logo.svg")
+      secondary: #1b6c90,
+      tertiary : #03232d
     ),
     hero: (
       hero     : url("../../assets/hero-bg-dark.png"),
