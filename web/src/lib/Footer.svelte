@@ -16,7 +16,7 @@
       display: block;
       padding: 4px 8px;
       border-radius: 6px;
-      font-size: .95rem;
+      font-size: 14px;
       text-transform: uppercase;
       user-select: none;
       background-color: transparent;
@@ -25,6 +25,14 @@
       &:hover {
         background-color: var(--theme-backdrop);
       }
+    }
+
+    hr {
+      margin: 20px 0;
+    }
+
+    span {
+      font-size: 16px;
     }
 
     h1 {

@@ -142,7 +142,7 @@
 
 <nav class="nav">
     <div class="nav-grid h-full flex ai-center">
-        <h6 class="m-l-xs">
+        <h6>
             <a class="nav-button" href="/">BLUFFS</a>
         </h6>
 
