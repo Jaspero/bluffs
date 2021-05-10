@@ -3,6 +3,7 @@
     import { fly } from 'svelte/transition';
     import CloseCircle from "svelte-material-icons/CloseCircle.svelte";
     import ChevronDown from "svelte-material-icons/ChevronDown.svelte";
+    import Check from "svelte-material-icons/Check.svelte";
 
     /**
      *  Specify input label
@@ -42,7 +43,8 @@
     background-color: var(--theme-fg);
     border: 1px solid var(--theme-tertiary);
     box-shadow: 0 0 0 1px transparent;
-    height: 60px;
+    min-height: 56px;
+    height: min-content;
     width: 100%;
     border-radius: 4px;
     transition: border .3s, box-shadow .3s;
@@ -106,13 +108,14 @@
 
   .chips {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     line-height: 16px;
     font-size: 16px;
-    padding: 12px;
+    padding: 12px 48px 12px 12px;
     border-radius: 4px;
     flex: 1;
-    height: 100%;
+    min-height: 58px;
     outline: none;
     border: none;
     background-color: transparent;
@@ -121,24 +124,24 @@
     font-family: Roboto,sans-serif;
 
     &:not(:placeholder-shown), &:focus:not(:placeholder-shown) {
-      padding: 28px 12px 6px;
+      padding: 28px 48px 6px 12px;
     }
   }
 
   .label {
     display: block;
     position: absolute;
-    bottom: 16px;
+    top: 16px;
     left: 12px;
     color: var(--theme-secondary);
-    transition: transform .3s, font-size .3s;
     pointer-events: none;
     user-select: none;
     font-size: 16px;
     font-family: Roboto,sans-serif;
+    transition: top .3s, font-size .3s;
 
     &.move {
-      transform: translateY(-18px);
+      top: 8px;
       font-size: 10px;
     }
 
@@ -167,6 +170,7 @@
     position: relative;
     font-size: 12px;
     padding: 2px 6px;
+    margin-top: 4px;
     user-select: none;
     background-color: var(--theme-tertiary);
   }
@@ -176,9 +180,12 @@
     {#if opened}
         <div class="select-box flex fd-col" transition:fly="{{ y: -10, duration: 300 }}">
             {#each options as option}
-                <label for="{option.label}" class="select-option pointer" class:checked={option.checked}>
+                <label for="{option.label}" class="select-option flex pointer" class:checked={option.checked}>
                     <input type="checkbox" id="{option.label}" value="{option.label}" bind:checked="{option.checked}">
-                    {option.label}
+                    <span class="flex-1">{option.label}</span>
+                    {#if option.checked}
+                        <Check size="24" color="white" />
+                    {/if}
                 </label>
             {/each}
         </div>

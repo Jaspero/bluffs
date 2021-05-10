@@ -32,15 +32,29 @@
 </script>
 
 <style lang="scss">
-  .search {
+  .filters {
     z-index: 1;
     position: sticky;
     top: 60px;
-    border-bottom: 2px dashed var(--theme-tertiary);
     background-color: var(--theme-bg);
+  }
 
-    @media (max-width: 900px) {
+  .filter {
+
+  }
+
+  @media (max-width: 900px) {
+    .filters {
       top: 50px;
+      height: 80px;
+    }
+
+    .search {
+      flex: 1;
+    }
+
+    .dropdown {
+      width: 80px;
     }
   }
 </style>
@@ -48,14 +62,16 @@
 <Header>Marketplace</Header>
 
 <div class="grid">
-    <div class="col-12 search flex">
-        <div class="m-r-xs">
-            <Field label="Search" spacing="none">
+    <div class="grid filters b-b-dashed">
+        <div class="col-4 search">
+            <Field label="Search" spacing="none" size="full">
                 <slot slot="prefix"><Magnify size="24px" /></slot>
             </Field>
         </div>
 
-        <Select label="Filters" {options} spacing="none" size="full" />
+        <div class="col-8 dropdown">
+            <Select label="Filters" {options} spacing="none" size="full" />
+        </div>
     </div>
 
     {#each buffs as buff}

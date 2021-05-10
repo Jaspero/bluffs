@@ -1,9 +1,12 @@
 <script>
     import Field from "./Field.svelte";
-    import Button from "./Button.svelte";
+    import EmailOutline from "svelte-material-icons/EmailOutline.svelte";
     import {dark} from "$lib/stores"
+    import Dialog from "./Dialog.svelte";
 
     let year = new Date().getFullYear()
+
+    let dialog
 </script>
 
 <style lang="scss">
@@ -12,7 +15,8 @@
       background-color: var(--footer-primary);
     }
 
-    a {
+    a, button {
+      border: none;
       display: block;
       padding: 4px 8px;
       border-radius: 6px;
@@ -78,7 +82,7 @@
 
             <p>Subscribe to our newsletter & never miss out on upcoming packs and updates.</p>
 
-            <a href="/faq">Newsletter</a>
+            <button on:click={() => dialog.open()}>Newsletter</button>
         </div>
 
         <div class="col-4 col-s-6">
@@ -101,3 +105,11 @@
         </div>
     </div>
 </footer>
+
+<Dialog title="Subscribe to our newsletter" subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit" bind:this={dialog}>
+    <slot slot="content">
+        <Field label="Email" type="email" autocomplete="email" required="true" spacing="none">
+            <slot slot="prefix"><EmailOutline size="24px" /></slot>
+        </Field>
+    </slot>
+</Dialog>

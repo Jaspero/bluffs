@@ -9,14 +9,13 @@
 
     let menu = false
 
-    function toggleMenu() {
-        menu = !menu
+    function toggleMenu(event) {
+        event.stopPropagation()
+        menu = true
     }
 
     function closeMenu() {
-        if (menu === true) {
-            menu = !menu
-        }
+        menu = false
     }
 
     function toggleTheme() {
@@ -189,7 +188,7 @@
         <div class="flex-1"></div>
 
         <div class="m-r-xs">
-            <Button size="icon" on:click={toggleTheme}>
+            <Button size="icon" kind="ghost" on:click={toggleTheme}>
                 {#if $dark}
                     <Brightness3 size="24px" />
                 {:else}
@@ -198,7 +197,7 @@
             </Button>
         </div>
 
-        <Button size="icon" kind="ghost" on:click={toggleMenu}>
+        <Button size="icon" kind="ghost" on:click={toggleMenu}> <!--Todo: Filip-->
             {#if menu}
                 <Close size="24px" />
             {:else}

@@ -1,6 +1,7 @@
 <script>
     import Close from "svelte-material-icons/Close.svelte";
     import Button from "./Button.svelte";
+    import { fade } from 'svelte/transition';
     import {clickOutside} from './clickOutside.js';
 
     /**
@@ -88,7 +89,7 @@
 </style>
 
 {#if opened}
-    <div class="dialog-backdrop">
+    <div class="dialog-backdrop" transition:fade="{{ duration: 200 }}">
         <div class="dialog" use:clickOutside on:click_outside={handleClickOutside}>
             <div class="dialog-header p-a-s">
                 <div class="flex jc-between ai-center">

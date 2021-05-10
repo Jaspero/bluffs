@@ -12,11 +12,10 @@
     border: 1px solid var(--theme-tertiary);
     border-radius: 8px;
     overflow: hidden;
-    transition: border-color .2s, transform .3s;
+    transition: border-color .2s;
 
     &:hover {
       border-color: var(--theme-secondary);
-      transform: translateY(-2px);
     }
 
     &.common {

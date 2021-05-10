@@ -129,7 +129,7 @@
 
     &-cards {
       position: absolute;
-      bottom: 15rem;
+      bottom: 11rem;
       left: 50%;
       transform: translateX(-50%);
       width: 900px;
@@ -141,7 +141,7 @@
 
     &-card {
       position: absolute;
-      bottom: 15rem;
+      bottom: 10rem;
       left: 50%;
       transform: translateX(-50%);
       max-width: 700px;
@@ -450,25 +450,6 @@
     </div>
 </section>
 
-<!--<section>
-    <div class="grid p-y-xs">
-        <div class="col-12">
-            <h4>Featured Sets</h4>
-            <p class="m-t-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto aut culpa eligendi explicabo facere minima nobis reiciendis sed sequi, sunt ullam voluptate voluptatum. Et maxime officia praesentium sapiente sint.</p>
-        </div>
-        {#each sets as set}
-            <div class="col-3">
-                {#if set.featured}
-                    <Set {set} />
-                {/if}
-            </div>
-        {/each}
-        <div class="col-12">
-            <Button kind="outlined" size="large" width="full" link="/sets">Browse all sets</Button>
-        </div>
-    </div>
-</section>-->
-
 <section class="b-t-dashed b-b-dashed">
     <div class="grid jc-center p-y-s">
         <div class="col-6 col-s-8 col-xs-12">
@@ -495,7 +476,7 @@
         </div>
 
         <div class="col-6 cols-8 col-xs-12">
-            <Card title="What are buffs?" subtitle="Buffs are collectible NFTs. You can start collecting them by opening packs or by purchasim them in the Marketplace">
+            <Card title="What are buffs?" subtitle="Buffs are collectible NFTs. You can start collecting them by opening packs or by purchasing them in the Marketplace">
                 <div class="grid nogutter">
                     <div class="col-6">
                         {#each buffs as buff}

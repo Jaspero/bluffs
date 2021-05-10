@@ -4,6 +4,8 @@
     import Buff from "$lib/Buff.svelte";
     import Field from "$lib/Field.svelte";
     import Dialog from "$lib/Dialog.svelte";
+    import Button from "../lib/Button.svelte";
+    import {user} from "$lib/stores"
 
     let sets = [
         {setName: "Common 2020", tier: "common", completed: true},
@@ -87,9 +89,24 @@
       left: calc(2 / 3 * 100%);
     }
   }
+
+  h1 {
+    padding: 2rem 10px;
+  }
+  hr {
+    margin-top: 0;
+  }
 </style>
 
-<Header>Profile</Header>
+<div class="grid jc-center ai-center">
+    <h1 class="col-6">Hello, {user}</h1>
+
+    <div class="col-6 ta-right">
+        <Button color="primary" link="/settings">Edit Profile</Button>
+    </div>
+</div>
+
+<hr>
 
 <div class="b-b w-full">
     <div class="grid profile-nav">
