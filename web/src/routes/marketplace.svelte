@@ -29,32 +29,65 @@
         {label: 'Option 8'},
         {label: 'Option 9'}
     ]
+
+    let filters = false
+
+    function toggleFilters() {
+        filters = !filters
+        console.log(filters)
+    }
 </script>
 
 <style lang="scss">
-  .filters {
+  .sticky-bar {
     z-index: 1;
     position: sticky;
     top: 60px;
+    border-bottom: 2px dashed var(--theme-tertiary);
     background-color: var(--theme-bg);
+
+    @media (max-width: 900px) {
+      top: 50px;
+    }
+  }
+
+  .filter-toggle {
+    display: none;
+  }
+
+  .search {
+    flex: 1;
   }
 
   .filter {
-
+    flex: 2;
   }
 
   @media (max-width: 900px) {
-    .filters {
-      top: 50px;
-      height: 80px;
+    .filter {
+      flex: unset;
+      width: 100%;
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+
+      &.active {
+        margin-top: calc(4px + .25vw);
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
     }
 
-    .search {
-      flex: 1;
-    }
-
-    .dropdown {
-      width: 80px;
+    .filter-toggle {
+      display: block;
+      min-width: 133px;
+      height: 60px;
+      border: 1px solid var(--theme-tertiary);
+      border-radius: 4px;
+      background-color: var(--theme-fg);
+      text-transform: uppercase;
+      padding: 0 16px;
     }
   }
 </style>
@@ -62,14 +95,16 @@
 <Header>Marketplace</Header>
 
 <div class="grid">
-    <div class="grid filters b-b-dashed">
-        <div class="col-4 search">
+    <div class="col-12 sticky-bar flex fw-wrap">
+        <div class="m-r-xs search">
             <Field label="Search" spacing="none" size="full">
                 <slot slot="prefix"><Magnify size="24px" /></slot>
             </Field>
         </div>
 
-        <div class="col-8 dropdown">
+        <button class="filter-toggle" on:click={toggleFilters}>{filters ? 'Hide' : 'Show'} Filters</button>
+
+        <div class="filter" class:active={filters}>
             <Select label="Filters" {options} spacing="none" size="full" />
         </div>
     </div>

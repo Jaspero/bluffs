@@ -49,11 +49,18 @@
         }
     }
 
+    let filters = false
+
+    function toggleFilters() {
+        filters = !filters
+        console.log(filters)
+    }
+
     let dialog
 </script>
 
 <style lang="scss">
-  .search {
+  .sticky-bar {
     z-index: 1;
     position: sticky;
     top: 60px;
@@ -63,6 +70,18 @@
     @media (max-width: 900px) {
       top: 50px;
     }
+  }
+
+  .filter-toggle {
+    display: none;
+  }
+
+  .search {
+    flex: 1;
+  }
+
+  .filter {
+    flex: 2;
   }
 
   .amount-field {
@@ -143,19 +162,51 @@
   input[type=number] {
     -moz-appearance:textfield;
   }
+
+  @media (max-width: 900px) {
+    .filter {
+      flex: unset;
+      width: 100%;
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+
+      &.active {
+        margin-top: calc(4px + .25vw);
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .filter-toggle {
+      display: block;
+      min-width: 133px;
+      height: 60px;
+      border: 1px solid var(--theme-tertiary);
+      border-radius: 4px;
+      background-color: var(--theme-fg);
+      text-transform: uppercase;
+      padding: 0 16px;
+    }
+  }
 </style>
 
 <Header>Packs</Header>
 
 <div class="grid">
-    <div class="col-12 search flex">
-        <div class="m-r-xs">
-            <Field label="Search" spacing="none">
+    <div class="col-12 sticky-bar flex fw-wrap">
+        <div class="m-r-xs search">
+            <Field label="Search" spacing="none" size="full">
                 <slot slot="prefix"><Magnify size="24px" /></slot>
             </Field>
         </div>
 
-        <Select label="Filters" {options} spacing="none" size="full" />
+        <button class="filter-toggle" on:click={toggleFilters}>{filters ? 'Hide' : 'Show'} Filters</button>
+
+        <div class="filter" class:active={filters}>
+            <Select label="Filters" {options} spacing="none" size="full" />
+        </div>
     </div>
 
     {#each packs as pack}

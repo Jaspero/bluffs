@@ -95,7 +95,7 @@
     font-size: 16px;
     padding: 12px;
     border-radius: 4px;
-    flex: 1;
+    width: inherit;
     height: 100%;
     outline: none;
     border: none;
@@ -136,7 +136,7 @@
   }
 
   .prefix, .suffix {
-    width: 36px;
+    min-width: 36px;
     height: 100%;
     display: flex;
     align-items: center;
