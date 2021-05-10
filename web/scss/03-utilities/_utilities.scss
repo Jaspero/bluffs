@@ -268,6 +268,10 @@
 /* Paddings
  *============================================================================*/
 
+@media (max-width: 600px) {
+  .xs-p-a-0 { padding: 0 }
+}
+
 .p-a-0  { padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; }
 .p-t-0  { padding-top: 0; }
 .p-r-0  { padding-right: 0; }

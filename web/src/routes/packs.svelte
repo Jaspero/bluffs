@@ -210,7 +210,7 @@
     </div>
 
     {#each packs as pack}
-        <div class="col-3 col-s-4 col-xs-6">
+        <div class="col-3 col-s-4 col-xs-6 xs-p-a-0">
             <Pack {pack} on:click={() => dialog.open()} />
         </div>
     {/each}

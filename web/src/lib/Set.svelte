@@ -14,6 +14,10 @@
     overflow: hidden;
     transition: border-color .2s;
 
+    @media(max-width: 600px) {
+      border-radius: 0;
+    }
+
     &:hover {
       border-color: var(--theme-secondary);
     }

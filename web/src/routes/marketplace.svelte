@@ -110,7 +110,7 @@
     </div>
 
     {#each buffs as buff}
-        <div class="col-3 col-s-4 col-xs-6">
+        <div class="col-3 col-s-4 col-xs-6 xs-p-a-0">
             <Buff  {buff} />
         </div>
     {/each}

@@ -122,20 +122,20 @@
     {#if selected === "one"}
         {#each sets as set}
             {#if set.completed === true}
-                <div class="col-3 col-s-4 col-xs-6">
+                <div class="col-3 col-s-4 col-xs-6 xs-p-a-0">
                     <Set {set} />
                 </div>
             {/if}
         {/each}
     {:else if selected === "two"}
         {#each sets as set}
-            <div class="col-3 col-s-4 col-xs-6">
+            <div class="col-3 col-s-4 col-xs-6 xs-p-a-0">
                 <Set {set} />
             </div>
         {/each}
     {:else}
         {#each buffs as buff}
-            <div class="col-3 col-s-4 col-xs-6">
+            <div class="col-3 col-s-4 col-xs-6 xs-p-a-0">
                 <Buff {buff} on:click={() => dialog.open()} />
             </div>
         {/each}
