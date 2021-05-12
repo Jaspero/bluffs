@@ -34,7 +34,6 @@
 
     function toggleFilters() {
         filters = !filters
-        console.log(filters)
     }
 </script>
 

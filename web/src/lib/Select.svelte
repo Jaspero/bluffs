@@ -87,7 +87,9 @@
       border: 1px solid var(--theme-tertiary);
       border-radius: 4px;
     }
+
     &-option {
+      height: 48px;
       padding: 12px;
       user-select: none;
       transition: color .2s, background-color .2s;
@@ -180,7 +182,7 @@
     {#if opened}
         <div class="select-box flex fd-col" transition:fly="{{ y: -10, duration: 300 }}">
             {#each options as option}
-                <label for="{option.label}" class="select-option flex pointer" class:checked={option.checked}>
+                <label for="{option.label}" class="select-option flex ai-center pointer" class:checked={option.checked}>
                     <input type="checkbox" id="{option.label}" value="{option.label}" bind:checked="{option.checked}">
                     <span class="flex-1">{option.label}</span>
                     {#if option.checked}
