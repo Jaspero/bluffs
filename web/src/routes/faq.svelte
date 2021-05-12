@@ -52,20 +52,4 @@
             <ExpandingCard panel="{topic.panels}" />
         </div>
     {/each}
-
-    <!--<div class="col-12">
-        <h6 class="m-b-s">What do I need?</h6>
-    </div>
-
-    <div class="col-12">
-        <h6 class="m-b-s">Buying and Selling</h6>
-    </div>
-
-    <div class="col-12">
-        <h6 class="m-b-s">What are buffs?</h6>
-    </div>
-
-    <div class="col-12">
-        <h6 class="m-b-s">Community</h6>
-    </div>-->
 </div>
