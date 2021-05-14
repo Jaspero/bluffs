@@ -41,9 +41,9 @@
     ]
 </script>
 
-<Header>Frequently Asked Questions</Header>
+<Header grid="small">Frequently Asked Questions</Header>
 
-<div class="grid">
+<div class="grid-small">
     <h3 class="col-12">Topics</h3>
 
     {#each topics as topic}

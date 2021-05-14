@@ -5,7 +5,6 @@
     import Field from "$lib/Field.svelte";
     import Dialog from "$lib/Dialog.svelte";
     import Button from "../lib/Button.svelte";
-    import {user} from "$lib/stores"
 
     let sets = [
         {setName: "Common 2020", tier: "common", completed: true},
@@ -99,7 +98,7 @@
 </style>
 
 <div class="grid jc-center ai-center">
-    <h1 class="col-6">Hello, {user}</h1>
+    <h1 class="col-6">Profile</h1>
 
     <div class="col-6 ta-right">
         <Button color="primary" link="/settings">Edit Profile</Button>

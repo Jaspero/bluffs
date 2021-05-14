@@ -2,9 +2,8 @@
     import Header from "$lib/Header.svelte";
     import Field from "$lib/Field.svelte";
     import Button from "$lib/Button.svelte";
-    import AccountOutline from "svelte-material-icons/AccountOutline.svelte";
     import EmailOutline from "svelte-material-icons/EmailOutline.svelte";
-    import LockOutline from "svelte-material-icons/LockOutline.svelte";
+    import Password from "../lib/Password.svelte";
 </script>
 
 <style lang="scss">
@@ -44,9 +43,9 @@
         <Field label="Email" type="email" autocomplete="email" required="true">
             <slot slot="prefix"><EmailOutline size="24px" /></slot>
         </Field>
-        <Field label="Password" type="password" autocomplete="off" required="true">
-            <slot slot="prefix"><LockOutline size="24px" /></slot>
-        </Field>
+
+        <Password label="Password" autocomplete="off" required="true" />
+
         <Button type="submit" kind="filled" color="primary">Sign up</Button>
     </form>
 

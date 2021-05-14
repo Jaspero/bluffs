@@ -3,7 +3,6 @@
     import Button from "../lib/Button.svelte";
     import Header from "../lib/Header.svelte";
     import EmailOutline from "svelte-material-icons/EmailOutline.svelte";
-    import LockOutline from "svelte-material-icons/LockOutline.svelte";
     import Dialog from "../lib/Dialog.svelte";
 
     let dialog
@@ -46,9 +45,9 @@
         <Field label="Email" type="email" autocomplete="email" required="true">
             <slot slot="prefix"><EmailOutline size="24px" /></slot>
         </Field>
-        <Field label="Password" type="password" autocomplete="current-password" required="true">
-            <slot slot="prefix"><LockOutline size="24px" /></slot>
-        </Field>
+
+        <Password label="Password" autocomplete="current-password" required="true" />
+
         <Button type="submit" kind="filled" color="primary">Log in</Button>
     </form>
 

@@ -24,6 +24,7 @@
       text-transform: uppercase;
       user-select: none;
       background-color: transparent;
+      color: var(--theme-primary);
       transition: background-color .3s;
 
       &:hover {
