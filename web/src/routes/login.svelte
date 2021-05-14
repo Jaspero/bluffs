@@ -4,6 +4,7 @@
     import Header from "../lib/Header.svelte";
     import EmailOutline from "svelte-material-icons/EmailOutline.svelte";
     import Dialog from "../lib/Dialog.svelte";
+    import Password from "../lib/Password.svelte";
 
     let dialog
 </script>

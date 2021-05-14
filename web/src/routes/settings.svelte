@@ -2,7 +2,6 @@
     import Header from "../lib/Header.svelte";
     import Field from "../lib/Field.svelte";
     import EmailOutline from "svelte-material-icons/EmailOutline.svelte";
-    import LockOutline from "svelte-material-icons/LockOutline.svelte";
     import Brightness3 from "svelte-material-icons/Brightness3.svelte";
     import Brightness7 from "svelte-material-icons/Brightness7.svelte";
     import Button from "../lib/Button.svelte";
@@ -33,6 +32,12 @@
     min-width: 250px;
     margin-bottom: 15px;
     overflow: hidden;
+    transition: border-color .3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow .3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      border-color: var(--theme-primary);
+      box-shadow: 0 0 0 1px var(--theme-primary);
+    }
   }
   .theme-icon {
     min-height: 58px;
@@ -94,17 +99,5 @@
         </button>
 
         <Button color="primary">Save User Preferences</Button>
-    </div>
-
-    <div class="col-12">
-        <h5 class="m-y-s">User Settings</h5>
-
-        <Field label="Email" type="email" autocomplete="email" required="true">
-            <slot slot="prefix"><EmailOutline size="24px" /></slot>
-        </Field>
-
-        <Field label="Password" type="password" autocomplete="current-password" required="true">
-            <slot slot="prefix"><LockOutline size="24px" /></slot>
-        </Field>
     </div>
 </div>
