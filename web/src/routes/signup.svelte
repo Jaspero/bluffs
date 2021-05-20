@@ -1,3 +1,4 @@
+<!--
 <script>
     import Header from "$lib/Header.svelte";
     import Field from "$lib/Field.svelte";
@@ -57,4 +58,4 @@
             Sign up with Google
         </button>
     </div>
-</div>
+</div>-->

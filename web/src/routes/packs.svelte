@@ -1,3 +1,4 @@
+<!--
 <script>
     import Header from "$lib/Header.svelte";
     import Pack from "$lib/Pack.svelte";
@@ -64,8 +65,8 @@
     z-index: 1;
     position: sticky;
     top: 60px;
-    border-bottom: 2px dashed var(--theme-tertiary);
-    background-color: var(--theme-bg);
+    border-bottom: 2px dashed var(&#45;&#45;theme-tertiary);
+    background-color: var(&#45;&#45;theme-bg);
 
     @media (max-width: 900px) {
       top: 50px;
@@ -93,16 +94,16 @@
     outline: none;
     border: none;
     text-align: center;
-    background-color: var(--theme-bg);
-    color: var(--theme-primary);
-    caret-color: var(--theme-primary);
+    background-color: var(&#45;&#45;theme-bg);
+    color: var(&#45;&#45;theme-primary);
+    caret-color: var(&#45;&#45;theme-primary);
     font-family: Roboto,sans-serif;
   }
 
   .box {
     display: flex;
     position: relative;
-    border: 1px solid var(--theme-tertiary);
+    border: 1px solid var(&#45;&#45;theme-tertiary);
     box-shadow: 0 0 0 1px transparent;
     height: 54px;
     border-radius: 4px;
@@ -111,13 +112,13 @@
     transition: box-shadow .3s, border .3s;
 
     &:hover {
-      border: 1px solid var(--theme-secondary);
-      box-shadow: 0 0 0 1px var(--theme-secondary);
+      border: 1px solid var(&#45;&#45;theme-secondary);
+      box-shadow: 0 0 0 1px var(&#45;&#45;theme-secondary);
     }
 
     &:focus-within {
-      border: 1px solid var(--primary-theme);
-      box-shadow: 0 0 0 1px var(--primary-theme);
+      border: 1px solid var(&#45;&#45;primary-theme);
+      box-shadow: 0 0 0 1px var(&#45;&#45;primary-theme);
     }
   }
 
@@ -130,8 +131,8 @@
     border: none;
     border-radius: 0;
     outline: none;
-    background-color: var(--theme-bg);
-    color: var(--theme-primary);
+    background-color: var(&#45;&#45;theme-bg);
+    color: var(&#45;&#45;theme-primary);
     transition: 0.4s;
 
     &:first-child {
@@ -183,10 +184,10 @@
       display: block;
       min-width: 133px;
       height: 60px;
-      border: 1px solid var(--theme-tertiary);
+      border: 1px solid var(&#45;&#45;theme-tertiary);
       border-radius: 4px;
-      background-color: var(--theme-fg);
-      color: var(--theme-primary);
+      background-color: var(&#45;&#45;theme-fg);
+      color: var(&#45;&#45;theme-primary);
       text-transform: uppercase;
       padding: 0 16px;
     }
@@ -233,4 +234,4 @@
             </button>
         </label>
     </slot>
-</Dialog>
+</Dialog>-->

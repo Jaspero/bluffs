@@ -196,13 +196,13 @@
 
         <div class="flex-1"></div>
 
-        <div class="m-r-xs">
+        <!--<div class="m-r-xs">
             <Button link="/packs" kind="ghost">Packs</Button>
         </div>
 
         <div class="m-r-xs">
             <Button link="/marketplace" kind="ghost">Marketplace</Button>
-        </div>
+        </div>-->
 
         <div class="m-r-xs">
             <Button link="/leaderboard" kind="ghost">Leaderboard</Button>
@@ -279,10 +279,10 @@
     <hr class="small">
     <a href="/signup" class="menu-button" on:click={closeMenu}>Signup</a>
     <hr class="small">
-    <a href="/packs" class="menu-button" on:click={closeMenu}>Packs</a>
+    <!--<a href="/packs" class="menu-button" on:click={closeMenu}>Packs</a>
     <hr class="small">
     <a href="/marketplace" class="menu-button" on:click={closeMenu}>Marketplace</a>
-    <hr class="small">
+    <hr class="small">-->
     <a href="/leaderboard" class="menu-button" on:click={closeMenu}>Leaderboard</a>
     <hr class="small">
     <a href="/faq" class="menu-button" on:click={closeMenu}>Common Questions</a>

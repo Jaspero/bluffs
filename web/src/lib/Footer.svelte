@@ -70,8 +70,8 @@
         <div class="col-4 col-s-12">
             <h4>Navigation</h4>
 
-            <a href="/packs">Packs</a>
-            <a href="/marketplace">Marketplace</a>
+            <!--<a href="/packs">Packs</a>
+            <a href="/marketplace">Marketplace</a>-->
             <a href="/leaderboard">Leaderboard</a>
             <a href="/faq">Common Questions</a>
             <a href="/login">Login</a>
