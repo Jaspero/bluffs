@@ -10,7 +10,7 @@
     display: block;
     background-color: var(--theme-fg);
     overflow: hidden;
-    box-shadow: 0 0 0 1px rgba(0,0,0,.16);
+    box-shadow: 0 0 0 1px var(--theme-tertiary);
     transition: margin .5s cubic-bezier(0.4, 0, 0.2, 1), border-radius .5s cubic-bezier(0.4, 0, 0.2, 1);
 
     &.opened {

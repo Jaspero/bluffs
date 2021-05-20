@@ -109,18 +109,20 @@
 
     <div class="col-4 col-m-5 col-xs-12">
         <Card>
-            <h5 class="pack-tier {pack.tier}">{pack.tier} Tier Pack</h5>
-            <div class="m-t-xs m-b-s">${pack.cost} - {pack.buffCount} buffs</div>
+            <slot slot="content">
+                <h5 class="pack-tier {pack.tier}">{pack.tier} Tier Pack</h5>
+                <div class="m-t-xs m-b-s">${pack.cost} - {pack.buffCount} buffs</div>
 
 
-            <Button color="primary" appearance="filled">Buy now</Button>
-            <h5 class="m-t-s">Pack Details</h5>
-            <h6 class="m-y-xs">This pack contains:</h6>
-            {#each packDetails as pack}
-                <p>
-                    {pack.count}x <span class="tier {pack.tier}">{pack.tier}</span> buffs
-                </p>
-            {/each}
+                <Button color="primary" appearance="filled">Buy now</Button>
+                <h5 class="m-t-s">Pack Details</h5>
+                <h6 class="m-y-xs">This pack contains:</h6>
+                {#each packDetails as pack}
+                    <p>
+                        {pack.count}x <span class="tier {pack.tier}">{pack.tier}</span> buffs
+                    </p>
+                {/each}
+            </slot>
         </Card>
     </div>
 </div>

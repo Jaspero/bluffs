@@ -186,6 +186,7 @@
       border: 1px solid var(--theme-tertiary);
       border-radius: 4px;
       background-color: var(--theme-fg);
+      color: var(--theme-primary);
       text-transform: uppercase;
       padding: 0 16px;
     }

@@ -80,16 +80,35 @@
       position: absolute;
       top: 26px;
       left: 10px;
+      max-height: 240px;
       width: calc(100% - 58px);
       color: var(--theme-primary);
       background-color: var(--theme-fg);
       outline: none;
       border: 1px solid var(--theme-tertiary);
+      overflow-y: scroll;
       border-radius: 4px;
+
+      /* width */
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: var(--theme-tertiary);
+        border-radius: 4px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: var(--theme-secondary);
+        border-radius: 4px;
+      }
     }
 
     &-option {
-      height: 48px;
+      min-height: 48px;
       padding: 12px;
       user-select: none;
       transition: color .2s, background-color .2s;

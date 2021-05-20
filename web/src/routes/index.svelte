@@ -173,7 +173,7 @@
   .moon {
     opacity: 0;
     transform-origin: bottom center;
-    transition: opacity 2s, transform 3s;
+    transition: opacity 2s, transform 2s;
 
     &.dark {
       transform: rotate(128deg);
@@ -442,10 +442,12 @@
 
     <div class="hero-card">
         <Card>
-            <div class="ta-center">
-                <h6 class="c-theme-secondary m-b-s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestias praesentium recusandae sequi totam? Aliquam aliquid architecto, blanditiis doloribus eveniet ipsum minima, nesciunt perspiciatis provident quis repellendus tempora ullam vitae.</h6>
-                <Button link="/signup" kind="filled" color="primary">Start your collection</Button>
-            </div>
+            <slot slot="content">
+                <div class="ta-center">
+                    <h6 class="c-theme-secondary m-b-s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestias praesentium recusandae sequi totam? Aliquam aliquid architecto, blanditiis doloribus eveniet ipsum minima, nesciunt perspiciatis provident quis repellendus tempora ullam vitae.</h6>
+                    <Button link="/signup" kind="filled" color="primary">Start your collection</Button>
+                </div>
+            </slot>
         </Card>
     </div>
 </section>
@@ -454,48 +456,52 @@
     <div class="grid jc-center p-y-s">
         <div class="col-6 col-s-8 col-xs-12">
             <Card title="What are sets?" subtitle="Sets are collections of buffs and there are 4 set tiers. Collect all the buffs in a set to gain a Unique buff!">
-                <div class="grid nogutter">
-                    <div class="col-6">
-                        {#each sets as set}
-                            {#if set.tier === selectedSet}
-                                <Set {set} />
-                            {/if}
-                        {/each}
-                    </div>
+                <slot slot="content">
+                    <div class="grid nogutter">
+                        <div class="col-6">
+                            {#each sets as set}
+                                {#if set.tier === selectedSet}
+                                    <Set {set} />
+                                {/if}
+                            {/each}
+                        </div>
 
-                    <div class="col-6">
-                        <ul class="p-a-0">
-                            <li class="select common pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedSet = setTiers[0]} class:selected={selectedSet==="common"}>Common tier</li>
-                            <li class="select rare pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedSet = setTiers[1]} class:selected={selectedSet==="rare"}>Rare tier</li>
-                            <li class="select epic pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedSet = setTiers[2]} class:selected={selectedSet==="epic"}>Epic tier</li>
-                            <li class="select legendary pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedSet = setTiers[3]} class:selected={selectedSet==="legendary"}>Legendary tier</li>
-                        </ul>
+                        <div class="col-6">
+                            <ul class="p-a-0">
+                                <li class="select common pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedSet = setTiers[0]} class:selected={selectedSet==="common"}>Common tier</li>
+                                <li class="select rare pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedSet = setTiers[1]} class:selected={selectedSet==="rare"}>Rare tier</li>
+                                <li class="select epic pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedSet = setTiers[2]} class:selected={selectedSet==="epic"}>Epic tier</li>
+                                <li class="select legendary pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedSet = setTiers[3]} class:selected={selectedSet==="legendary"}>Legendary tier</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </slot>
             </Card>
         </div>
 
         <div class="col-6 cols-8 col-xs-12">
             <Card title="What are buffs?" subtitle="Buffs are collectible NFTs. You can start collecting them by opening packs or by purchasing them in the Marketplace">
-                <div class="grid nogutter">
-                    <div class="col-6">
-                        {#each buffs as buff}
-                            {#if buff.tier === selectedBuff &! buff.cost}
-                                <Buff {buff} />
-                            {/if}
-                        {/each}
-                    </div>
+                <slot slot="content">
+                    <div class="grid nogutter">
+                        <div class="col-6">
+                            {#each buffs as buff}
+                                {#if buff.tier === selectedBuff &! buff.cost}
+                                    <Buff {buff} />
+                                {/if}
+                            {/each}
+                        </div>
 
-                    <div class="col-6">
-                        <ul class="p-a-0">
-                            <li class="select common pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[0]} class:selected={selectedBuff==="common"}>Common tier</li>
-                            <li class="select rare pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[1]} class:selected={selectedBuff==="rare"}>Rare tier</li>
-                            <li class="select epic pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[2]} class:selected={selectedBuff==="epic"}>Epic tier</li>
-                            <li class="select legendary pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[3]} class:selected={selectedBuff==="legendary"}>Legendary tier</li>
-                            <li class="select unique pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[4]} class:selected={selectedBuff==="unique"}>Unique tier</li>
-                        </ul>
+                        <div class="col-6">
+                            <ul class="p-a-0">
+                                <li class="select common pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[0]} class:selected={selectedBuff==="common"}>Common tier</li>
+                                <li class="select rare pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[1]} class:selected={selectedBuff==="rare"}>Rare tier</li>
+                                <li class="select epic pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[2]} class:selected={selectedBuff==="epic"}>Epic tier</li>
+                                <li class="select legendary pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[3]} class:selected={selectedBuff==="legendary"}>Legendary tier</li>
+                                <li class="select unique pointer m-b-xs m-l-xs p-a-xs" on:click={()=>selectedBuff = buffTiers[4]} class:selected={selectedBuff==="unique"}>Unique tier</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </slot>
             </Card>
         </div>
     </div>

@@ -44,7 +44,15 @@
         </div>
     {/if}
 
-    <div class="p-a-s card-content">
-        <slot></slot>
-    </div>
+    {#if $$slots.content}
+        <div class="p-a-s">
+            <slot name="content"></slot>
+        </div>
+    {/if}
+
+    {#if $$slots.actions}
+        <div class="p-a-s b-t-dashed">
+            <slot name="actions"></slot>
+        </div>
+    {/if}
 </div>

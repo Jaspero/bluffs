@@ -140,7 +140,6 @@
   }
 
   .prefix {
-    z-index: 10;
     min-width: 48px;
     height: 100%;
   }

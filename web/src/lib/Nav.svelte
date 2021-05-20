@@ -4,10 +4,16 @@
     import Close from "svelte-material-icons/Close.svelte";
     import Brightness3 from "svelte-material-icons/Brightness3.svelte";
     import Brightness7 from "svelte-material-icons/Brightness7.svelte";
+    import AccountCircleOutline from "svelte-material-icons/AccountCircleOutline.svelte";
     import {clickOutside} from './clickOutside.js';
+    import { fly } from 'svelte/transition';
     import {dark} from "$lib/stores"
 
     let menu = false
+
+    let profileMenu = false
+
+    let user = "QElizabeth"
 
     function toggleMenu(event) {
         event.stopPropagation()
@@ -15,7 +21,9 @@
     }
 
     function closeMenu() {
-        menu = false
+        if (menu) {
+            menu = false
+        }
     }
 
     function toggleTheme() {
@@ -28,8 +36,14 @@
         }
     }
 
-    function handleClickOutside(event) {
-        menu = false
+    function toggleProfileMenu() {
+        profileMenu = !profileMenu
+    }
+
+    function closeProfileMenu() {
+        if (profileMenu) {
+            profileMenu = false
+        }
     }
 </script>
 
@@ -126,6 +140,41 @@
     }
   }
 
+  .profile {
+    position: relative;
+
+    &-menu {
+      position: absolute;
+      top: 38px;
+      right: 0;
+      background-color: var(--theme-fg);
+
+      a {
+        display: block;
+        transition: background-color .3s;
+
+        &:hover {
+          background-color: var(--theme-backdrop);
+        }
+      }
+
+      button {
+        border-top: 1px solid var(--theme-tertiary);
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+        background-color: var(--theme-fg);
+        color: var(--theme-primary);
+        text-align: left;
+        transition: background-color .3s;
+
+        &:hover {
+          background-color: var(--theme-backdrop);
+        }
+      }
+    }
+  }
+
   @media (max-width: 900px) {
     .nav {
       display: none;
@@ -167,9 +216,11 @@
             <Button link="/login" kind="ghost">Login</Button>
         </div>
 
-        <Button link="/signup" color="primary">Join</Button>
+        <div class="m-r-xs">
+            <Button link="/signup" color="primary">Join</Button>
+        </div>
 
-        <div class="m-l-xs">
+        <div class="m-r-xs">
             <Button kind="ghost" size="icon" on:click={toggleTheme}>
                 {#if $dark}
                     <Brightness3 size="24px" />
@@ -177,6 +228,22 @@
                     <Brightness7 size="24px" />
                 {/if}
             </Button>
+        </div>
+
+        <div class="profile" use:clickOutside on:click_outside={closeProfileMenu}>
+            <Button kind="ghost" size="icon" on:click={toggleProfileMenu}>
+                <img src="assets/profile-pic.png" alt="">
+                <!--<AccountCircleOutline size="24px" />-->
+            </Button>
+
+            {#if profileMenu}
+                <div class="profile-menu b-a br-rounded" transition:fly="{{ y: -200, duration: 200 }}">
+                    <p class="fs-small p-a-xs ws-nowrap">Signed in as <span class="fw-medium">{user}</span></p>
+                    <a class="fs-small p-a-xs b-t" href="/profile" on:click={closeProfileMenu}>Your Profile</a>
+                    <a class="fs-small p-a-xs b-t" href="/settings" on:click={closeProfileMenu}>Settings</a>
+                    <button class="fs-small p-a-xs w-full" on:click={closeProfileMenu}>Sign out</button>
+                </div>
+            {/if}
         </div>
     </div>
 </nav>
@@ -207,7 +274,7 @@
     </div>
 </nav>
 
-<div class="menu" class:active={menu} use:clickOutside on:click_outside={handleClickOutside}>
+<div class="menu" class:active={menu} use:clickOutside on:click_outside={closeMenu}>
     <a href="/login" class="menu-button" on:click={closeMenu}>Login</a>
     <hr class="small">
     <a href="/signup" class="menu-button" on:click={closeMenu}>Signup</a>
@@ -218,5 +285,9 @@
     <hr class="small">
     <a href="/leaderboard" class="menu-button" on:click={closeMenu}>Leaderboard</a>
     <hr class="small">
+    <a href="/faq" class="menu-button" on:click={closeMenu}>Common Questions</a>
+    <hr class="small">
     <a href="/profile" class="menu-button" on:click={closeMenu}>Profile</a>
+    <hr class="small">
+    <a href="/settings" class="menu-button" on:click={closeMenu}>Settings</a>
 </div>
