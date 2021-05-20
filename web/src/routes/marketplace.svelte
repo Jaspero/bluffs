@@ -71,7 +71,7 @@
       opacity: 0;
 
       &.active {
-        margin-top: calc(4px + .25vw);
+        margin-top: calc(8px + .5vw);
         display: block;
         visibility: visible;
         opacity: 1;
@@ -96,7 +96,7 @@
 
 <div class="grid">
     <div class="col-12 sticky-bar flex fw-wrap">
-        <div class="m-r-xs search">
+        <div class="m-r-s search">
             <Field label="Search" spacing="none" size="full">
                 <slot slot="prefix"><Magnify size="24px" /></slot>
             </Field>
