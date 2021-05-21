@@ -1,3 +1,4 @@
+<!--
 <script>
     import Header from "$lib/Header.svelte";
     import Buff from "$lib/Buff.svelte";
@@ -42,8 +43,8 @@
     z-index: 1;
     position: sticky;
     top: 60px;
-    border-bottom: 2px dashed var(--theme-tertiary);
-    background-color: var(--theme-bg);
+    border-bottom: 2px dashed var(&#45;&#45;theme-tertiary);
+    background-color: var(&#45;&#45;theme-bg);
 
     @media (max-width: 900px) {
       top: 50px;
@@ -82,10 +83,10 @@
       display: block;
       min-width: 133px;
       height: 60px;
-      border: 1px solid var(--theme-tertiary);
+      border: 1px solid var(&#45;&#45;theme-tertiary);
       border-radius: 4px;
-      background-color: var(--theme-fg);
-      color: var(--theme-primary);
+      background-color: var(&#45;&#45;theme-fg);
+      color: var(&#45;&#45;theme-primary);
       text-transform: uppercase;
       padding: 0 16px;
     }
@@ -114,4 +115,4 @@
             <Buff  {buff} />
         </div>
     {/each}
-</div>
+</div>-->

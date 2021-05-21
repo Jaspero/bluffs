@@ -7,6 +7,7 @@
 
 <style lang="scss">
   .buff {
+    position: relative;
     display: block;
     cursor: pointer;
     padding: 10px;
@@ -121,9 +122,19 @@
     border: none;
     outline: none;
   }
+
+  .cooldown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    width: 100%;
+    height: 100%;
+  }
 </style>
 
-<div class="buff {buff.tier} font-secondary" on:click={()=>dispatch('click')}>
+<div class="buff {buff.tier} font-secondary of-hidden" on:click={()=>dispatch('click')}>
     <h6>{buff.buffName}</h6>
     <div class="fs-small flex jc-between">
         <span class="buff-tier">{buff.tier}</span>
@@ -140,5 +151,12 @@
     {/if}
     {#if buff.cost}
         <p>${buff.cost}</p>
+    {/if}
+
+    {#if buff.cooldown}
+        <p class="cooldown flex fd-col jc-center ai-center">
+            <span class="fs-small">Cooldown:</span>
+            <span class="fs-large">23:59:59</span>
+        </p>
     {/if}
 </div>
