@@ -125,88 +125,84 @@
 
 <div class="grid">
     <div class="col-6 col-s-12">
-        <Card title="User Settings">
-            <slot slot="content">
-                <Field label="Email" type="email" autocomplete="email" required="true">
-                    <slot slot="prefix"><EmailOutline size="24px" /></slot>
-                </Field>
+        <h4 class="m-b-s">User Settings</h4>
 
-                <Password label="Password" autocomplete="current-password" spacing="none" />
-            </slot>
+        <Field label="Email" type="email" autocomplete="email" required="true">
+            <slot slot="prefix"><EmailOutline size="24px" /></slot>
+        </Field>
 
-            <slot slot="actions">
-                <Button color="primary">Save User Settings</Button>
-            </slot>
-        </Card>
+        <Password label="Password" autocomplete="current-password" spacing="none" />
+
+        <div class="m-t-s">
+            <Button color="primary">Save User Settings</Button>
+        </div>
     </div>
 
     <div class="col-6 col-s-12">
-        <Card title="User Preferences">
-            <slot slot="content">
-                <button class="toggle-button flex" on:click={toggleTheme}>
-                    <span class="toggle-button-wrapper">
-                        <span class="toggle-button-content flex fd-col" class:active={$dark}>
-                            <span class="flex">
-                                <span class="toggle-icon flex jc-end ai-center">
-                                    <Brightness7 size="24px" />
-                                </span>
+        <h4 class="m-b-s">User Preferences</h4>
 
-                                <span class="toggle-text flex ai-center">
-                                    <span>Light Theme</span>
-                                </span>
-                            </span>
+        <button class="toggle-button flex" on:click={toggleTheme}>
+            <span class="toggle-button-wrapper">
+                <span class="toggle-button-content flex fd-col" class:active={$dark}>
+                    <span class="flex">
+                        <span class="toggle-icon flex jc-end ai-center">
+                            <Brightness7 size="24px" />
+                        </span>
 
-                            <span class="flex">
-                                <span class="toggle-icon flex jc-end ai-center">
-                                    <Brightness3 size="24px" />
-                                </span>
-
-                                <span class="toggle-text flex ai-center">
-                                    <span>Dark Theme</span>
-                                </span>
-                            </span>
+                        <span class="toggle-text flex ai-center">
+                            <span>Light Theme</span>
                         </span>
                     </span>
 
-                    <span class="toggle-hint fs-small c-theme-secondary ta-left">
-                        Choose how Bluffs looks to you.
+                    <span class="flex">
+                        <span class="toggle-icon flex jc-end ai-center">
+                            <Brightness3 size="24px" />
+                        </span>
+
+                        <span class="toggle-text flex ai-center">
+                            <span>Dark Theme</span>
+                        </span>
                     </span>
-                </button>
+                </span>
+            </span>
 
-                <button class="toggle-button flex" on:click={toggleSubscription}>
-                    <span class="toggle-button-wrapper">
-                        <span class="toggle-button-content flex fd-col" class:active={subscribed}>
-                            <span class="flex">
-                                <span class="toggle-icon flex jc-end ai-center">
-                                    <BellOffOutline size="24px" />
-                                </span>
+            <span class="toggle-hint fs-small c-theme-secondary ta-left">
+                Choose how Bluffs looks to you.
+            </span>
+        </button>
 
-                                <span class="toggle-text flex ai-center">
-                                    <span>Not Subscribed</span>
-                                </span>
-                            </span>
+        <button class="toggle-button flex" on:click={toggleSubscription}>
+            <span class="toggle-button-wrapper">
+                <span class="toggle-button-content flex fd-col" class:active={subscribed}>
+                    <span class="flex">
+                        <span class="toggle-icon flex jc-end ai-center">
+                            <BellOffOutline size="24px" />
+                        </span>
 
-                            <span class="flex">
-                                <span class="toggle-icon flex jc-end ai-center">
-                                    <BellRingOutline size="24px" />
-                                </span>
-
-                                <span class="toggle-text flex ai-center">
-                                    <span>Subscribed</span>
-                                </span>
-                            </span>
+                        <span class="toggle-text flex ai-center">
+                            <span>Not Subscribed</span>
                         </span>
                     </span>
 
-                    <span class="toggle-hint fs-small c-theme-secondary ta-left">
-                        Subscribe to our Newsletter to get regular updates and promotions.
-                    </span>
-                </button>
-            </slot>
+                    <span class="flex">
+                        <span class="toggle-icon flex jc-end ai-center">
+                            <BellRingOutline size="24px" />
+                        </span>
 
-            <slot slot="actions">
-                <Button color="primary">Save User Preferences</Button>
-            </slot>
-        </Card>
+                        <span class="toggle-text flex ai-center">
+                            <span>Subscribed</span>
+                        </span>
+                    </span>
+                </span>
+            </span>
+
+            <span class="toggle-hint fs-small c-theme-secondary ta-left">
+                Subscribe to our Newsletter to get regular updates and promotions.
+            </span>
+        </button>
+
+        <div class="m-t-s">
+            <Button color="primary">Save User Preferences</Button>
+        </div>
     </div>
 </div>
