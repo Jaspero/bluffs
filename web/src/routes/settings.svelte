@@ -43,6 +43,7 @@
     border-radius: 4px;
     background-color: var(--theme-fg);
     color: var(--theme-primary);
+    user-select: none;
     height: 58px;
     padding: 0;
     font-size: 14px;
